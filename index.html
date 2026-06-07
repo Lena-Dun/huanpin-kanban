@@ -98,7 +98,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 .lost-bar-row:hover{background:#f8f9fc}
 .lost-bar-label{width:60px;text-align:right;font-size:13px;color:#555;font-weight:500}
 .lost-bar-track{flex:1;height:22px;background:#f0f2f5;border-radius:11px;overflow:hidden;position:relative}
-.lost-bar-fill{height:100%;border-radius:11px;transition:width 0.6s ease-out;min-width:4px}
+.lost-bar-fill{height:100%;border-radius:11px;transition:width 0.6s ease-out;min-width:4px  transition: width 0.6s ease;
+}
 .lost-bar-num{width:45px;text-align:center;font-size:13px;font-weight:600;color:#e15759}
 .lost-bar-pct{width:50px;text-align:right;font-size:12px;color:#888}
 .stat-mini-card{flex:1;min-width:100px;text-align:center;padding:14px 10px;background:#fafbfc;border-radius:10px;border:1px solid #eee;transition:all 0.2s}
@@ -951,37 +952,10 @@ document.querySelectorAll('.top-nav-btn').forEach(function(btn){
 initOverview();
 
 
-// ==================== 流失时间分布动画 ====================
-(function animateLostBars(){
-  var bars = document.querySelectorAll('.lost-bar-fill');
-  bars.forEach(function(bar, i){
-    var row = bar.closest('.lost-bar-row');
-    if (!row) return;
-    var pctEl = row.querySelector('.lost-bar-pct');
-    if (!pctEl) return;
-    var pctText = pctEl.textContent.replace('%','').trim();
-    var pct = parseFloat(pctText) || 0;
-    setTimeout(function(){
-      bar.style.width = pct + '%';
-    }, 200 + i * 80);
-  });
-})();
 
-// ==================== 流失时间分布动画 ====================
-(function animateLostBars(){
-  var bars = document.querySelectorAll('.lost-bar-fill');
-  bars.forEach(function(bar, i){
-    var row = bar.closest('.lost-bar-row');
-    if (!row) return;
-    var pctEl = row.querySelector('.lost-bar-pct');
-    if (!pctEl) return;
-    var pctText = pctEl.textContent.replace('%','').trim();
-    var pct = parseFloat(pctText) || 0;
-    setTimeout(function(){
-      bar.style.width = pct + '%';
-    }, 200 + i * 80);
-  });
-})();
+
+
+
 
 // ==================== 三维筛选逻辑 ====================
 (function(){
