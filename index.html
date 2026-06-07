@@ -114,100 +114,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
       总览分析 <span style="font-size:13px;font-weight:400;color:#888;margin-left:8px">换品数据截至 2026年6月5日15:00</span>
     </h2>
     
-<div class="kpi-row">
-  <div class="kpi-card" style="--c:#4e79a7"><div class="month">1月</div><div class="num">947</div><div class="label">换品记录</div></div>  <div class="kpi-card" style="--c:#f28e2b"><div class="month">2月</div><div class="num">797</div><div class="label">换品记录</div></div>  <div class="kpi-card" style="--c:#e15759"><div class="month">3月</div><div class="num">1055</div><div class="label">换品记录</div></div>  <div class="kpi-card" style="--c:#76b7b2"><div class="month">4月</div><div class="num">887</div><div class="label">换品记录</div></div>  <div class="kpi-card" style="--c:#59a14f"><div class="month">5月</div><div class="num">979</div><div class="label">换品记录</div></div>  <div class="kpi-card" style="--c:#edc948"><div class="month">6月</div><div class="num">257</div><div class="label">换品记录</div></div>
-  <div class="kpi-card" style="--c:#2c3e50"><div class="month">1-6月合计</div><div class="num">4922</div><div class="label">换品记录</div></div>
-</div>
-</div>
-</div>
-    <div class="charts-grid">
-      <div class="chart-card" style="--accent:#4e79a7"><h3>月度换品总量趋势</h3><div class="chart-wrap"><canvas id="ov-total"></canvas></div></div>
-      <div class="chart-card" style="--accent:#f28e2b"><h3>换品类型月度构成（堆积）</h3><div class="chart-wrap"><canvas id="ov-type-stack"></canvas></div></div>
-      <div class="chart-card" style="--accent:#59a14f"><h3>细分类型月度趋势</h3><div class="chart-wrap"><canvas id="ov-sub"></canvas></div></div>
-      <div class="chart-card" style="--accent:#e15759"><h3>版本流向 Top5</h3><div class="chart-wrap"><canvas id="ov-flow"></canvas></div></div>
-    </div>
-    <div class="chart-card full" style="--accent:#76b7b2;margin-bottom:18px"><h3>换品类型月度构成（100%堆积）</h3><div class="chart-wrap"><canvas id="ov-type-pct"></canvas></div></div>
-    <div class="chart-card full"><h3>月度换品明细数据</h3>
-      <div style="overflow-x:auto"><table class="data-table" id="ov-table"></table></div>
-    </div>
-  </div>
-</div>
-
-<div id="page-ketou" class="page">
-  <div class="container">
-    <h2 style="font-size:16px;font-weight:700;color:#2c3e50;margin-bottom:16px;padding:12px 16px;background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border-left:4px solid #f28e2b">
-      课包分析
-    </h2>
-    <div class="sub-tabs"><button class="sub-tab  active" data-kt="A" style="--accent:#4e79a7">调入A版</button><button class="sub-tab" data-kt="S" style="--accent:#f28e2b">调入S+版</button><button class="sub-tab" data-kt="B" style="--accent:#e15759">调入B版</button><button class="sub-tab" data-kt="C" style="--accent:#59a14f">调入C版</button><button class="sub-tab" data-kt="Y" style="--accent:#76b7b2">换年级</button></div>
-    
-<div class="sub-section  active" id="kt-sec-A">
-  <div class="charts-grid">
-    <div class="chart-card full" style="--accent:#4e79a7"><h3>调入A版 各课头月度分布</h3><div class="chart-wrap-xl"><canvas id="kt-chart-A"></canvas></div></div>
-  </div>
-  <div class="chart-card full"><h3>调入A版 课头明细</h3>
-    <div style="overflow-x:auto"><table class="data-table" id="kt-table-A"></table></div>
-  </div>
-</div>
-<div class="sub-section" id="kt-sec-S">
-  <div class="charts-grid">
-    <div class="chart-card full" style="--accent:#f28e2b"><h3>调入S+版 各课头月度分布</h3><div class="chart-wrap-xl"><canvas id="kt-chart-S"></canvas></div></div>
-  </div>
-  <div class="chart-card full"><h3>调入S+版 课头明细</h3>
-    <div style="overflow-x:auto"><table class="data-table" id="kt-table-S"></table></div>
-  </div>
-</div>
-<div class="sub-section" id="kt-sec-B">
-  <div class="charts-grid">
-    <div class="chart-card full" style="--accent:#e15759"><h3>调入B版 各课头月度分布</h3><div class="chart-wrap-xl"><canvas id="kt-chart-B"></canvas></div></div>
-  </div>
-  <div class="chart-card full"><h3>调入B版 课头明细</h3>
-    <div style="overflow-x:auto"><table class="data-table" id="kt-table-B"></table></div>
-  </div>
-</div>
-<div class="sub-section" id="kt-sec-C">
-  <div class="charts-grid">
-    <div class="chart-card full" style="--accent:#59a14f"><h3>调入C版 各课头月度分布</h3><div class="chart-wrap-xl"><canvas id="kt-chart-C"></canvas></div></div>
-  </div>
-  <div class="chart-card full"><h3>调入C版 课头明细</h3>
-    <div style="overflow-x:auto"><table class="data-table" id="kt-table-C"></table></div>
-  </div>
-</div>
-<div class="sub-section" id="kt-sec-Y">
-  <div class="charts-grid">
-    <div class="chart-card full" style="--accent:#76b7b2"><h3>换年级 各课头月度分布</h3><div class="chart-wrap-xl"><canvas id="kt-chart-Y"></canvas></div></div>
-  </div>
-  <div class="chart-card full"><h3>换年级 课头明细</h3>
-    <div style="overflow-x:auto"><table class="data-table" id="kt-table-Y"></table></div>
-  </div>
-</div>
-  </div>
-</div>
-
-<div id="page-timing" class="page">
-  <div class="container">
-    <h2 style="font-size:16px;font-weight:700;color:#2c3e50;margin-bottom:16px;padding:12px 16px;background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border-left:4px solid #76b7b2">
-      换品时机分析
-    </h2>
-    <div class="charts-grid">
-      <div class="chart-card full" style="--accent:#4e79a7"><h3>整体换品时机分布（相对开课月数）</h3><div class="chart-wrap-lg"><canvas id="tm-total"></canvas></div></div>
-    </div>
-    <div class="charts-grid">
-      <div class="chart-card full" style="--accent:#f28e2b"><h3>各换品类型 x 时机分布（堆积）</h3><div class="chart-wrap-xl"><canvas id="tm-type"></canvas></div></div>
-    </div>
-    <div class="charts-grid">
-      <div class="chart-card full" style="--accent:#e15759"><h3>换品月份 x 开课后时间 热力图</h3><div class="chart-wrap-lg"><canvas id="tm-heat"></canvas></div></div>
-    </div>
-    <div class="charts-grid">
-      <div class="chart-card full" style="--accent:#76b7b2"><h3>Top 课包的换品时机分布</h3><div class="chart-wrap-xl"><canvas id="tm-pkg"></canvas></div></div>
-    </div>
-    <div class="chart-card full"><h3>时机明细数据</h3><div style="overflow-x:auto"><table class="data-table" id="tm-table"></table></div></div>
-    <div class="ay-section">
-      <div class="ay-section-title">按学年区分换品时机</div>
-      <div class="kpi-row"><div class="kpi-card" style="--c:#e15759">
+<div class="kpi-row"><div class="kpi-card" style="--c:#e15759">
       <div class="month">24-25学年</div>
-      <div class="num">0</div>
-      <div class="label">课前0 | 当月0 | 1-3月0 | 4月+0</div>
+      <div class="num">512</div>
+      <div class="label">课前0 | 当月0 | 1-3月0 | 4月+512</div>
     </div><div class="kpi-card" style="--c:#4e79a7">
+      <div class="month">25-26学年</div>
+      <div class="num">4238</div>
+      <div class="label">课前699 | 当月847 | 1-3月1123 | 4月+1569</div>
+    </div><div class="kpi-card" style="--c:#59a14f">
+      <div class="month">26-27学年</div>
+      <div class="num">172</div>
+      <div class="label">课前172 | 当月0 | 1-3月0 | 4月+0</div>
+    </div></div><div class="kpi-card" style="--c:#4e79a7">
       <div class="month">25-26学年</div>
       <div class="num">0</div>
       <div class="label">课前0 | 当月0 | 1-3月0 | 4月+0</div>
@@ -239,16 +158,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
       <div class="kpi-card" style="--c:#f28e2b"><div class="month">总流失率</div><div class="num" style="font-size:26px">5.67%</div><div class="label">流失/总换品</div></div>
       <div class="kpi-card" style="--c:#59a14f"><div class="month">流失中位间隔</div><div class="num" style="font-size:26px">39.0</div><div class="label">天（换品后）</div></div>
       <div class="kpi-card" style="--c:#76b7b2"><div class="month">流失均值间隔</div><div class="num" style="font-size:26px">48.5</div><div class="label">天（换品后）</div></div>
-    </div>
-      <div class="kpi-card" style="--c:#4e79a7"><div class="month">未流失</div><div class="num">4388</div><div class="label">1-5月累计</div></div>
-      <div class="kpi-card" style="--c:#f28e2b"><div class="month">总流失率</div><div class="num" style="font-size:26px">5.94%</div><div class="label">流失/总换品</div></div>
-      <div class="kpi-card" style="--c:#59a14f"><div class="month">流失中位间隔</div><div class="num" style="font-size:26px">39.5</div><div class="label">天（换品后）</div></div>
-      <div class="kpi-card" style="--c:#76b7b2"><div class="month">流失均值间隔</div><div class="num" style="font-size:26px">48.8</div><div class="label">天（换品后）</div></div>
-    </div>
-      <div class="kpi-card" style="--c:#4e79a7"><div class="month">未流失</div><div class="num">4363</div><div class="label">1-5月累计</div></div>
-      <div class="kpi-card" style="--c:#f28e2b"><div class="month">总流失率</div><div class="num" style="font-size:26px">6.47%</div><div class="label">流失/总换品</div></div>
-      <div class="kpi-card" style="--c:#59a14f"><div class="month">流失中位间隔</div><div class="num" style="font-size:26px">39.0</div><div class="label">天（换品后）</div></div>
-      <div class="kpi-card" style="--c:#76b7b2"><div class="month">流失均值间隔</div><div class="num" style="font-size:26px">45.3</div><div class="label">天（换品后）</div></div>
     </div>
     <!-- 图表 -->
     <div class="charts-grid">
