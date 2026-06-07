@@ -329,8 +329,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
     <div class="charts-grid">
       <div class="chart-card"><h3>各月流失人数 &amp; 流失率</h3><div class="chart-wrap"><canvas id="c-lost-month"></canvas></div></div>
       <div class="chart-card"><h3>各调品类型流失率对比</h3><div class="chart-wrap"><canvas id="c-lost-type"></canvas></div></div>
-      <div class="chart-card"><h3>换品后流失间隔分布（有效 278 条）</h3><div class="chart-wrap"><canvas id="c-lost-interval"></canvas></div></div>
-      <div class="chart-card"><h3>各月流失间隔结构（堆积）</h3><div class="chart-wrap"><canvas id="c-lost-month-interval"></canvas></div></div>
     </div>
     <!-- 流失时间分布 -->
     <div class="charts-grid" style="margin-top:18px">
@@ -359,12 +357,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
       <div class="interval-card interval-card-mid"><div class="interval-card-icon">◆</div><div class="interval-card-body"><div class="interval-card-val">27</div><div class="interval-card-label">中位数（天）</div></div></div>
       <div class="interval-card interval-card-max"><div class="interval-card-icon">◐</div><div class="interval-card-body"><div class="interval-card-val">54</div><div class="interval-card-label">P75 分位（天）</div></div></div>
       <div class="interval-card interval-card-end"><div class="interval-card-icon">▲</div><div class="interval-card-body"><div class="interval-card-val">402</div><div class="interval-card-label">最大值（天）</div></div></div>
-    </div>
-    </div>
-    <!-- 各调品类型流失明细 -->
-    <div class="chart-card full" style="margin-top:18px">
-      <h3>各调品类型流失明细</h3>
-      <div style="overflow-x:auto"><table class="data-table" id="lost-type-tbl"><thead><tr><th data-tbl="lost-type-tbl" data-col="0" onclick="sortTableByCol(this)">调品类型<span class="sort-icon"></span></th><th data-tbl="lost-type-tbl" data-col="1" onclick="sortTableByCol(this)">总记录<span class="sort-icon"></span></th><th data-tbl="lost-type-tbl" data-col="2" onclick="sortTableByCol(this)">流失人数<span class="sort-icon"></span></th><th data-tbl="lost-type-tbl" data-col="3" onclick="sortTableByCol(this)">流失率<span class="sort-icon"></span></th></tr></thead><tbody><tr><td class="row-label"><span class="tag" style="background:#59a14f20;color:#59a14f">调入B版</span></td><td>1000</td><td style="color:#e15759;font-weight:600">72</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:36.0%;background:#59a14f"></div><span>7.20%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#f28e2b20;color:#f28e2b">调入S+版</span></td><td>1401</td><td style="color:#e15759;font-weight:600">80</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:28.6%;background:#f28e2b"></div><span>5.71%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#4e79a720;color:#4e79a7">调入A版</span></td><td>1863</td><td style="color:#e15759;font-weight:600">77</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:20.6%;background:#4e79a7"></div><span>4.13%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#e1575920;color:#e15759">换年级</span></td><td>541</td><td style="color:#e15759;font-weight:600">41</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:37.9%;background:#e15759"></div><span>7.58%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#76b7b220;color:#76b7b2">调入C版</span></td><td>80</td><td style="color:#e15759;font-weight:600">7</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:43.8%;background:#76b7b2"></div><span>8.75%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#b07aa120;color:#b07aa1">换课头</span></td><td>18</td><td style="color:#e15759;font-weight:600">1</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:27.8%;background:#b07aa1"></div><span>5.56%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#edc94820;color:#edc948">换时段</span></td><td>19</td><td style="color:#e15759;font-weight:600">1</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:26.3%;background:#edc948"></div><span>5.26%</span></div></td></tr></tbody></table></div>
+    </div></td></tr><tr><td class="row-label"><span class="tag" style="background:#f28e2b20;color:#f28e2b">调入S+版</span></td><td>1401</td><td style="color:#e15759;font-weight:600">80</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:28.6%;background:#f28e2b"></div><span>5.71%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#4e79a720;color:#4e79a7">调入A版</span></td><td>1863</td><td style="color:#e15759;font-weight:600">77</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:20.6%;background:#4e79a7"></div><span>4.13%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#e1575920;color:#e15759">换年级</span></td><td>541</td><td style="color:#e15759;font-weight:600">41</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:37.9%;background:#e15759"></div><span>7.58%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#76b7b220;color:#76b7b2">调入C版</span></td><td>80</td><td style="color:#e15759;font-weight:600">7</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:43.8%;background:#76b7b2"></div><span>8.75%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#b07aa120;color:#b07aa1">换课头</span></td><td>18</td><td style="color:#e15759;font-weight:600">1</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:27.8%;background:#b07aa1"></div><span>5.56%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#edc94820;color:#edc948">换时段</span></td><td>19</td><td style="color:#e15759;font-weight:600">1</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:26.3%;background:#edc948"></div><span>5.26%</span></div></td></tr></tbody></table></div>
     </div>
     <!-- 课头流失明细 -->
     <div class="chart-card full" style="margin-top:18px">
@@ -8877,42 +8870,7 @@ function initLostCharts() {
     }
   });
 
-  // 3. 流失间隔分布
-  var intLabels = D.interval_labels || [];
-  var intTotal = D.interval_total || [];
-  var intData = intLabels.map(function(l, i){ return intTotal[i] || 0; });
-  var intColors = ['#e15759','#f28e2b','#edc948','#4e79a7','#76b7b2','#59a14f','#b07aa1'];
-  new Chart(document.getElementById('c-lost-interval').getContext('2d'), {
-    type:'bar',
-    data:{ labels:intLabels, datasets:[{
-      label:'流失人数', data:intData,
-      backgroundColor:intColors.map(c=>c+'99'), borderColor:intColors, borderWidth:1.5
-    }]},
-    options:{ responsive:true, maintainAspectRatio:false,
-      scales:{ y:{beginAtZero:true,title:{display:true,text:'人数'}} },
-      plugins:{ legend:{display:false},
-        tooltip:{ callbacks:{ label:function(ctx){
-          var total = intTotal.reduce(function(a,b){ return a+b; }, 0);
-          return ctx.raw+'人 ('+(ctx.raw/total*100).toFixed(1)+'%)';
-        }}}
-      }
-    }
-  });
-
-  // 4. 各月流失间隔堆积
-  var miDatasets = D.interval_labels.map(function(lbl,i){
-    return { label:lbl, data:D.months.map(m=>(D.monthly_interval_summary[m]||[])[i]||0),
-             backgroundColor:intColors[i]+'99', borderColor:intColors[i], borderWidth:1 };
-  });
-  new Chart(document.getElementById('c-lost-month-interval').getContext('2d'), {
-    type:'bar',
-    data:{ labels:D.months, datasets:miDatasets },
-    options:{ responsive:true, maintainAspectRatio:false,
-      scales:{ x:{stacked:true}, y:{stacked:true,beginAtZero:true,title:{display:true,text:'流失人数'}} }
-    }
-  });
-
-  // 5. 各课头流失率
+  // 3. 各课头流失率
   var ktLabels = D.kt_lost_top.map(r=>r[0]);
   var ktRates = D.kt_lost_top.map(r=>r[1].rate);
   var ktTotals = D.kt_lost_top.map(r=>r[1].total);
@@ -9085,7 +9043,11 @@ function initKetouType(typeCode) {
     }
   });
 
-  var thead = '<tr><th>课头</th>'+MONTHS.map(m=>'<th>'+m+'</th>').join('')+'<th>合计</th></tr>';
+  var thead = '<tr>'
+    + '<th data-tbl="kt-table-'+typeCode+'" data-col="0" onclick="sortTableByCol(this)" style="cursor:pointer">课头 <span class="sort-icon">⇅</span></th>'
+    + MONTHS.map(function(m,i){ return '<th data-tbl="kt-table-'+typeCode+'" data-col="'+(i+1)+'" onclick="sortTableByCol(this)" style="cursor:pointer">'+m+' <span class="sort-icon">⇅</span></th>'; }).join('')
+    + '<th data-tbl="kt-table-'+typeCode+'" data-col="'+(MONTHS.length+1)+'" onclick="sortTableByCol(this)" style="cursor:pointer">合计 <span class="sort-icon">⇅</span></th>'
+    + '</tr>';
   var tbody = order.map(function(k){
     var row = kd.counts[k];
     var sum = row.reduce(function(a,v){return a+v;},0);
