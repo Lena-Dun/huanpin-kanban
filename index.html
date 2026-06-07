@@ -189,14 +189,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
     </h2>
     
     <!-- 月度KPI卡片 -->
+    <div class="kpi-row" style="margin-bottom:16px"><div class="kpi-card" style="--c:#4e79a7"><div class="month">换品总记录</div><div class="num">4922</div><div class="label">数据截止 2026年6月5日</div></div><div class="kpi-card" style="--c:#e15759"><div class="month">总流失</div><div class="num" style="color:#e15759">279人</div><div class="label">流失率 5.67%</div></div><div class="kpi-card" style="--c:#e15759"><div class="month">24-25学年</div><div class="num">512</div><div class="label">课前503 | 当月5 | 1-3月3 | 4月+1</div></div><div class="kpi-card" style="--c:#4e79a7"><div class="month">25-26学年</div><div class="num">4238</div><div class="label">课前1104 | 当月847 | 1-3月1123 | 4月+1074</div></div><div class="kpi-card" style="--c:#59a14f"><div class="month">26-27学年</div><div class="num">172</div><div class="label">课前124 | 当月0 | 1-3月0 | 4月+48</div></div></div>
     <div class="kpi-row">
-      <div class="kpi-card" style="--c:#4e79a7"><div class="month">1月</div><div class="num">947</div><div class="label">换品记录</div></div>
-      <div class="kpi-card" style="--c:#f28e2b"><div class="month">2月</div><div class="num">797</div><div class="label">换品记录</div></div>
-      <div class="kpi-card" style="--c:#e15759"><div class="month">3月</div><div class="num">1055</div><div class="label">换品记录</div></div>
-      <div class="kpi-card" style="--c:#76b7b2"><div class="month">4月</div><div class="num">887</div><div class="label">换品记录</div></div>
-      <div class="kpi-card" style="--c:#59a14f"><div class="month">5月</div><div class="num">979</div><div class="label">换品记录</div></div>
-      <div class="kpi-card" style="--c:#edc948"><div class="month">6月</div><div class="num">257</div><div class="label">换品记录</div></div>
-      <div class="kpi-card" style="--c:#2c3e50"><div class="month">1-6月合计</div><div class="num">4922</div><div class="label">换品记录</div></div>
+      <div class="kpi-card" style="--c:#4e79a7"><div class="month">1月</div><div class="num">947</div><div class="label">换品记录</div></div><div class="kpi-card" style="--c:#f28e2b"><div class="month">2月</div><div class="num">797</div><div class="label">换品记录</div></div><div class="kpi-card" style="--c:#e15759"><div class="month">3月</div><div class="num">1055</div><div class="label">换品记录</div></div><div class="kpi-card" style="--c:#76b7b2"><div class="month">4月</div><div class="num">887</div><div class="label">换品记录</div></div><div class="kpi-card" style="--c:#59a14f"><div class="month">5月</div><div class="num">979</div><div class="label">换品记录</div></div><div class="kpi-card" style="--c:#edc948"><div class="month">6月</div><div class="num">257</div><div class="label">换品记录</div></div><div class="kpi-card" style="--c:#2c3e50"><div class="month">1-6月合计</div><div class="num">4922</div><div class="label">换品记录</div></div>
     </div>
     <!-- 总览图表 -->
     <div class="charts-grid">
@@ -212,7 +207,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
     </div>
     <div class="chart-card full" style="margin-bottom:18px">
       <h3>月度换品明细数据</h3>
-      <div style="overflow-x:auto"><table class="data-table" id="ov-table"></table></div>
+      <div style="overflow-x:auto"><table class="data-table" id="ov-table"><thead><tr><th>换品类型</th><th data-tbl="ov-table" data-col="1" onclick="sortTableByCol(this)" style="cursor:pointer">1月 <span class="sort-icon">⇅</span></th><th data-tbl="ov-table" data-col="2" onclick="sortTableByCol(this)" style="cursor:pointer">2月 <span class="sort-icon">⇅</span></th><th data-tbl="ov-table" data-col="3" onclick="sortTableByCol(this)" style="cursor:pointer">3月 <span class="sort-icon">⇅</span></th><th data-tbl="ov-table" data-col="4" onclick="sortTableByCol(this)" style="cursor:pointer">4月 <span class="sort-icon">⇅</span></th><th data-tbl="ov-table" data-col="5" onclick="sortTableByCol(this)" style="cursor:pointer">5月 <span class="sort-icon">⇅</span></th><th data-tbl="ov-table" data-col="6" onclick="sortTableByCol(this)" style="cursor:pointer">6月 <span class="sort-icon">⇅</span></th><th data-tbl="ov-table" data-col="7" onclick="sortTableByCol(this)" style="cursor:pointer">合计 <span class="sort-icon">⇅</span></th></tr></thead><tbody><tr><td class="row-label">调入B版</td><td>244</td><td>138</td><td>248</td><td>157</td><td>160</td><td>53</td><td><b>1000</b></td></tr><tr><td class="row-label">调入S+版</td><td>250</td><td>156</td><td>196</td><td>374</td><td>353</td><td>72</td><td><b>1401</b></td></tr><tr><td class="row-label">调入A版</td><td>380</td><td>355</td><td>425</td><td>282</td><td>319</td><td>102</td><td><b>1863</b></td></tr><tr><td class="row-label">换年级</td><td>49</td><td>120</td><td>165</td><td>67</td><td>121</td><td>19</td><td><b>541</b></td></tr><tr><td class="row-label">调入C版</td><td>13</td><td>12</td><td>21</td><td>7</td><td>19</td><td>8</td><td><b>80</b></td></tr><tr><td class="row-label">换课头</td><td>8</td><td>3</td><td>0</td><td>0</td><td>5</td><td>2</td><td><b>18</b></td></tr><tr><td class="row-label">换时段</td><td>3</td><td>13</td><td>0</td><td>0</td><td>2</td><td>1</td><td><b>19</b></td></tr><tr style="font-weight:700;background:#f5f6fa"><td class="row-label">合计</td><td>947</td><td>797</td><td>1055</td><td>887</td><td>979</td><td>257</td><td><b>4922</b></td></tr></tbody></table></div>
     </div>
   </div>
 </div>
@@ -288,11 +283,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
     </h2>
 
     <!-- 学年KPI -->
-    <div class="kpi-row">
-      <div class="kpi-card" style="--c:#e15759"><div class="month">24-25学年</div><div class="num">512</div><div class="label">课前0 | 当月0 | 1-3月0 | 4月+512</div></div>
-      <div class="kpi-card" style="--c:#4e79a7"><div class="month">25-26学年</div><div class="num">4238</div><div class="label">课前699 | 当月847 | 1-3月1123 | 4月+1569</div></div>
-      <div class="kpi-card" style="--c:#59a14f"><div class="month">26-27学年</div><div class="num">172</div><div class="label">课前172 | 当月0 | 1-3月0 | 4月+0</div></div>
-    </div>
+    <div class="kpi-row"><div class="kpi-card" style="--c:#e15759"><div class="month">24-25学年</div><div class="num">512</div><div class="label">课前503 | 当月5 | 1-3月3 | 4月+1</div></div><div class="kpi-card" style="--c:#4e79a7"><div class="month">25-26学年</div><div class="num">4238</div><div class="label">课前1104 | 当月847 | 1-3月1123 | 4月+1074</div></div><div class="kpi-card" style="--c:#59a14f"><div class="month">26-27学年</div><div class="num">172</div><div class="label">课前124 | 当月0 | 1-3月0 | 4月+48</div></div></div>
 
     <!-- 整体分布 -->
     <div class="charts-grid">
@@ -363,90 +354,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
       <div class="chart-card">
         <h3>换品-流失间隔统计</h3>
         <div style="display:flex;gap:16px;align-items:stretch;padding:8px 0;flex-wrap:wrap">
-          <div class="interval-card">
-            <div class="interval-card-icon">📊</div>
-            <div class="interval-card-body">
-              <div class="interval-card-val">278</div>
-              <div class="interval-card-label">有效记录</div>
-            </div>
-          </div>
-          <div class="interval-card interval-card-min">
-            <div class="interval-card-icon">◐</div>
-            <div class="interval-card-body">
-              <div class="interval-card-val">24.2</div>
-              <div class="interval-card-label">P25 分位（天）</div>
-            </div>
-          </div>
-          <div class="interval-card interval-card-mid">
-            <div class="interval-card-icon">◆</div>
-            <div class="interval-card-body">
-              <div class="interval-card-val">39.0</div>
-              <div class="interval-card-label">中位数（天）</div>
-            </div>
-          </div>
-          <div class="interval-card interval-card-max">
-            <div class="interval-card-icon">◐</div>
-            <div class="interval-card-body">
-              <div class="interval-card-val">64.8</div>
-              <div class="interval-card-label">P75 分位（天）</div>
-            </div>
-          </div>
-          <div class="interval-card interval-card-end">
-            <div class="interval-card-icon">▲</div>
-            <div class="interval-card-body">
-              <div class="interval-card-val">156.0</div>
-              <div class="interval-card-label">最大值（天）</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- 各月流失明细 -->
-    <div class="chart-card full" style="margin-top:18px">
-      <h3>各月流失明细</h3>
-      <div style="overflow-x:auto"><table class="data-table" id="lost-month-tbl"><thead><tr><th data-tbl="lost-month-tbl" data-col="0" onclick="sortTableByCol(this)">月份<span class="sort-icon"></span></th><th data-tbl="lost-month-tbl" data-col="1" onclick="sortTableByCol(this)">总记录<span class="sort-icon"></span></th><th data-tbl="lost-month-tbl" data-col="2" onclick="sortTableByCol(this)">流失人数<span class="sort-icon"></span></th><th data-tbl="lost-month-tbl" data-col="3" onclick="sortTableByCol(this)">流失率<span class="sort-icon"></span></th></tr></thead><tbody><tr><td class="row-label">1月</td><td>947</td><td style="color:#e15759;font-weight:600">67</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:35.35%;background:#e15759"></div><span>7.07%</span></div></td></tr>
-<tr><td class="row-label">2月</td><td>797</td><td style="color:#e15759;font-weight:600">55</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:34.5%;background:#e15759"></div><span>6.9%</span></div></td></tr>
-<tr><td class="row-label">3月</td><td>1055</td><td style="color:#e15759;font-weight:600">79</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:37.45%;background:#e15759"></div><span>7.49%</span></div></td></tr>
-<tr><td class="row-label">4月</td><td>887</td><td style="color:#e15759;font-weight:600">49</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:27.599999999999998%;background:#e15759"></div><span>5.52%</span></div></td></tr>
-<tr><td class="row-label">5月</td><td>979</td><td style="color:#e15759;font-weight:600">27</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:13.799999999999999%;background:#e15759"></div><span>2.76%</span></div></td></tr>
-<tr><td class="row-label">6月</td><td>257</td><td style="color:#e15759;font-weight:600">2</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:3.9000000000000004%;background:#e15759"></div><span>0.78%</span></div></td></tr>
-</tbody></table></div>
+      <div class="interval-card"><div class="interval-card-icon">📊</div><div class="interval-card-body"><div class="interval-card-val">279</div><div class="interval-card-label">有效记录</div></div></div>
+      <div class="interval-card interval-card-min"><div class="interval-card-icon">◐</div><div class="interval-card-body"><div class="interval-card-val">10</div><div class="interval-card-label">P25 分位（天）</div></div></div>
+      <div class="interval-card interval-card-mid"><div class="interval-card-icon">◆</div><div class="interval-card-body"><div class="interval-card-val">27</div><div class="interval-card-label">中位数（天）</div></div></div>
+      <div class="interval-card interval-card-max"><div class="interval-card-icon">◐</div><div class="interval-card-body"><div class="interval-card-val">54</div><div class="interval-card-label">P75 分位（天）</div></div></div>
+      <div class="interval-card interval-card-end"><div class="interval-card-icon">▲</div><div class="interval-card-body"><div class="interval-card-val">402</div><div class="interval-card-label">最大值（天）</div></div></div>
+    </div>
     </div>
     <!-- 各调品类型流失明细 -->
     <div class="chart-card full" style="margin-top:18px">
       <h3>各调品类型流失明细</h3>
-      <div style="overflow-x:auto"><table class="data-table" id="lost-type-tbl"><thead><tr><th data-tbl="lost-type-tbl" data-col="0" onclick="sortTableByCol(this)">调品类型<span class="sort-icon"></span></th><th data-tbl="lost-type-tbl" data-col="1" onclick="sortTableByCol(this)">总记录<span class="sort-icon"></span></th><th data-tbl="lost-type-tbl" data-col="2" onclick="sortTableByCol(this)">流失人数<span class="sort-icon"></span></th><th data-tbl="lost-type-tbl" data-col="3" onclick="sortTableByCol(this)">流失率<span class="sort-icon"></span></th></tr></thead><tbody><tr><td class="row-label"><span class="tag" style="background:#4e79a720;color:#4e79a7">调入A版</span></td><td>1863</td><td style="color:#e15759;font-weight:600">77</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:20.65%;background:#4e79a7"></div><span>4.13%</span></div></td></tr>
-<tr><td class="row-label"><span class="tag" style="background:#f28e2b20;color:#f28e2b">调入S+版</span></td><td>1401</td><td style="color:#e15759;font-weight:600">80</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:28.55%;background:#f28e2b"></div><span>5.71%</span></div></td></tr>
-<tr><td class="row-label"><span class="tag" style="background:#e1575920;color:#e15759">调入B版</span></td><td>1000</td><td style="color:#e15759;font-weight:600">72</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:36.0%;background:#e15759"></div><span>7.2%</span></div></td></tr>
-<tr><td class="row-label"><span class="tag" style="background:#76b7b220;color:#76b7b2">换年级</span></td><td>541</td><td style="color:#e15759;font-weight:600">41</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:37.9%;background:#76b7b2"></div><span>7.58%</span></div></td></tr>
-<tr><td class="row-label"><span class="tag" style="background:#59a14f20;color:#59a14f">调入C版</span></td><td>80</td><td style="color:#e15759;font-weight:600">7</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:43.75%;background:#59a14f"></div><span>8.75%</span></div></td></tr>
-<tr><td class="row-label"><span class="tag" style="background:#edc94820;color:#edc948">换时段</span></td><td>19</td><td style="color:#e15759;font-weight:600">1</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:26.299999999999997%;background:#edc948"></div><span>5.26%</span></div></td></tr>
-<tr><td class="row-label"><span class="tag" style="background:#b07aa120;color:#b07aa1">换课头</span></td><td>18</td><td style="color:#e15759;font-weight:600">1</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:27.799999999999997%;background:#b07aa1"></div><span>5.56%</span></div></td></tr>
-</tbody></table></div>
+      <div style="overflow-x:auto"><table class="data-table" id="lost-type-tbl"><thead><tr><th data-tbl="lost-type-tbl" data-col="0" onclick="sortTableByCol(this)">调品类型<span class="sort-icon"></span></th><th data-tbl="lost-type-tbl" data-col="1" onclick="sortTableByCol(this)">总记录<span class="sort-icon"></span></th><th data-tbl="lost-type-tbl" data-col="2" onclick="sortTableByCol(this)">流失人数<span class="sort-icon"></span></th><th data-tbl="lost-type-tbl" data-col="3" onclick="sortTableByCol(this)">流失率<span class="sort-icon"></span></th></tr></thead><tbody><tr><td class="row-label"><span class="tag" style="background:#59a14f20;color:#59a14f">调入B版</span></td><td>1000</td><td style="color:#e15759;font-weight:600">72</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:36.0%;background:#59a14f"></div><span>7.20%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#f28e2b20;color:#f28e2b">调入S+版</span></td><td>1401</td><td style="color:#e15759;font-weight:600">80</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:28.6%;background:#f28e2b"></div><span>5.71%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#4e79a720;color:#4e79a7">调入A版</span></td><td>1863</td><td style="color:#e15759;font-weight:600">77</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:20.6%;background:#4e79a7"></div><span>4.13%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#e1575920;color:#e15759">换年级</span></td><td>541</td><td style="color:#e15759;font-weight:600">41</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:37.9%;background:#e15759"></div><span>7.58%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#76b7b220;color:#76b7b2">调入C版</span></td><td>80</td><td style="color:#e15759;font-weight:600">7</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:43.8%;background:#76b7b2"></div><span>8.75%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#b07aa120;color:#b07aa1">换课头</span></td><td>18</td><td style="color:#e15759;font-weight:600">1</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:27.8%;background:#b07aa1"></div><span>5.56%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#edc94820;color:#edc948">换时段</span></td><td>19</td><td style="color:#e15759;font-weight:600">1</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:26.3%;background:#edc948"></div><span>5.26%</span></div></td></tr></tbody></table></div>
     </div>
     <!-- 课头流失明细 -->
     <div class="chart-card full" style="margin-top:18px">
       <h3>课头流失明细 TOP20（按总记录排序）</h3>
-      <div style="overflow-x:auto"><table class="data-table" id="lost-ketou-tbl"><thead><tr><th data-tbl="lost-ketou-tbl" data-col="0" onclick="sortTableByCol(this)">课头<span class="sort-icon"></span></th><th data-tbl="lost-ketou-tbl" data-col="1" onclick="sortTableByCol(this)">总记录<span class="sort-icon"></span></th><th data-tbl="lost-ketou-tbl" data-col="2" onclick="sortTableByCol(this)">流失人数<span class="sort-icon"></span></th><th data-tbl="lost-ketou-tbl" data-col="3" onclick="sortTableByCol(this)">流失率<span class="sort-icon"></span></th></tr></thead><tbody><tr><td class="row-label">25-26【1月】</td><td>1201</td><td style="color:#e15759;font-weight:600">100</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:41.65%;background:#e15759"></div><span>8.33%</span></div></td></tr>
-<tr><td class="row-label">25-26【9月】</td><td>516</td><td style="color:#e15759;font-weight:600">19</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:18.400000000000002%;background:#59a14f"></div><span>3.68%</span></div></td></tr>
-<tr><td class="row-label">25-26【7月】</td><td>495</td><td style="color:#e15759;font-weight:600">14</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:14.15%;background:#59a14f"></div><span>2.83%</span></div></td></tr>
-<tr><td class="row-label">25-26【3月】</td><td>430</td><td style="color:#e15759;font-weight:600">39</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:45.35%;background:#e15759"></div><span>9.07%</span></div></td></tr>
-<tr><td class="row-label">25-26【4月】</td><td>377</td><td style="color:#e15759;font-weight:600">24</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:31.85%;background:#f28e2b"></div><span>6.37%</span></div></td></tr>
-<tr><td class="row-label">25-26【12月】</td><td>269</td><td style="color:#e15759;font-weight:600">18</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:33.45%;background:#f28e2b"></div><span>6.69%</span></div></td></tr>
-<tr><td class="row-label">25-26【6月】</td><td>266</td><td style="color:#e15759;font-weight:600">11</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:20.7%;background:#59a14f"></div><span>4.14%</span></div></td></tr>
-<tr><td class="row-label">25-26【5月】</td><td>256</td><td style="color:#e15759;font-weight:600">22</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:42.95%;background:#e15759"></div><span>8.59%</span></div></td></tr>
-<tr><td class="row-label">25-26【11月】</td><td>205</td><td style="color:#e15759;font-weight:600">11</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:26.85%;background:#f28e2b"></div><span>5.37%</span></div></td></tr>
-<tr><td class="row-label">25-26【10月】</td><td>197</td><td style="color:#e15759;font-weight:600">5</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:12.7%;background:#59a14f"></div><span>2.54%</span></div></td></tr>
-<tr><td class="row-label">24-25【6月】</td><td>173</td><td style="color:#e15759;font-weight:600">4</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:11.55%;background:#59a14f"></div><span>2.31%</span></div></td></tr>
-<tr><td class="row-label">24-25【3月】</td><td>126</td><td style="color:#e15759;font-weight:600">1</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:3.95%;background:#59a14f"></div><span>0.79%</span></div></td></tr>
-<tr><td class="row-label">26-27【7月】</td><td>124</td><td style="color:#e15759;font-weight:600">4</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:16.15%;background:#59a14f"></div><span>3.23%</span></div></td></tr>
-<tr><td class="row-label">24-25【4月】</td><td>107</td><td style="color:#e15759;font-weight:600">4</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:18.700000000000003%;background:#59a14f"></div><span>3.74%</span></div></td></tr>
-<tr><td class="row-label">24-25【5月】</td><td>105</td><td style="color:#e15759;font-weight:600">0</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:0.0%;background:#59a14f"></div><span>0.0%</span></div></td></tr>
-<tr><td class="row-label">26-27【9月】</td><td>44</td><td style="color:#e15759;font-weight:600">0</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:0.0%;background:#59a14f"></div><span>0.0%</span></div></td></tr>
-<tr><td class="row-label">25-26【新12月】</td><td>24</td><td style="color:#e15759;font-weight:600">3</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:62.5%;background:#e15759"></div><span>12.5%</span></div></td></tr>
-<tr><td class="row-label">26-27【10月】</td><td>4</td><td style="color:#e15759;font-weight:600">0</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:0.0%;background:#59a14f"></div><span>0.0%</span></div></td></tr>
-<tr><td class="row-label">25-26【2月】</td><td>2</td><td style="color:#e15759;font-weight:600">0</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:0.0%;background:#59a14f"></div><span>0.0%</span></div></td></tr>
-<tr><td class="row-label">24-25【1月】</td><td>1</td><td style="color:#e15759;font-weight:600">0</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:0.0%;background:#59a14f"></div><span>0.0%</span></div></td></tr>
-</tbody></table></div>
+      <div style="overflow-x:auto"><table class="data-table" id="lost-ketou-tbl"><thead><tr><th data-tbl="lost-ketou-tbl" data-col="0" onclick="sortTableByCol(this)">课头<span class="sort-icon"></span></th><th data-tbl="lost-ketou-tbl" data-col="1" onclick="sortTableByCol(this)">总记录<span class="sort-icon"></span></th><th data-tbl="lost-ketou-tbl" data-col="2" onclick="sortTableByCol(this)">流失人数<span class="sort-icon"></span></th><th data-tbl="lost-ketou-tbl" data-col="3" onclick="sortTableByCol(this)">流失率<span class="sort-icon"></span></th></tr></thead><tbody><tr><td class="row-label">25-26【1月】</td><td>1201</td><td style="color:#e15759;font-weight:600">100</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:41.6%;background:#f28e2b"></div><span>8.33%</span></div></td></tr><tr><td class="row-label">25-26【9月】</td><td>516</td><td style="color:#e15759;font-weight:600">19</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:18.4%;background:#59a14f"></div><span>3.68%</span></div></td></tr><tr><td class="row-label">25-26【7月】</td><td>495</td><td style="color:#e15759;font-weight:600">14</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:14.2%;background:#59a14f"></div><span>2.83%</span></div></td></tr><tr><td class="row-label">25-26【3月】</td><td>430</td><td style="color:#e15759;font-weight:600">39</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:45.4%;background:#f28e2b"></div><span>9.07%</span></div></td></tr><tr><td class="row-label">25-26【4月】</td><td>377</td><td style="color:#e15759;font-weight:600">24</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:31.9%;background:#59a14f"></div><span>6.37%</span></div></td></tr><tr><td class="row-label">25-26【12月】</td><td>269</td><td style="color:#e15759;font-weight:600">18</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:33.5%;background:#59a14f"></div><span>6.69%</span></div></td></tr><tr><td class="row-label">25-26【6月】</td><td>266</td><td style="color:#e15759;font-weight:600">11</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:20.7%;background:#59a14f"></div><span>4.14%</span></div></td></tr><tr><td class="row-label">25-26【5月】</td><td>256</td><td style="color:#e15759;font-weight:600">22</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:43.0%;background:#f28e2b"></div><span>8.59%</span></div></td></tr><tr><td class="row-label">25-26【11月】</td><td>205</td><td style="color:#e15759;font-weight:600">11</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:26.9%;background:#59a14f"></div><span>5.37%</span></div></td></tr><tr><td class="row-label">25-26【10月】</td><td>197</td><td style="color:#e15759;font-weight:600">5</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:12.7%;background:#59a14f"></div><span>2.54%</span></div></td></tr><tr><td class="row-label">24-25【6月】</td><td>173</td><td style="color:#e15759;font-weight:600">4</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:11.6%;background:#59a14f"></div><span>2.31%</span></div></td></tr><tr><td class="row-label">24-25【3月】</td><td>126</td><td style="color:#e15759;font-weight:600">1</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:4.0%;background:#59a14f"></div><span>0.79%</span></div></td></tr><tr><td class="row-label">26-27【7月】</td><td>124</td><td style="color:#e15759;font-weight:600">4</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:16.1%;background:#59a14f"></div><span>3.23%</span></div></td></tr><tr><td class="row-label">24-25【4月】</td><td>107</td><td style="color:#e15759;font-weight:600">4</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:18.7%;background:#59a14f"></div><span>3.74%</span></div></td></tr><tr><td class="row-label">24-25【5月】</td><td>105</td><td style="color:#e15759;font-weight:600">0</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:0.0%;background:#59a14f"></div><span>0.00%</span></div></td></tr><tr><td class="row-label">26-27【9月】</td><td>44</td><td style="color:#e15759;font-weight:600">0</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:0.0%;background:#59a14f"></div><span>0.00%</span></div></td></tr><tr><td class="row-label">25-26【新12月】</td><td>24</td><td style="color:#e15759;font-weight:600">3</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:62.5%;background:#e15759"></div><span>12.50%</span></div></td></tr><tr><td class="row-label">26-27【10月】</td><td>4</td><td style="color:#e15759;font-weight:600">0</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:0.0%;background:#59a14f"></div><span>0.00%</span></div></td></tr><tr><td class="row-label">25-26【2月】</td><td>2</td><td style="color:#e15759;font-weight:600">0</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:0.0%;background:#59a14f"></div><span>0.00%</span></div></td></tr><tr><td class="row-label">24-25【1月】</td><td>1</td><td style="color:#e15759;font-weight:600">0</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:0.0%;background:#59a14f"></div><span>0.00%</span></div></td></tr></tbody></table></div>
     </div>
     <!-- 课头流失率 -->
     <div class="chart-card full" style="margin-top:18px">
@@ -546,9 +469,9 @@ var DATA = {
   "type_colors": {
     "调入A版": "#4e79a7",
     "调入S+版": "#f28e2b",
-    "调入B版": "#e15759",
+    "调入B版": "#59a14f",
     "调入C版": "#76b7b2",
-    "换年级": "#59a14f",
+    "换年级": "#e15759",
     "换时段": "#edc948",
     "换课头": "#b07aa1"
   },
@@ -622,150 +545,150 @@ var DATA = {
     }
   },
   "top_ketou": [
-    "【1-12月】L3新思维全年提升计划",
-    "【1-12月】L3新思维全年提升计划（全国B版）",
-    "【9-8月】L3新思维全年提升计划",
-    "【1-12月】S1新思维全年提升计划",
-    "【7-6月】L3新思维全年提升计划",
-    "【1-12月】S3新思维全年提升计划",
-    "【1-12月】L5新思维全年提升计划",
-    "【3-2月】S1新思维全年提升计划",
-    "【1-12月】L4新思维全年提升计划",
-    "【1-12月】L2新思维全年提升计划（全国B版）",
-    "【3-2月】L4新思维全年提升计划",
-    "【1-12月】L2新思维全年提升计划",
-    "【9-8月】S4新思维全年提升计划",
-    "【3-2月】L2新思维全年提升计划",
-    "【1-12月】L5新思维全年提升计划（全国B版）",
-    "【1-12月】L4新思维全年提升计划（全国B版）",
-    "【9-8月】L4新思维全年提升计划",
-    "【3-2月】L3新思维全年提升计划",
-    "【7-6月】L4新思维全年提升计划",
-    "【9-8月】L5新思维全年提升计划"
+    "25-26【1月】",
+    "25-26【9月】",
+    "25-26【7月】",
+    "25-26【3月】",
+    "25-26【4月】",
+    "25-26【12月】",
+    "25-26【6月】",
+    "25-26【5月】",
+    "25-26【11月】",
+    "25-26【10月】",
+    "24-25【6月】",
+    "24-25【3月】",
+    "26-27【7月】",
+    "24-25【4月】",
+    "24-25【5月】",
+    "26-27【9月】",
+    "25-26【新12月】",
+    "26-27【10月】",
+    "25-26【2月】",
+    "24-25【1月】"
   ],
   "lost_ketou": {
-    "【1-12月】L3新思维全年提升计划": {
-      "total": 178,
-      "lost": 17,
-      "rate": 9.55
+    "25-26【1月】": {
+      "total": 1201,
+      "lost": 100,
+      "rate": 8.33
     },
-    "【1-12月】L3新思维全年提升计划（全国B版）": {
-      "total": 148,
-      "lost": 16,
-      "rate": 10.81
+    "25-26【9月】": {
+      "total": 516,
+      "lost": 19,
+      "rate": 3.68
     },
-    "【9-8月】L3新思维全年提升计划": {
-      "total": 113,
-      "lost": 3,
-      "rate": 2.65
+    "25-26【7月】": {
+      "total": 495,
+      "lost": 14,
+      "rate": 2.83
     },
-    "【1-12月】S1新思维全年提升计划": {
-      "total": 112,
-      "lost": 15,
-      "rate": 13.39
+    "25-26【3月】": {
+      "total": 430,
+      "lost": 39,
+      "rate": 9.07
     },
-    "【7-6月】L3新思维全年提升计划": {
-      "total": 91,
-      "lost": 1,
-      "rate": 1.1
+    "25-26【4月】": {
+      "total": 377,
+      "lost": 24,
+      "rate": 6.37
     },
-    "【1-12月】S3新思维全年提升计划": {
-      "total": 83,
-      "lost": 12,
-      "rate": 14.46
+    "25-26【12月】": {
+      "total": 269,
+      "lost": 18,
+      "rate": 6.69
     },
-    "【1-12月】L5新思维全年提升计划": {
-      "total": 80,
-      "lost": 5,
-      "rate": 6.25
-    },
-    "【3-2月】S1新思维全年提升计划": {
-      "total": 80,
+    "25-26【6月】": {
+      "total": 266,
       "lost": 11,
-      "rate": 13.75
+      "rate": 4.14
     },
-    "【1-12月】L4新思维全年提升计划": {
-      "total": 79,
-      "lost": 2,
-      "rate": 2.53
+    "25-26【5月】": {
+      "total": 256,
+      "lost": 22,
+      "rate": 8.59
     },
-    "【1-12月】L2新思维全年提升计划（全国B版）": {
-      "total": 79,
-      "lost": 6,
-      "rate": 7.59
+    "25-26【11月】": {
+      "total": 205,
+      "lost": 11,
+      "rate": 5.37
     },
-    "【3-2月】L4新思维全年提升计划": {
-      "total": 71,
+    "25-26【10月】": {
+      "total": 197,
+      "lost": 5,
+      "rate": 2.54
+    },
+    "24-25【6月】": {
+      "total": 173,
       "lost": 4,
-      "rate": 5.63
+      "rate": 2.31
     },
-    "【1-12月】L2新思维全年提升计划": {
-      "total": 70,
-      "lost": 2,
-      "rate": 2.86
+    "24-25【3月】": {
+      "total": 126,
+      "lost": 1,
+      "rate": 0.79
     },
-    "【9-8月】S4新思维全年提升计划": {
-      "total": 69,
-      "lost": 3,
-      "rate": 4.35
-    },
-    "【3-2月】L2新思维全年提升计划": {
-      "total": 64,
+    "26-27【7月】": {
+      "total": 124,
       "lost": 4,
-      "rate": 6.25
+      "rate": 3.23
     },
-    "【1-12月】L5新思维全年提升计划（全国B版）": {
-      "total": 63,
+    "24-25【4月】": {
+      "total": 107,
+      "lost": 4,
+      "rate": 3.74
+    },
+    "24-25【5月】": {
+      "total": 105,
+      "lost": 0,
+      "rate": 0.0
+    },
+    "26-27【9月】": {
+      "total": 44,
+      "lost": 0,
+      "rate": 0.0
+    },
+    "25-26【新12月】": {
+      "total": 24,
       "lost": 3,
-      "rate": 4.76
+      "rate": 12.5
     },
-    "【1-12月】L4新思维全年提升计划（全国B版）": {
-      "total": 59,
-      "lost": 8,
-      "rate": 13.56
+    "26-27【10月】": {
+      "total": 4,
+      "lost": 0,
+      "rate": 0.0
     },
-    "【9-8月】L4新思维全年提升计划": {
-      "total": 58,
-      "lost": 2,
-      "rate": 3.45
+    "25-26【2月】": {
+      "total": 2,
+      "lost": 0,
+      "rate": 0.0
     },
-    "【3-2月】L3新思维全年提升计划": {
-      "total": 57,
-      "lost": 6,
-      "rate": 10.53
-    },
-    "【7-6月】L4新思维全年提升计划": {
-      "total": 55,
-      "lost": 2,
-      "rate": 3.64
-    },
-    "【9-8月】L5新思维全年提升计划": {
-      "total": 55,
-      "lost": 3,
-      "rate": 5.45
+    "24-25【1月】": {
+      "total": 1,
+      "lost": 0,
+      "rate": 0.0
     }
   },
   "ketou_colors": [
     "#4e79a7",
     "#f28e2b",
+    "#59a14f",
     "#e15759",
     "#76b7b2",
-    "#59a14f",
-    "#edc948",
     "#b07aa1",
+    "#edc948",
     "#ff9da7",
-    "#9c755f",
-    "#bab0ac",
-    "#d4a6c8",
-    "#aec7e8",
-    "#ffbb78",
-    "#98df8a",
-    "#ff9896",
-    "#c5b0d5",
-    "#c49c94",
-    "#f7b6d2",
-    "#c7c7c7",
-    "#dbdb8d"
+    "#8cd3c5",
+    "#beb9db",
+    "#fccde5",
+    "#b3de69",
+    "#80b1d3",
+    "#fb8072",
+    "#d9d9d9",
+    "#bc80bd",
+    "#ccebc5",
+    "#ffed6f",
+    "#8dd3c7",
+    "#ffffb3"
   ],
   "timing_labels": [
     "课前5月",
@@ -790,159 +713,159 @@ var DATA = {
     "课后14月"
   ],
   "timing_total": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
+    3,
+    5,
+    3,
+    5,
+    21,
+    51,
+    42,
+    30,
+    24,
+    35,
+    17,
+    14,
+    10,
+    5,
+    3,
+    5,
     1,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    93,
-    89,
-    48
+    0
   ],
   "timing_range": [
-    -11.75,
-    -11.75,
-    -11.75,
-    -11.75,
-    -11.75,
-    -9.75,
-    -9.75,
-    -11.75,
-    -10.75,
-    -11.75,
-    -11.75,
-    -11.75,
-    -11.75,
-    -11.75,
-    -11.75,
-    -11.75,
-    -11.75,
-    81.25,
-    77.25,
-    36.25
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
   ],
   "timing_type": {
     "调入B版": [
       0,
+      2,
+      1,
+      4,
+      2,
+      14,
+      10,
+      11,
+      9,
+      7,
+      3,
+      4,
+      3,
+      0,
+      0,
+      2,
       0,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      23,
-      24,
-      14
+      0
     ],
     "调入S+版": [
+      1,
+      2,
+      1,
+      0,
+      10,
+      10,
+      15,
+      6,
+      5,
+      13,
+      6,
+      4,
+      4,
+      2,
+      1,
       0,
       0,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      30,
-      26,
-      14
+      0
     ],
     "调入A版": [
-      0,
-      0,
-      0,
-      0,
-      0,
+      2,
       1,
       1,
       0,
+      5,
+      12,
+      13,
+      6,
+      8,
+      9,
+      3,
+      4,
+      3,
+      2,
+      1,
+      3,
       1,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      19,
-      32,
-      10
+      0
     ],
     "换年级": [
       0,
       0,
       0,
-      0,
-      0,
       1,
-      1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      19,
+      3,
+      12,
+      3,
+      5,
+      2,
+      5,
       4,
-      8
+      2,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "调入C版": [
       0,
       0,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      1,
+      3,
       0,
       2,
-      3,
-      1
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "换课头": [
       0,
@@ -951,6 +874,7 @@ var DATA = {
       0,
       0,
       0,
+      1,
       0,
       0,
       0,
@@ -963,8 +887,7 @@ var DATA = {
       0,
       0,
       0,
-      0,
-      1
+      0
     ],
     "换时段": [
       0,
@@ -976,7 +899,7 @@ var DATA = {
       0,
       0,
       0,
-      0,
+      1,
       0,
       0,
       0,
@@ -991,57 +914,106 @@ var DATA = {
   },
   "month_timing": {
     "1月": [
+      1,
+      2,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      2,
+      2,
+      7,
+      15,
+      14,
       6,
-      16,
-      20
+      5,
+      5,
+      2,
+      2,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0
     ],
     "2月": [
+      2,
+      1,
+      1,
+      3,
+      1,
+      5,
+      11,
+      5,
+      5,
+      6,
+      3,
+      5,
+      2,
+      2,
+      2,
+      0,
+      1,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      14,
-      16,
-      11
+      0
     ],
     "3月": [
       0,
+      2,
+      2,
+      0,
+      6,
+      18,
+      7,
+      9,
+      8,
+      10,
+      5,
+      3,
+      5,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "4月": [
+      0,
+      0,
+      0,
+      0,
+      5,
+      11,
+      9,
+      2,
+      4,
+      12,
+      2,
+      2,
+      1,
+      1,
       0,
       0,
       0,
       0,
       0,
+      0
+    ],
+    "5月": [
       0,
+      0,
+      0,
+      0,
+      7,
+      8,
+      0,
+      0,
+      1,
+      2,
+      2,
+      2,
       0,
       1,
       0,
@@ -1049,55 +1021,6 @@ var DATA = {
       0,
       0,
       0,
-      0,
-      0,
-      0,
-      31,
-      27,
-      15
-    ],
-    "4月": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      22,
-      25,
-      2
-    ],
-    "5月": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      2,
-      2,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      18,
-      5,
       0
     ],
     "6月": [
@@ -1106,333 +1029,100 @@ var DATA = {
       0,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0
     ]
   },
   "top_ketou_timing": {
-    "【1-12月】L3新思维全年提升计划": [
+    "25-26【1月】": [
       0,
       0,
       0,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      3,
-      9,
-      4
-    ],
-    "【1-12月】L3新思维全年提升计划（全国B版）": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      3,
-      7,
-      4
-    ],
-    "【9-8月】L3新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1
-    ],
-    "【1-12月】S1新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      2,
-      3,
-      4
-    ],
-    "【7-6月】L3新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0
-    ],
-    "【1-12月】S3新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      7,
-      1,
-      2
-    ],
-    "【1-12月】L5新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      3,
-      1
-    ],
-    "【3-2月】S1新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      5,
+      23,
+      24,
+      19,
+      23,
       6,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【9月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      5,
+      7,
+      4,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【7月】": [
       3,
-      2
-    ],
-    "【1-12月】L4新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      1,
-      0
-    ],
-    "【1-12月】L2新思维全年提升计划（全国B版）": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      5,
       2,
-      2,
-      0
-    ],
-    "【3-2月】L4新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      2,
-      0,
-      0
-    ],
-    "【1-12月】L2新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0
-    ],
-    "【9-8月】S4新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      1,
-      0
-    ],
-    "【3-2月】L2新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
       3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ],
-    "【1-12月】L5新思维全年提升计划（全国B版）": [
+    "25-26【3月】": [
+      0,
+      0,
+      0,
+      0,
+      2,
+      20,
+      10,
+      6,
+      1,
       0,
       0,
       0,
@@ -1440,6 +1130,122 @@ var DATA = {
       0,
       0,
       0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【4月】": [
+      0,
+      0,
+      0,
+      0,
+      4,
+      12,
+      8,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【12月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      10,
+      5,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【6月】": [
+      0,
+      0,
+      0,
+      0,
+      7,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【5月】": [
+      0,
+      0,
+      1,
+      2,
+      8,
+      10,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【11月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      6,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【10月】": [
       0,
       0,
       0,
@@ -1451,12 +1257,83 @@ var DATA = {
       0,
       0,
       2,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0
     ],
-    "【1-12月】L4新思维全年提升计划（全国B版）": [
+    "24-25【6月】": [
       0,
       0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "24-25【3月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "26-27【7月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "24-25【4月】": [
       0,
       0,
       0,
@@ -1473,32 +1350,12 @@ var DATA = {
       0,
       0,
       4,
-      2,
-      2
-    ],
-    "【9-8月】L4新思维全年提升计划": [
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
       0,
       0
     ],
-    "【3-2月】L3新思维全年提升计划": [
+    "24-25【5月】": [
       0,
       0,
       0,
@@ -1517,10 +1374,10 @@ var DATA = {
       0,
       0,
       0,
-      3,
-      3
+      0,
+      0
     ],
-    "【7-6月】L4新思维全年提升计划": [
+    "26-27【9月】": [
       0,
       0,
       0,
@@ -1538,11 +1395,11 @@ var DATA = {
       0,
       0,
       0,
-      1,
+      0,
       0,
       0
     ],
-    "【9-8月】L5新思维全年提升计划": [
+    "25-26【新12月】": [
       0,
       0,
       0,
@@ -1551,17 +1408,83 @@ var DATA = {
       0,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      2,
       0,
       1,
-      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "26-27【10月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【2月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "24-25【1月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ]
   },
@@ -1585,35 +1508,35 @@ var DATA = {
       0,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
+      1,
+      2,
+      5,
+      1,
       0,
       0,
       0
     ],
     "25-26": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      3,
+      5,
+      3,
+      5,
+      21,
+      51,
+      42,
+      30,
+      24,
+      35,
+      17,
+      14,
+      10,
+      4,
       1,
       0,
       0,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      93,
-      89,
-      48
+      0
     ],
     "26-27": [
       0,
@@ -1621,8 +1544,8 @@ var DATA = {
       0,
       0,
       0,
-      2,
-      2,
+      0,
+      0,
       0,
       0,
       0,
@@ -1639,14 +1562,14 @@ var DATA = {
     ]
   },
   "ay_timing_total": {
-    "24-25": 0,
-    "25-26": 231,
-    "26-27": 4
+    "24-25": 9,
+    "25-26": 265,
+    "26-27": 0
   },
   "ay_colors": {
-    "24-25": "#4e79a7",
-    "25-26": "#f28e2b",
-    "26-27": "#e15759"
+    "24-25": "#e15759",
+    "25-26": "#4e79a7",
+    "26-27": "#59a14f"
   },
   "ay_type_timing": {
     "24-25": {
@@ -1666,7 +1589,7 @@ var DATA = {
         0,
         0,
         0,
-        0,
+        2,
         0,
         0,
         0,
@@ -1687,7 +1610,7 @@ var DATA = {
         0,
         0,
         0,
-        0,
+        1,
         0,
         0,
         0,
@@ -1710,8 +1633,8 @@ var DATA = {
         0,
         0,
         0,
-        0,
-        0,
+        3,
+        1,
         0,
         0,
         0
@@ -1730,8 +1653,8 @@ var DATA = {
         0,
         0,
         0,
-        0,
-        0,
+        1,
+        1,
         0,
         0,
         0,
@@ -1808,51 +1731,115 @@ var DATA = {
     "25-26": {
       "调入B版": [
         0,
+        2,
+        1,
+        4,
+        2,
+        14,
+        10,
+        11,
+        9,
+        7,
+        3,
+        4,
+        3,
         0,
         0,
         0,
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        23,
-        24,
-        14
+        0
       ],
       "调入S+版": [
+        1,
+        2,
+        1,
+        0,
+        10,
+        10,
+        15,
+        6,
+        5,
+        13,
+        6,
+        4,
+        4,
+        2,
         0,
         0,
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        30,
-        26,
-        14
+        0
       ],
       "调入A版": [
+        2,
+        1,
+        1,
+        0,
+        5,
+        12,
+        13,
+        6,
+        8,
+        9,
+        3,
+        4,
+        3,
+        2,
+        1,
         0,
         0,
+        0,
+        0,
+        0
+      ],
+      "换年级": [
+        0,
+        0,
+        0,
+        1,
+        3,
+        12,
+        3,
+        5,
+        2,
+        5,
+        4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "调入C版": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        3,
+        0,
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "换课头": [
         0,
         0,
         0,
@@ -1868,75 +1855,11 @@ var DATA = {
         0,
         0,
         0,
-        19,
-        32,
-        10
-      ],
-      "换年级": [
         0,
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        19,
-        4,
-        8
-      ],
-      "调入C版": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        3,
-        1
-      ],
-      "换课头": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1
+        0
       ],
       "换时段": [
         0,
@@ -1948,7 +1871,7 @@ var DATA = {
         0,
         0,
         0,
-        0,
+        1,
         0,
         0,
         0,
@@ -2012,8 +1935,8 @@ var DATA = {
         0,
         0,
         0,
-        1,
-        1,
+        0,
+        0,
         0,
         0,
         0,
@@ -2034,8 +1957,8 @@ var DATA = {
         0,
         0,
         0,
-        1,
-        1,
+        0,
+        0,
         0,
         0,
         0,
@@ -2122,7 +2045,7 @@ var DATA = {
     {
       "name": "康霓虹",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -2130,7 +2053,7 @@ var DATA = {
     {
       "name": "李子杰",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -2138,7 +2061,7 @@ var DATA = {
     {
       "name": "阮春晓",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 3,
       "lost": 0,
       "rate": 0.0
@@ -2146,7 +2069,7 @@ var DATA = {
     {
       "name": "吴勋楷",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -2162,7 +2085,7 @@ var DATA = {
     {
       "name": "李逸雪",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 8,
       "lost": 0,
       "rate": 0.0
@@ -2202,7 +2125,7 @@ var DATA = {
     {
       "name": "王淋",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -2226,7 +2149,7 @@ var DATA = {
     {
       "name": "李伊琳",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 20,
       "lost": 1,
       "rate": 5.0
@@ -2234,7 +2157,7 @@ var DATA = {
     {
       "name": "郑文斐",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 3,
       "lost": 0,
       "rate": 0.0
@@ -2242,7 +2165,7 @@ var DATA = {
     {
       "name": "程晓雨",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 9,
       "lost": 1,
       "rate": 11.11
@@ -2266,7 +2189,7 @@ var DATA = {
     {
       "name": "冯旖旎",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 3,
       "lost": 1,
       "rate": 33.33
@@ -2346,7 +2269,7 @@ var DATA = {
     {
       "name": "王耀一",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 12,
       "lost": 1,
       "rate": 8.33
@@ -2354,7 +2277,7 @@ var DATA = {
     {
       "name": "刘冰雨",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 12,
       "lost": 2,
       "rate": 16.67
@@ -2362,7 +2285,7 @@ var DATA = {
     {
       "name": "张琪郁",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 7,
       "lost": 0,
       "rate": 0.0
@@ -2386,7 +2309,7 @@ var DATA = {
     {
       "name": "李可喻",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 13,
       "lost": 4,
       "rate": 30.77
@@ -2394,7 +2317,7 @@ var DATA = {
     {
       "name": "郭秀峰",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 11,
       "lost": 0,
       "rate": 0.0
@@ -2402,7 +2325,7 @@ var DATA = {
     {
       "name": "胡晋琦",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -2434,7 +2357,7 @@ var DATA = {
     {
       "name": "邵蓉",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 8,
       "lost": 1,
       "rate": 12.5
@@ -2498,7 +2421,7 @@ var DATA = {
     {
       "name": "田苗",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 4,
       "lost": 1,
       "rate": 25.0
@@ -2514,7 +2437,7 @@ var DATA = {
     {
       "name": "王心雨",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 13,
       "lost": 2,
       "rate": 15.38
@@ -2522,7 +2445,7 @@ var DATA = {
     {
       "name": "王姗",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 5,
       "lost": 0,
       "rate": 0.0
@@ -2570,7 +2493,7 @@ var DATA = {
     {
       "name": "李锦欣",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -2626,7 +2549,7 @@ var DATA = {
     {
       "name": "陈颖",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 4,
       "lost": 1,
       "rate": 25.0
@@ -2634,7 +2557,7 @@ var DATA = {
     {
       "name": "龙冉冉",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 8,
       "lost": 3,
       "rate": 37.5
@@ -2650,7 +2573,7 @@ var DATA = {
     {
       "name": "程佳雪",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 3,
       "lost": 0,
       "rate": 0.0
@@ -2666,7 +2589,7 @@ var DATA = {
     {
       "name": "杨兆龙",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 7,
       "lost": 0,
       "rate": 0.0
@@ -2698,7 +2621,7 @@ var DATA = {
     {
       "name": "陈思琦",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -2714,7 +2637,7 @@ var DATA = {
     {
       "name": "吴朝辉",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -2786,7 +2709,7 @@ var DATA = {
     {
       "name": "李茹诗",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 10,
       "lost": 2,
       "rate": 20.0
@@ -2810,7 +2733,7 @@ var DATA = {
     {
       "name": "鲁嘉怡",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 8,
       "lost": 0,
       "rate": 0.0
@@ -2858,7 +2781,7 @@ var DATA = {
     {
       "name": "苗冉",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 1,
       "rate": 100.0
@@ -2882,7 +2805,7 @@ var DATA = {
     {
       "name": "刁西洋",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 8,
       "lost": 0,
       "rate": 0.0
@@ -2922,7 +2845,7 @@ var DATA = {
     {
       "name": "陈伟伟",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 4,
       "lost": 0,
       "rate": 0.0
@@ -2930,7 +2853,7 @@ var DATA = {
     {
       "name": "陈柯雅",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -2978,7 +2901,7 @@ var DATA = {
     {
       "name": "王慧民",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -2986,7 +2909,7 @@ var DATA = {
     {
       "name": "李英英",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -3066,7 +2989,7 @@ var DATA = {
     {
       "name": "张焕",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -3138,7 +3061,7 @@ var DATA = {
     {
       "name": "李惠敏",
       "leader": "小猴",
-      "base": "小猴",
+      "base": "其他",
       "total": 6,
       "lost": 3,
       "rate": 50.0
@@ -3265,8 +3188,8 @@ var DATA = {
     },
     {
       "name": "徐瑛瑛",
-      "leader": "未知",
-      "base": "未知",
+      "leader": "徐婷",
+      "base": "西安",
       "total": 15,
       "lost": 1,
       "rate": 6.67
@@ -3458,7 +3381,7 @@ var DATA = {
     {
       "name": "冯雪辉",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 12,
       "lost": 2,
       "rate": 16.67
@@ -3658,7 +3581,7 @@ var DATA = {
     {
       "name": "王佳妮",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 3,
       "lost": 1,
       "rate": 33.33
@@ -3690,7 +3613,7 @@ var DATA = {
     {
       "name": "崔晓婷",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 1,
       "rate": 50.0
@@ -3698,7 +3621,7 @@ var DATA = {
     {
       "name": "雷艳洁",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 7,
       "lost": 0,
       "rate": 0.0
@@ -3714,7 +3637,7 @@ var DATA = {
     {
       "name": "孟子怡",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 27,
       "lost": 4,
       "rate": 14.81
@@ -3722,7 +3645,7 @@ var DATA = {
     {
       "name": "徐昊原",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 6,
       "lost": 2,
       "rate": 33.33
@@ -3762,7 +3685,7 @@ var DATA = {
     {
       "name": "广佳文",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -3786,7 +3709,7 @@ var DATA = {
     {
       "name": "耿英哲",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -3802,7 +3725,7 @@ var DATA = {
     {
       "name": "张梦娜",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 3,
       "lost": 0,
       "rate": 0.0
@@ -3818,7 +3741,7 @@ var DATA = {
     {
       "name": "余荣雪",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 9,
       "lost": 1,
       "rate": 11.11
@@ -3834,7 +3757,7 @@ var DATA = {
     {
       "name": "邹欣",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -3882,7 +3805,7 @@ var DATA = {
     {
       "name": "牛昱",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 1,
       "rate": 50.0
@@ -3890,7 +3813,7 @@ var DATA = {
     {
       "name": "张妍妍",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 4,
       "lost": 2,
       "rate": 50.0
@@ -3914,7 +3837,7 @@ var DATA = {
     {
       "name": "袁雨欣",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 6,
       "lost": 0,
       "rate": 0.0
@@ -3930,7 +3853,7 @@ var DATA = {
     {
       "name": "李惠群",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 3,
       "lost": 1,
       "rate": 33.33
@@ -3946,7 +3869,7 @@ var DATA = {
     {
       "name": "秦子明",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -3994,7 +3917,7 @@ var DATA = {
     {
       "name": "贾志发",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 4,
       "lost": 1,
       "rate": 25.0
@@ -4074,7 +3997,7 @@ var DATA = {
     {
       "name": "刘彤彤",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 9,
       "lost": 1,
       "rate": 11.11
@@ -4098,7 +4021,7 @@ var DATA = {
     {
       "name": "张娟",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4154,7 +4077,7 @@ var DATA = {
     {
       "name": "郝旭鸽",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 4,
       "lost": 0,
       "rate": 0.0
@@ -4162,7 +4085,7 @@ var DATA = {
     {
       "name": "马得忠",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4186,7 +4109,7 @@ var DATA = {
     {
       "name": "潘艳青",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4210,7 +4133,7 @@ var DATA = {
     {
       "name": "董予心",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -4242,7 +4165,7 @@ var DATA = {
     {
       "name": "曹梦缘",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4258,7 +4181,7 @@ var DATA = {
     {
       "name": "周青荣",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -4266,7 +4189,7 @@ var DATA = {
     {
       "name": "刚旭青",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -4322,7 +4245,7 @@ var DATA = {
     {
       "name": "张硕",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4346,7 +4269,7 @@ var DATA = {
     {
       "name": "李梦瑶",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4370,7 +4293,7 @@ var DATA = {
     {
       "name": "胡梦蕊",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4378,7 +4301,7 @@ var DATA = {
     {
       "name": "关晨璐",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 3,
       "lost": 0,
       "rate": 0.0
@@ -4418,7 +4341,7 @@ var DATA = {
     {
       "name": "牛向阳",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 1,
       "rate": 50.0
@@ -4474,7 +4397,7 @@ var DATA = {
     {
       "name": "李吉",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4482,7 +4405,7 @@ var DATA = {
     {
       "name": "刘静雷",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 1,
       "rate": 50.0
@@ -4498,7 +4421,7 @@ var DATA = {
     {
       "name": "赵纯",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4522,7 +4445,7 @@ var DATA = {
     {
       "name": "黄鑫艳",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4554,7 +4477,7 @@ var DATA = {
     {
       "name": "翟曼彤",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 1,
       "rate": 100.0
@@ -4666,7 +4589,7 @@ var DATA = {
     {
       "name": "徐启辙",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4682,7 +4605,7 @@ var DATA = {
     {
       "name": "李欣荣",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4690,7 +4613,7 @@ var DATA = {
     {
       "name": "张诗璐",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -4730,7 +4653,7 @@ var DATA = {
     {
       "name": "潘永祺",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4802,7 +4725,7 @@ var DATA = {
     {
       "name": "吕雅铎",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4818,7 +4741,7 @@ var DATA = {
     {
       "name": "张鑫",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4834,7 +4757,7 @@ var DATA = {
     {
       "name": "李浩楠",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 15,
       "lost": 1,
       "rate": 6.67
@@ -4842,7 +4765,7 @@ var DATA = {
     {
       "name": "胡倩雯",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -4858,7 +4781,7 @@ var DATA = {
     {
       "name": "冯思瑕",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 9,
       "lost": 2,
       "rate": 22.22
@@ -4906,7 +4829,7 @@ var DATA = {
     {
       "name": "尹霞",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 4,
       "lost": 1,
       "rate": 25.0
@@ -4938,7 +4861,7 @@ var DATA = {
     {
       "name": "钟承晓",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4946,7 +4869,7 @@ var DATA = {
     {
       "name": "安迪",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -4962,7 +4885,7 @@ var DATA = {
     {
       "name": "李泳漾",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 3,
       "lost": 0,
       "rate": 0.0
@@ -5002,7 +4925,7 @@ var DATA = {
     {
       "name": "芮宝",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5010,7 +4933,7 @@ var DATA = {
     {
       "name": "马思佳飞",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5025,8 +4948,8 @@ var DATA = {
     },
     {
       "name": "赵浩宇",
-      "leader": "济南拉新",
-      "base": "济南拉新",
+      "leader": "未知",
+      "base": "其他",
       "total": 7,
       "lost": 0,
       "rate": 0.0
@@ -5034,7 +4957,7 @@ var DATA = {
     {
       "name": "杨丽萍",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5042,7 +4965,7 @@ var DATA = {
     {
       "name": "刘祎雪",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -5050,7 +4973,7 @@ var DATA = {
     {
       "name": "周学谦",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -5058,7 +4981,7 @@ var DATA = {
     {
       "name": "韩岩松",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5074,7 +4997,7 @@ var DATA = {
     {
       "name": "曹逸晗",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5090,7 +5013,7 @@ var DATA = {
     {
       "name": "刘雨卉",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5114,7 +5037,7 @@ var DATA = {
     {
       "name": "程雪航",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5122,7 +5045,7 @@ var DATA = {
     {
       "name": "邓熠",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5170,7 +5093,7 @@ var DATA = {
     {
       "name": "牛军芳·",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -5186,7 +5109,7 @@ var DATA = {
     {
       "name": "王君岩",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -5194,7 +5117,7 @@ var DATA = {
     {
       "name": "黄琴",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -5202,7 +5125,7 @@ var DATA = {
     {
       "name": "王红红",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -5226,7 +5149,7 @@ var DATA = {
     {
       "name": "张盛兆",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 4,
       "lost": 0,
       "rate": 0.0
@@ -5234,7 +5157,7 @@ var DATA = {
     {
       "name": "周倩",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5242,7 +5165,7 @@ var DATA = {
     {
       "name": "李宇菲",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -5258,7 +5181,7 @@ var DATA = {
     {
       "name": "舒瑶",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5274,7 +5197,7 @@ var DATA = {
     {
       "name": "程柯谊",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5290,7 +5213,7 @@ var DATA = {
     {
       "name": "王言嘉",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5322,7 +5245,7 @@ var DATA = {
     {
       "name": "邹沐桐",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5402,7 +5325,7 @@ var DATA = {
     {
       "name": "王康睿",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 4,
       "lost": 0,
       "rate": 0.0
@@ -5410,7 +5333,7 @@ var DATA = {
     {
       "name": "宋文欣",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 0,
       "rate": 0.0
@@ -5426,7 +5349,7 @@ var DATA = {
     {
       "name": "秦梓航",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5434,7 +5357,7 @@ var DATA = {
     {
       "name": "金宁苏",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5506,7 +5429,7 @@ var DATA = {
     {
       "name": "庄韫含",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 2,
       "lost": 1,
       "rate": 50.0
@@ -5514,7 +5437,7 @@ var DATA = {
     {
       "name": "陈奕晓",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5546,7 +5469,7 @@ var DATA = {
     {
       "name": "惠磊",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5618,7 +5541,7 @@ var DATA = {
     {
       "name": "张译丹",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 3,
       "lost": 0,
       "rate": 0.0
@@ -5634,7 +5557,7 @@ var DATA = {
     {
       "name": "李婧一·",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5690,7 +5613,7 @@ var DATA = {
     {
       "name": "师金花",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 1,
       "rate": 100.0
@@ -5786,7 +5709,7 @@ var DATA = {
     {
       "name": "果仁儿",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5818,7 +5741,7 @@ var DATA = {
     {
       "name": "管悦函",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5834,7 +5757,7 @@ var DATA = {
     {
       "name": "吕叶阳光",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5842,7 +5765,7 @@ var DATA = {
     {
       "name": "源源",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5898,7 +5821,7 @@ var DATA = {
     {
       "name": "嘉宝",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5906,7 +5829,7 @@ var DATA = {
     {
       "name": "董盼",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5914,7 +5837,7 @@ var DATA = {
     {
       "name": "张铭哲",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5922,7 +5845,7 @@ var DATA = {
     {
       "name": "张钰涵",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5930,7 +5853,7 @@ var DATA = {
     {
       "name": "朱新月",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5946,7 +5869,7 @@ var DATA = {
     {
       "name": "杨诗雨",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5954,7 +5877,7 @@ var DATA = {
     {
       "name": "侯展",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5962,7 +5885,7 @@ var DATA = {
     {
       "name": "吴骏哲",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5978,7 +5901,7 @@ var DATA = {
     {
       "name": "席浩杰",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5986,7 +5909,7 @@ var DATA = {
     {
       "name": "杜鹏君",
       "leader": "济南拉新",
-      "base": "济南拉新",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -5994,7 +5917,7 @@ var DATA = {
     {
       "name": "稳稳",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -6058,7 +5981,7 @@ var DATA = {
     {
       "name": "毛静",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 4,
       "lost": 0,
       "rate": 0.0
@@ -6082,7 +6005,7 @@ var DATA = {
     {
       "name": "李丽霞",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -6122,7 +6045,7 @@ var DATA = {
     {
       "name": "韩思瑜",
       "leader": "客服",
-      "base": "客服",
+      "base": "其他",
       "total": 1,
       "lost": 1,
       "rate": 100.0
@@ -6130,7 +6053,7 @@ var DATA = {
     {
       "name": "李瑞雪",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 3,
       "lost": 0,
       "rate": 0.0
@@ -6138,7 +6061,7 @@ var DATA = {
     {
       "name": "刘伟",
       "leader": "未知",
-      "base": "未知",
+      "base": "其他",
       "total": 1,
       "lost": 0,
       "rate": 0.0
@@ -6179,11 +6102,11 @@ var DATA = {
   "leader_detail": [
     {
       "name": "未知",
-      "base": "未知",
+      "base": "其他",
       "fp_cnt": 135,
-      "total": 456,
-      "lost": 48,
-      "rate": 10.53
+      "total": 448,
+      "lost": 47,
+      "rate": 10.49
     },
     {
       "name": "程雪航",
@@ -6348,10 +6271,10 @@ var DATA = {
     {
       "name": "徐婷",
       "base": "西安",
-      "fp_cnt": 21,
-      "total": 159,
-      "lost": 7,
-      "rate": 4.4
+      "fp_cnt": 22,
+      "total": 174,
+      "lost": 8,
+      "rate": 4.6
     },
     {
       "name": "林柏霆",
@@ -6363,7 +6286,7 @@ var DATA = {
     },
     {
       "name": "小猴",
-      "base": "小猴",
+      "base": "其他",
       "fp_cnt": 1,
       "total": 6,
       "lost": 3,
@@ -6387,15 +6310,15 @@ var DATA = {
     },
     {
       "name": "济南拉新",
-      "base": "济南拉新",
-      "fp_cnt": 2,
-      "total": 8,
+      "base": "其他",
+      "fp_cnt": 1,
+      "total": 1,
       "lost": 0,
       "rate": 0.0
     },
     {
       "name": "客服",
-      "base": "客服",
+      "base": "其他",
       "fp_cnt": 1,
       "total": 1,
       "lost": 1,
@@ -6404,20 +6327,12 @@ var DATA = {
   ],
   "base_detail": [
     {
-      "name": "未知",
-      "leader_cnt": 0,
-      "fp_cnt": 138,
-      "total": 461,
-      "lost": 47,
-      "rate": 10.2
-    },
-    {
-      "name": "西安",
-      "leader_cnt": 14,
-      "fp_cnt": 257,
-      "total": 3603,
-      "lost": 174,
-      "rate": 4.83
+      "name": "其他",
+      "leader_cnt": 4,
+      "fp_cnt": 141,
+      "total": 471,
+      "lost": 52,
+      "rate": 11.04
     },
     {
       "name": "济南",
@@ -6428,36 +6343,12 @@ var DATA = {
       "rate": 6.25
     },
     {
-      "name": "离职",
-      "leader_cnt": 1,
-      "fp_cnt": 1,
-      "total": 1,
-      "lost": 1,
-      "rate": 100.0
-    },
-    {
-      "name": "小猴",
-      "leader_cnt": 1,
-      "fp_cnt": 1,
-      "total": 6,
-      "lost": 3,
-      "rate": 50.0
-    },
-    {
-      "name": "济南拉新",
-      "leader_cnt": 1,
-      "fp_cnt": 2,
-      "total": 2,
-      "lost": 0,
-      "rate": 0.0
-    },
-    {
-      "name": "客服",
-      "leader_cnt": 1,
-      "fp_cnt": 1,
-      "total": 1,
-      "lost": 1,
-      "rate": 100.0
+      "name": "西安",
+      "leader_cnt": 14,
+      "fp_cnt": 257,
+      "total": 3603,
+      "lost": 174,
+      "rate": 4.83
     }
   ],
   "all_leaders": [
@@ -6490,157 +6381,71 @@ var DATA = {
     "黄欣瑞"
   ],
   "all_bases": [
-    "客服",
-    "小猴",
-    "未知",
+    "其他",
     "济南",
-    "济南拉新",
-    "离职",
     "西安"
   ],
   "interval_labels": [
-    "课前5月",
-    "课前4月",
-    "课前3月",
-    "课前2月",
-    "课前1月",
-    "开课当月",
-    "课后1月",
-    "课后2月",
-    "课后3月",
-    "课后4月",
-    "课后5月",
-    "课后6月",
-    "课后7月",
-    "课后8月",
-    "课后9月",
-    "课后10月",
-    "课后11月",
-    "课后12月",
-    "课后13月",
-    "课后14月"
+    "0个月",
+    "1个月",
+    "2个月",
+    "3个月",
+    "4个月",
+    "5个月",
+    "6个月",
+    "7个月",
+    "8个月",
+    "9个月",
+    "10个月",
+    "11个月",
+    "12个月",
+    "13个月",
+    "14个月",
+    "15个月",
+    "16个月",
+    "17个月",
+    "18个月",
+    "19个月",
+    "20个月",
+    "21个月",
+    "22个月",
+    "23个月",
+    "24个月"
   ],
   "interval_total": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
-    1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     93,
     89,
-    48
+    48,
+    25,
+    8,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    7,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
   ],
   "interval_type": {
     "调入B版": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       23,
       24,
-      14
-    ],
-    "调入S+版": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      30,
-      26,
-      14
-    ],
-    "调入A版": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      1,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      19,
-      32,
-      10
-    ],
-    "换年级": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      19,
-      4,
-      8
-    ],
-    "调入C版": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      14,
+      6,
+      3,
       0,
       0,
       0,
@@ -6650,12 +6455,130 @@ var DATA = {
       0,
       0,
       2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "调入S+版": [
+      30,
+      26,
+      14,
+      8,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "调入A版": [
+      19,
+      32,
+      10,
+      6,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
       3,
-      1
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "换年级": [
+      19,
+      4,
+      8,
+      4,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "调入C版": [
+      2,
+      3,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "换课头": [
       0,
       0,
+      1,
       0,
       0,
       0,
@@ -6673,9 +6596,18 @@ var DATA = {
       0,
       0,
       0,
-      1
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "换时段": [
+      0,
+      0,
+      0,
+      1,
+      0,
       0,
       0,
       0,
@@ -6700,103 +6632,11 @@ var DATA = {
   },
   "type_interval": {
     "调入B版": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       23,
       24,
-      14
-    ],
-    "调入S+版": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      30,
-      26,
-      14
-    ],
-    "调入A版": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      1,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      19,
-      32,
-      10
-    ],
-    "换年级": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      19,
-      4,
-      8
-    ],
-    "调入C版": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      14,
+      6,
+      3,
       0,
       0,
       0,
@@ -6806,12 +6646,130 @@ var DATA = {
       0,
       0,
       2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "调入S+版": [
+      30,
+      26,
+      14,
+      8,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "调入A版": [
+      19,
+      32,
+      10,
+      6,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
       3,
-      1
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "换年级": [
+      19,
+      4,
+      8,
+      4,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "调入C版": [
+      2,
+      3,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "换课头": [
       0,
       0,
+      1,
       0,
       0,
       0,
@@ -6829,9 +6787,18 @@ var DATA = {
       0,
       0,
       0,
-      1
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "换时段": [
+      0,
+      0,
+      0,
+      1,
+      0,
       0,
       0,
       0,
@@ -6856,50 +6823,65 @@ var DATA = {
   },
   "monthly_interval_summary": {
     "1月": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       6,
       16,
-      20
+      20,
+      12,
+      7,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "2月": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       14,
       16,
-      11
+      11,
+      9,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "3月": [
+      31,
+      27,
+      15,
+      4,
+      0,
       0,
       0,
       0,
@@ -6917,73 +6899,88 @@ var DATA = {
       0,
       0,
       0,
-      31,
-      27,
-      15
+      0,
+      0,
+      0
     ],
     "4月": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       22,
       25,
-      2
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "5月": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      2,
-      2,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       18,
       5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ],
     "6月": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0
     ]
@@ -7188,863 +7185,719 @@ var DATA = {
   "ketou_data": {
     "B": {
       "order": [
-        "【1-12月】L3新思维全年提升计划（全国B版）",
-        "【1-12月】L2新思维全年提升计划（全国B版）",
-        "【1-12月】L5新思维全年提升计划（全国B版）",
-        "【1-12月】L4新思维全年提升计划（全国B版）",
-        "【6-5月】L2升L3新思维全年提升计划（全国B版）",
-        "【4-3月】L5新思维全年提升计划（全国B版）",
-        "【4-3月】L4新思维全年提升计划（全国B版）",
-        "【7-6月】L5新思维全年提升计划（全国B版）",
-        "【9-8月】L5新思维全年提升计划（全国B版）",
-        "【5-4月】L1新思维全年提升计划（全国B版）",
-        "【1-12月】L1新思维全年提升计划（全国B版）",
-        "【6-5月】L1升L2新思维全年提升计划（全国B版）",
-        "【4-3月】L2新思维全年提升计划（全国B版）",
-        "【9-8月】L4新思维全年提升计划（全国B版）",
-        "【9-8月】L3新思维全年提升计划（全国B版）",
-        "【7-6月】L3新思维全年提升计划（全国B版）",
-        "【12-11月】L5新思维全年提升计划（全国B版）",
-        "【4-3月】L3新思维全年提升计划（全国B版）",
-        "【12-11月】L3新思维全年提升计划（全国B版）",
-        "【7-6月】L4新思维全年提升计划（全国B版）"
+        "25-26【1月】",
+        "25-26【4月】",
+        "25-26【6月】",
+        "25-26【9月】",
+        "25-26【7月】",
+        "25-26【5月】",
+        "25-26【12月】",
+        "25-26【3月】",
+        "25-26【10月】",
+        "25-26【11月】",
+        "24-25【4月】",
+        "24-25【6月】",
+        "26-27【7月】",
+        "24-25【3月】",
+        "24-25【5月】",
+        "26-27【9月】"
       ],
       "counts": {
-        "【1-12月】L3新思维全年提升计划（全国B版）": [
-          87,
-          19,
-          24,
-          7,
-          6,
-          3
-        ],
-        "【1-12月】L2新思维全年提升计划（全国B版）": [
-          40,
-          22,
-          9,
-          4,
-          1,
-          1
-        ],
-        "【1-12月】L5新思维全年提升计划（全国B版）": [
-          13,
-          11,
-          15,
-          15,
-          9,
-          0
-        ],
-        "【1-12月】L4新思维全年提升计划（全国B版）": [
-          17,
-          3,
-          16,
-          7,
-          7,
-          1
-        ],
-        "【6-5月】L2升L3新思维全年提升计划（全国B版）": [
-          0,
-          0,
-          0,
-          0,
-          36,
-          14
-        ],
-        "【4-3月】L5新思维全年提升计划（全国B版）": [
-          1,
-          0,
-          3,
-          27,
-          2,
-          2
-        ],
-        "【4-3月】L4新思维全年提升计划（全国B版）": [
-          0,
-          0,
-          25,
-          5,
-          4,
-          0
-        ],
-        "【7-6月】L5新思维全年提升计划（全国B版）": [
-          4,
-          13,
-          6,
-          3,
-          5,
-          2
-        ],
-        "【9-8月】L5新思维全年提升计划（全国B版）": [
-          0,
-          9,
-          5,
-          4,
-          7,
-          1
-        ],
-        "【5-4月】L1新思维全年提升计划（全国B版）": [
-          0,
-          0,
-          0,
-          25,
-          1,
-          0
-        ],
-        "【1-12月】L1新思维全年提升计划（全国B版）": [
-          18,
-          2,
-          3,
-          1,
-          0,
-          0
-        ],
-        "【6-5月】L1升L2新思维全年提升计划（全国B版）": [
-          0,
-          0,
-          0,
-          0,
-          17,
-          6
-        ],
-        "【4-3月】L2新思维全年提升计划（全国B版）": [
-          0,
-          0,
-          17,
-          4,
-          0,
-          1
-        ],
-        "【9-8月】L4新思维全年提升计划（全国B版）": [
-          1,
-          4,
-          6,
-          2,
-          6,
-          2
-        ],
-        "【9-8月】L3新思维全年提升计划（全国B版）": [
-          3,
-          4,
-          5,
-          3,
-          4,
-          0
-        ],
-        "【7-6月】L3新思维全年提升计划（全国B版）": [
-          7,
-          2,
-          5,
-          0,
-          4,
-          0
-        ],
-        "【12-11月】L5新思维全年提升计划（全国B版）": [
-          2,
-          4,
-          6,
-          4,
-          1,
-          1
-        ],
-        "【4-3月】L3新思维全年提升计划（全国B版）": [
-          2,
-          0,
-          10,
-          4,
-          0,
-          0
-        ],
-        "【12-11月】L3新思维全年提升计划（全国B版）": [
-          4,
-          1,
-          6,
-          0,
-          3,
-          1
-        ],
-        "【7-6月】L4新思维全年提升计划（全国B版）": [
-          3,
-          2,
-          5,
-          2,
-          1,
-          2
-        ]
-      },
-      "totals": [
-        202,
-        96,
-        166,
-        117,
-        114,
-        37
-      ]
-    },
-    "S+": {
-      "order": [
-        "【1-12月】S3新思维全年提升计划",
-        "【1-12月】S1新思维全年提升计划",
-        "【9-8月】S4新思维全年提升计划",
-        "【1-12月】S5新思维全年提升计划",
-        "【1-12月】S4新思维全年提升计划",
-        "【6-5月】S5升S6新思维全年提升计划",
-        "【7-6月】L4新思维全年提升计划（S班）",
-        "【4-3月】S5新思维全年提升计划",
-        "【7-6月】L5新思维全年提升计划（S班）",
-        "【3-2月】S3新思维全年提升计划",
-        "【9-8月】S3新思维全年提升计划",
-        "【7-6月】L3新思维全年提升计划（S班）",
-        "【12-11月】S4新思维全年提升计划",
-        "【3-2月】S5新思维全年提升计划",
-        "【9-8月】S5新思维全年提升计划",
-        "【7-6月】L2新思维全年提升计划（S班）",
-        "【5-4月】S1新思维全年提升计划",
-        "【4-3月】S4新思维全年提升计划",
-        "【10-9月】S4新思维全年提升计划",
-        "【11-10月】S4新思维全年提升计划"
-      ],
-      "counts": {
-        "【1-12月】S3新思维全年提升计划": [
-          6,
-          12,
-          15,
-          39,
-          7,
-          2
-        ],
-        "【1-12月】S1新思维全年提升计划": [
+        "25-26【1月】": [
+          178,
+          57,
+          67,
           34,
-          29,
-          3,
-          13,
-          0,
-          0
-        ],
-        "【9-8月】S4新思维全年提升计划": [
-          6,
-          4,
-          3,
-          30,
-          16,
+          23,
           5
         ],
-        "【1-12月】S5新思维全年提升计划": [
-          6,
-          6,
-          5,
-          23,
-          5,
-          1
-        ],
-        "【1-12月】S4新思维全年提升计划": [
-          5,
-          7,
-          6,
-          24,
-          1,
-          2
-        ],
-        "【6-5月】S5升S6新思维全年提升计划": [
-          0,
-          0,
-          0,
-          0,
-          36,
-          4
-        ],
-        "【7-6月】L4新思维全年提升计划（S班）": [
-          4,
-          5,
-          9,
-          6,
-          11,
-          4
-        ],
-        "【4-3月】S5新思维全年提升计划": [
-          6,
-          1,
-          12,
-          16,
-          1,
-          0
-        ],
-        "【7-6月】L5新思维全年提升计划（S班）": [
+        "25-26【4月】": [
           3,
+          0,
+          66,
+          43,
           6,
-          8,
-          2,
-          17,
-          0
-        ],
-        "【3-2月】S3新思维全年提升计划": [
-          5,
-          2,
-          9,
-          15,
-          3,
-          0
-        ],
-        "【9-8月】S3新思维全年提升计划": [
-          9,
-          6,
-          4,
-          1,
-          10,
-          2
-        ],
-        "【7-6月】L3新思维全年提升计划（S班）": [
-          6,
-          4,
-          1,
-          5,
-          14,
-          2
-        ],
-        "【12-11月】S4新思维全年提升计划": [
-          4,
-          3,
-          4,
-          14,
-          4,
-          1
-        ],
-        "【3-2月】S5新思维全年提升计划": [
-          16,
-          5,
-          2,
-          4,
-          1,
-          1
-        ],
-        "【9-8月】S5新思维全年提升计划": [
-          4,
-          2,
-          5,
-          4,
-          11,
           3
         ],
-        "【7-6月】L2新思维全年提升计划（S班）": [
-          3,
-          8,
-          2,
-          3,
+        "25-26【6月】": [
+          0,
+          0,
+          0,
+          0,
+          61,
+          23
+        ],
+        "25-26【9月】": [
+          6,
+          17,
+          25,
           12,
-          0
-        ],
-        "【5-4月】S1新思维全年提升计划": [
-          0,
-          0,
-          0,
-          16,
-          11,
-          0
-        ],
-        "【4-3月】S4新思维全年提升计划": [
-          0,
-          0,
-          8,
           15,
+          2
+        ],
+        "25-26【7月】": [
+          14,
+          20,
+          17,
+          5,
+          11,
+          4
+        ],
+        "25-26【5月】": [
+          1,
           2,
+          1,
+          44,
+          9,
+          2
+        ],
+        "25-26【12月】": [
+          7,
+          7,
+          20,
+          4,
+          9,
+          3
+        ],
+        "25-26【3月】": [
+          1,
+          16,
+          21,
+          5,
+          3,
           1
         ],
-        "【10-9月】S4新思维全年提升计划": [
-          6,
+        "25-26【10月】": [
+          4,
+          7,
+          13,
+          4,
+          2,
+          3
+        ],
+        "25-26【11月】": [
+          5,
+          5,
+          7,
+          4,
+          7,
+          2
+        ],
+        "24-25【4月】": [
+          14,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "24-25【6月】": [
+          0,
+          0,
+          9,
+          1,
+          4,
+          0
+        ],
+        "26-27【7月】": [
+          0,
+          0,
+          0,
+          0,
+          7,
+          4
+        ],
+        "24-25【3月】": [
+          7,
           3,
-          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        "24-25【5月】": [
+          4,
           3,
           1,
-          9
+          1,
+          0,
+          0
         ],
-        "【11-10月】S4新思维全年提升计划": [
+        "26-27【9月】": [
+          0,
+          0,
+          0,
+          0,
           3,
+          1
+        ]
+      },
+      "totals": [
+        244,
+        138,
+        248,
+        157,
+        160,
+        53
+      ]
+    },
+    "S": {
+      "order": [
+        "25-26【1月】",
+        "25-26【7月】",
+        "25-26【9月】",
+        "25-26【4月】",
+        "25-26【6月】",
+        "25-26【3月】",
+        "25-26【12月】",
+        "25-26【5月】",
+        "25-26【10月】",
+        "25-26【11月】",
+        "24-25【6月】",
+        "26-27【7月】",
+        "24-25【3月】",
+        "26-27【9月】",
+        "24-25【4月】",
+        "24-25【5月】",
+        "26-27【10月】"
+      ],
+      "counts": {
+        "25-26【1月】": [
+          58,
+          60,
+          32,
+          108,
+          14,
+          5
+        ],
+        "25-26【7月】": [
+          22,
+          24,
+          21,
+          17,
+          58,
+          6
+        ],
+        "25-26【9月】": [
+          37,
+          15,
+          20,
+          41,
+          23,
+          8
+        ],
+        "25-26【4月】": [
+          6,
+          1,
+          42,
+          57,
+          7,
+          2
+        ],
+        "25-26【6月】": [
+          0,
+          0,
+          0,
+          0,
+          100,
+          13
+        ],
+        "25-26【3月】": [
+          22,
+          21,
+          29,
+          26,
+          10,
+          1
+        ],
+        "25-26【12月】": [
+          9,
+          10,
+          13,
+          40,
+          13,
+          2
+        ],
+        "25-26【5月】": [
+          3,
+          4,
+          2,
+          36,
+          38,
+          2
+        ],
+        "25-26【10月】": [
+          24,
+          5,
+          11,
+          16,
+          8,
+          14
+        ],
+        "25-26【11月】": [
+          21,
+          5,
+          10,
+          21,
+          6,
+          7
+        ],
+        "24-25【6月】": [
+          9,
+          6,
+          6,
+          8,
+          24,
+          0
+        ],
+        "26-27【7月】": [
+          0,
+          0,
+          0,
+          0,
+          28,
+          6
+        ],
+        "24-25【3月】": [
+          24,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "26-27【9月】": [
+          0,
+          0,
+          0,
+          1,
+          22,
+          2
+        ],
+        "24-25【4月】": [
+          9,
+          1,
+          5,
+          0,
+          2,
+          0
+        ],
+        "24-25【5月】": [
+          6,
           2,
           5,
-          9,
-          2,
+          3,
+          0,
+          0
+        ],
+        "26-27【10月】": [
+          0,
+          0,
+          0,
+          0,
+          0,
           4
         ]
       },
       "totals": [
-        126,
-        105,
-        104,
-        242,
-        165,
-        41
+        250,
+        156,
+        196,
+        374,
+        353,
+        72
       ]
     },
     "A": {
       "order": [
-        "【1-12月】L3新思维全年提升计划",
-        "【9-8月】L3新思维全年提升计划",
-        "【7-6月】L3新思维全年提升计划",
-        "【1-12月】L4新思维全年提升计划",
-        "【1-12月】L2新思维全年提升计划",
-        "【3-2月】L4新思维全年提升计划",
-        "【1-12月】L5新思维全年提升计划",
-        "【3-2月】L2新思维全年提升计划",
-        "【9-8月】L5新思维全年提升计划",
-        "【9-8月】L4新思维全年提升计划",
-        "【3-2月】L5新思维全年提升计划",
-        "【3-2月】L3新思维全年提升计划",
-        "【1-12月】L1新思维全年提升计划",
-        "【7-6月】L2新思维全年提升计划",
-        "【7-6月】L5新思维全年提升计划",
-        "【7-6月】L4新思维全年提升计划",
-        "【4-3月】L3新思维全年提升计划",
-        "【4-3月】L4新思维全年提升计划",
-        "【5-4月】L2新思维全年提升计划",
-        "【9-8月】L2新思维全年提升计划"
+        "25-26【1月】",
+        "25-26【9月】",
+        "25-26【7月】",
+        "25-26【3月】",
+        "25-26【4月】",
+        "25-26【12月】",
+        "25-26【11月】",
+        "24-25【3月】",
+        "25-26【10月】",
+        "25-26【5月】",
+        "24-25【4月】",
+        "24-25【5月】",
+        "26-27【7月】",
+        "24-25【6月】",
+        "25-26【6月】",
+        "26-27【9月】",
+        "25-26【新12月】",
+        "25-26【2月】"
       ],
       "counts": {
-        "【1-12月】L3新思维全年提升计划": [
-          47,
-          29,
-          26,
-          28,
-          21,
-          13
+        "25-26【1月】": [
+          91,
+          96,
+          70,
+          99,
+          46,
+          20
         ],
-        "【9-8月】L3新思维全年提升计划": [
-          25,
-          14,
+        "25-26【9月】": [
+          48,
+          44,
+          74,
           30,
-          10,
-          23,
-          9
+          44,
+          14
         ],
-        "【7-6月】L3新思维全年提升计划": [
-          16,
-          18,
-          19,
-          3,
-          25,
+        "25-26【7月】": [
+          51,
+          54,
+          48,
+          22,
+          57,
+          19
+        ],
+        "25-26【3月】": [
+          20,
+          32,
+          68,
+          21,
+          12,
           8
         ],
-        "【1-12月】L4新思维全年提升计划": [
-          6,
+        "25-26【4月】": [
+          16,
+          12,
+          21,
+          29,
           17,
-          19,
-          20,
-          5,
-          3
-        ],
-        "【1-12月】L2新思维全年提升计划": [
-          9,
-          20,
-          15,
-          14,
-          9,
-          1
-        ],
-        "【3-2月】L4新思维全年提升计划": [
-          18,
-          16,
-          22,
-          6,
-          3,
-          1
-        ],
-        "【1-12月】L5新思维全年提升计划": [
-          13,
-          19,
-          5,
-          16,
-          5,
           2
         ],
-        "【3-2月】L2新思维全年提升计划": [
-          19,
-          12,
-          20,
-          6,
-          1,
-          1
-        ],
-        "【9-8月】L5新思维全年提升计划": [
-          9,
+        "25-26【12月】": [
           11,
-          16,
-          4,
-          11,
+          13,
+          26,
+          27,
+          15,
           3
         ],
-        "【9-8月】L4新思维全年提升计划": [
+        "25-26【11月】": [
+          11,
+          24,
+          21,
+          8,
+          14,
+          2
+        ],
+        "24-25【3月】": [
+          59,
+          18,
+          1,
+          0,
+          1,
+          0
+        ],
+        "25-26【10月】": [
+          5,
+          18,
+          31,
           6,
           8,
-          12,
-          11,
-          11,
+          2
+        ],
+        "25-26【5月】": [
+          3,
+          10,
+          14,
+          20,
+          16,
           4
         ],
-        "【3-2月】L5新思维全年提升计划": [
-          25,
-          8,
-          8,
-          4,
-          3,
-          2
-        ],
-        "【3-2月】L3新思维全年提升计划": [
+        "24-25【4月】": [
+          40,
           9,
-          13,
           14,
-          5,
-          6,
-          3
+          1,
+          0,
+          0
         ],
-        "【1-12月】L1新思维全年提升计划": [
+        "24-25【5月】": [
+          20,
+          14,
+          20,
+          9,
+          0,
+          0
+        ],
+        "26-27【7月】": [
+          0,
+          0,
+          0,
           3,
+          35,
+          17
+        ],
+        "24-25【6月】": [
+          2,
           11,
-          5,
-          21,
-          6,
+          16,
+          2,
+          13,
           1
         ],
-        "【7-6月】L2新思维全年提升计划": [
-          4,
-          11,
-          11,
-          11,
-          6,
-          3
-        ],
-        "【7-6月】L5新思维全年提升计划": [
-          8,
-          16,
-          6,
-          3,
-          9,
-          3
-        ],
-        "【7-6月】L4新思维全年提升计划": [
-          8,
-          8,
-          7,
-          2,
-          15,
+        "25-26【6月】": [
+          0,
+          0,
+          0,
+          0,
+          31,
           5
         ],
-        "【4-3月】L3新思维全年提升计划": [
-          6,
-          3,
-          14,
-          8,
-          6,
-          2
+        "26-27【9月】": [
+          0,
+          0,
+          0,
+          0,
+          9,
+          5
         ],
-        "【4-3月】L4新思维全年提升计划": [
-          23,
-          4,
+        "25-26【新12月】": [
+          1,
+          0,
+          1,
           5,
-          5,
-          2,
+          1,
           0
         ],
-        "【5-4月】L2新思维全年提升计划": [
-          3,
-          11,
-          11,
-          9,
+        "25-26【2月】": [
           2,
-          2
-        ],
-        "【9-8月】L2新思维全年提升计划": [
-          6,
-          10,
-          13,
-          5,
-          4,
+          0,
+          0,
+          0,
+          0,
           0
         ]
       },
       "totals": [
-        263,
-        259,
-        278,
-        191,
-        173,
-        66
+        380,
+        355,
+        425,
+        282,
+        319,
+        102
       ]
     },
-    "年级": {
+    "Y": {
       "order": [
-        "【3-2月】S1新思维全年提升计划",
-        "【1-12月】S1新思维全年提升计划",
-        "【6-5月】L2新思维全年提升计划（S班）",
-        "【1-12月】L5新思维全年提升计划",
-        "【7-6月】新S6新思维全年提升计划",
-        "【6-5月】L1新思维全年提升计划（S班）",
-        "【7-6月】L4新思维全年提升计划",
-        "【1-12月】L3新思维全年提升计划",
-        "【5-4月】L4新思维全年提升计划",
-        "【5-4月】L3新思维全年提升计划",
-        "【1-12月】L4新思维全年提升计划",
-        "【6-5月】L4新思维全年提升计划（S班）",
-        "【9-8月】S5新思维全年提升计划",
-        "【12-11月】L4新思维全年提升计划",
-        "【3-2月】S2新思维全年提升计划",
-        "【3-2月】L3新思维全年提升计划",
-        "【1-12月】L4新思维全年提升计划（全国B版）",
-        "【4-3月】L5新思维全年提升计划",
-        "【5-4月】L0新思维全年提升计划",
-        "【4-3月】L2新思维全年提升计划（S班）"
+        "25-26【3月】",
+        "25-26【1月】",
+        "24-25【6月】",
+        "25-26【5月】",
+        "25-26【9月】",
+        "25-26【12月】",
+        "25-26【4月】",
+        "25-26【7月】",
+        "25-26【11月】",
+        "26-27【7月】",
+        "24-25【5月】",
+        "25-26【10月】",
+        "25-26【6月】",
+        "25-26【新12月】",
+        "24-25【3月】",
+        "24-25【4月】",
+        "26-27【9月】"
       ],
       "counts": {
-        "【3-2月】S1新思维全年提升计划": [
-          0,
-          1,
-          57,
-          2,
-          1,
+        "25-26【3月】": [
+          4,
+          9,
+          75,
+          6,
+          4,
           0
         ],
-        "【1-12月】S1新思维全年提升计划": [
+        "25-26【1月】": [
+          17,
+          42,
+          20,
+          5,
+          9,
+          4
+        ],
+        "24-25【6月】": [
+          4,
+          6,
+          7,
           2,
-          27,
+          41,
+          0
+        ],
+        "25-26【5月】": [
+          0,
+          4,
+          3,
+          11,
+          20,
+          0
+        ],
+        "25-26【9月】": [
+          3,
+          9,
+          8,
+          7,
+          8,
+          2
+        ],
+        "25-26【12月】": [
+          6,
+          7,
+          8,
+          5,
+          8,
+          2
+        ],
+        "25-26【4月】": [
+          0,
+          7,
+          11,
+          13,
+          0,
+          0
+        ],
+        "25-26【7月】": [
+          3,
+          6,
+          9,
+          3,
           2,
+          2
+        ],
+        "25-26【11月】": [
           0,
-          0,
+          8,
+          5,
+          6,
+          3,
           1
         ],
-        "【6-5月】L2新思维全年提升计划（S班）": [
+        "26-27【7月】": [
           0,
           0,
-          1,
-          1,
-          21,
-          0
-        ],
-        "【1-12月】L5新思维全年提升计划": [
-          1,
-          4,
-          5,
-          1,
-          4,
+          0,
+          2,
+          18,
           3
         ],
-        "【7-6月】新S6新思维全年提升计划": [
-          0,
-          0,
-          0,
-          1,
-          15,
-          0
-        ],
-        "【6-5月】L1新思维全年提升计划（S班）": [
+        "24-25【5月】": [
           2,
-          0,
-          0,
-          0,
-          11,
-          0
-        ],
-        "【7-6月】L4新思维全年提升计划": [
-          1,
+          8,
           5,
-          3,
-          1,
+          2,
           0,
           0
         ],
-        "【1-12月】L3新思维全年提升计划": [
-          3,
-          2,
-          2,
-          2,
-          1,
-          0
-        ],
-        "【5-4月】L4新思维全年提升计划": [
-          0,
-          3,
-          1,
-          2,
-          3,
-          0
-        ],
-        "【5-4月】L3新思维全年提升计划": [
-          0,
-          2,
-          1,
-          2,
-          3,
-          0
-        ],
-        "【1-12月】L4新思维全年提升计划": [
-          3,
-          1,
-          2,
-          0,
-          1,
-          0
-        ],
-        "【6-5月】L4新思维全年提升计划（S班）": [
-          2,
-          1,
-          0,
-          0,
-          4,
-          0
-        ],
-        "【9-8月】S5新思维全年提升计划": [
-          1,
-          0,
-          2,
+        "25-26【10月】": [
           1,
           3,
-          0
-        ],
-        "【12-11月】L4新思维全年提升计划": [
-          1,
-          4,
-          0,
-          0,
-          2,
-          0
-        ],
-        "【3-2月】S2新思维全年提升计划": [
-          2,
-          2,
+          6,
           2,
           1,
-          0,
           0
         ],
-        "【3-2月】L3新思维全年提升计划": [
-          1,
-          1,
-          4,
-          1,
+        "25-26【6月】": [
           0,
-          0
+          0,
+          0,
+          1,
+          6,
+          5
         ],
-        "【1-12月】L4新思维全年提升计划（全国B版）": [
+        "25-26【新12月】": [
           0,
-          1,
           5,
-          1,
+          4,
+          2,
           0,
           0
         ],
-        "【4-3月】L5新思维全年提升计划": [
-          0,
-          0,
-          3,
+        "24-25【3月】": [
           4,
-          0,
-          0
-        ],
-        "【5-4月】L0新思维全年提升计划": [
-          0,
-          0,
-          0,
-          3,
           4,
-          0
-        ],
-        "【4-3月】L2新思维全年提升计划（S班）": [
-          4,
-          0,
           2,
           0,
           0,
+          0
+        ],
+        "24-25【4月】": [
+          5,
+          2,
+          2,
+          0,
+          0,
+          0
+        ],
+        "26-27【9月】": [
+          0,
+          0,
+          0,
+          0,
+          1,
           0
         ]
       },
       "totals": [
-        23,
-        54,
-        92,
-        23,
-        73,
-        4
+        49,
+        120,
+        165,
+        67,
+        121,
+        19
       ]
     },
     "C": {
       "order": [
-        "【1-12月】L2新思维全年提升计划（全国C版）",
-        "【6-5月】L2升L3新思维全年提升计划（全国C版）",
-        "【1-12月】L1新思维全年提升计划（全国C版）",
-        "【3-2月】L2新思维全年提升计划（全国C版）",
-        "【6-5月】L1升L2新思维全年提升计划（全国C版）",
-        "【4-3月】L1新思维全年提升计划（全国C版）",
-        "【5-4月】L1新思维全年提升计划（全国C版）",
-        "【4-3月】L2新思维全年提升计划（全国C版）",
-        "【3-2月】L1新思维全年提升计划（全国C版）"
+        "25-26【1月】",
+        "25-26【6月】",
+        "25-26【4月】",
+        "25-26【3月】",
+        "25-26【5月】"
       ],
       "counts": {
-        "【1-12月】L2新思维全年提升计划（全国C版）": [
-          5,
-          11,
+        "25-26【1月】": [
+          12,
+          12,
+          3,
           2,
           1,
-          1,
           0
         ],
-        "【6-5月】L2升L3新思维全年提升计划（全国C版）": [
+        "25-26【6月】": [
           0,
           0,
           0,
           0,
-          5,
-          7
+          13,
+          8
         ],
-        "【1-12月】L1新思维全年提升计划（全国C版）": [
-          7,
-          1,
-          1,
-          1,
-          0,
-          0
-        ],
-        "【3-2月】L2新思维全年提升计划（全国C版）": [
-          1,
-          0,
-          8,
+        "25-26【4月】": [
           0,
           0,
-          0
-        ],
-        "【6-5月】L1升L2新思维全年提升计划（全国C版）": [
-          0,
-          0,
-          0,
-          0,
-          8,
-          1
-        ],
-        "【4-3月】L1新思维全年提升计划（全国C版）": [
-          0,
-          0,
-          4,
+          9,
           3,
           1,
           0
         ],
-        "【5-4月】L1新思维全年提升计划（全国C版）": [
+        "25-26【3月】": [
+          1,
+          0,
+          9,
+          0,
+          0,
+          0
+        ],
+        "25-26【5月】": [
           0,
           0,
           0,
           2,
           4,
-          0
-        ],
-        "【4-3月】L2新思维全年提升计划（全国C版）": [
-          0,
-          0,
-          5,
-          0,
-          0,
-          0
-        ],
-        "【3-2月】L1新思维全年提升计划（全国C版）": [
-          0,
-          0,
-          1,
-          0,
-          0,
           0
         ]
       },
@@ -8059,36 +7912,33 @@ var DATA = {
     },
     "课头": {
       "order": [
-        "【3-2月】L1新思维全年提升计划",
-        "【新12-11月】L3新思维全年提升计划",
-        "【9-8月】S4新思维全年提升计划",
-        "【11-10月】S1新思维全年提升计划",
-        "【11-10月】S4新思维全年提升计划",
-        "【12-11月】S2新思维全年提升计划",
-        "【3-2月】S5新思维全年提升计划",
-        "【新12-6月】L6新思维提升计划",
-        "【5-4月】L5新思维全年提升计划",
-        "【1-12月】L4新思维全年提升计划",
-        "【1-12月】L5新思维全年提升计划"
+        "25-26【3月】",
+        "25-26【新12月】",
+        "25-26【11月】",
+        "25-26【9月】",
+        "25-26【12月】",
+        "25-26【5月】",
+        "24-25【1月】",
+        "25-26【1月】"
       ],
       "counts": {
-        "【3-2月】L1新思维全年提升计划": [
-          1,
+        "25-26【3月】": [
+          2,
           3,
           0,
           0,
           0,
           0
         ],
-        "【新12-11月】L3新思维全年提升计划": [
-          0,
+        "25-26【新12月】": [
+          1,
           0,
           0,
           0,
           4,
           0
         ],
-        "【9-8月】S4新思维全年提升计划": [
+        "25-26【11月】": [
           2,
           0,
           0,
@@ -8096,7 +7946,15 @@ var DATA = {
           0,
           0
         ],
-        "【11-10月】S1新思维全年提升计划": [
+        "25-26【9月】": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "25-26【12月】": [
           1,
           0,
           0,
@@ -8104,39 +7962,7 @@ var DATA = {
           0,
           0
         ],
-        "【11-10月】S4新思维全年提升计划": [
-          1,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【12-11月】S2新思维全年提升计划": [
-          1,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【3-2月】S5新思维全年提升计划": [
-          1,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【新12-6月】L6新思维提升计划": [
-          1,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【5-4月】L5新思维全年提升计划": [
+        "25-26【5月】": [
           0,
           0,
           0,
@@ -8144,7 +7970,7 @@ var DATA = {
           1,
           0
         ],
-        "【1-12月】L4新思维全年提升计划": [
+        "24-25【1月】": [
           0,
           0,
           0,
@@ -8152,7 +7978,7 @@ var DATA = {
           0,
           1
         ],
-        "【1-12月】L5新思维全年提升计划": [
+        "25-26【1月】": [
           0,
           0,
           0,
@@ -8172,142 +7998,70 @@ var DATA = {
     },
     "时段": {
       "order": [
-        "【1-12月】L3新思维全年提升计划",
-        "【1-12月】L1新思维全年提升计划",
-        "【10-9月】L3新思维全年提升计划",
-        "【9-8月】S3新思维全年提升计划",
-        "【9-8月】L3新思维全年提升计划",
-        "【1-12月】S1新思维全年提升计划",
-        "【3-2月】L1新思维全年提升计划",
-        "【1-12月】L4新思维全年提升计划",
-        "【10-9月】L4新思维全年提升计划",
-        "【1-12月】L4新思维全年提升计划（全国B版）",
-        "【4-3月】L5新思维全年提升计划",
-        "【10-9月】S5新思维全年提升计划",
-        "【7-6月】新L6新思维全年提升计划",
-        "【6-5月】L2新思维全年提升计划",
-        "【1-12月】L5新思维全年提升计划"
+        "25-26【1月】",
+        "25-26【10月】",
+        "25-26【9月】",
+        "24-25【3月】",
+        "24-25【4月】",
+        "26-27【7月】",
+        "24-25【6月】"
       ],
       "counts": {
-        "【1-12月】L3新思维全年提升计划": [
-          0,
-          4,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【1-12月】L1新思维全年提升计划": [
+        "25-26【1月】": [
           2,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【10-9月】L3新思维全年提升计划": [
-          1,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【9-8月】S3新思维全年提升计划": [
-          0,
-          1,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【9-8月】L3新思维全年提升计划": [
-          0,
-          1,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【1-12月】S1新思维全年提升计划": [
-          0,
-          1,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【3-2月】L1新思维全年提升计划": [
-          0,
-          1,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【1-12月】L4新思维全年提升计划": [
-          0,
-          1,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【10-9月】L4新思维全年提升计划": [
-          0,
-          1,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【1-12月】L4新思维全年提升计划（全国B版）": [
-          0,
-          1,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【4-3月】L5新思维全年提升计划": [
-          0,
-          1,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【10-9月】S5新思维全年提升计划": [
-          0,
-          1,
-          0,
-          0,
-          0,
-          0
-        ],
-        "【7-6月】新L6新思维全年提升计划": [
-          0,
-          0,
-          0,
-          0,
-          1,
-          0
-        ],
-        "【6-5月】L2新思维全年提升计划": [
-          0,
-          0,
-          0,
-          0,
-          1,
-          0
-        ],
-        "【1-12月】L5新思维全年提升计划": [
-          0,
-          0,
+          7,
           0,
           0,
           0,
           1
+        ],
+        "25-26【10月】": [
+          1,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "25-26【9月】": [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "24-25【3月】": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "24-25【4月】": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "26-27【7月】": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "24-25【6月】": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
         ]
       },
       "totals": [
@@ -8422,476 +8176,243 @@ var DATA = {
   },
   "kt_lost_top": [
     [
-      "【1-12月】L3新思维全年提升计划",
+      "25-26【1月】",
       {
-        "total": 178,
-        "lost": 17,
-        "rate": 9.55
+        "total": 1201,
+        "lost": 100,
+        "rate": 8.33
       }
     ],
     [
-      "【1-12月】L3新思维全年提升计划（全国B版）",
+      "25-26【9月】",
       {
-        "total": 148,
-        "lost": 16,
-        "rate": 10.81
+        "total": 516,
+        "lost": 19,
+        "rate": 3.68
       }
     ],
     [
-      "【9-8月】L3新思维全年提升计划",
+      "25-26【7月】",
       {
-        "total": 113,
-        "lost": 3,
-        "rate": 2.65
+        "total": 495,
+        "lost": 14,
+        "rate": 2.83
       }
     ],
     [
-      "【1-12月】S1新思维全年提升计划",
+      "25-26【3月】",
       {
-        "total": 112,
-        "lost": 15,
-        "rate": 13.39
+        "total": 430,
+        "lost": 39,
+        "rate": 9.07
       }
     ],
     [
-      "【7-6月】L3新思维全年提升计划",
+      "25-26【4月】",
       {
-        "total": 91,
-        "lost": 1,
-        "rate": 1.1
+        "total": 377,
+        "lost": 24,
+        "rate": 6.37
       }
     ],
     [
-      "【1-12月】S3新思维全年提升计划",
+      "25-26【12月】",
       {
-        "total": 83,
-        "lost": 12,
-        "rate": 14.46
+        "total": 269,
+        "lost": 18,
+        "rate": 6.69
       }
     ],
     [
-      "【1-12月】L5新思维全年提升计划",
+      "25-26【6月】",
       {
-        "total": 80,
-        "lost": 5,
-        "rate": 6.25
-      }
-    ],
-    [
-      "【3-2月】S1新思维全年提升计划",
-      {
-        "total": 80,
+        "total": 266,
         "lost": 11,
-        "rate": 13.75
+        "rate": 4.14
       }
     ],
     [
-      "【1-12月】L4新思维全年提升计划",
+      "25-26【5月】",
       {
-        "total": 79,
-        "lost": 2,
-        "rate": 2.53
+        "total": 256,
+        "lost": 22,
+        "rate": 8.59
       }
     ],
     [
-      "【1-12月】L2新思维全年提升计划（全国B版）",
+      "25-26【11月】",
       {
-        "total": 79,
-        "lost": 6,
-        "rate": 7.59
+        "total": 205,
+        "lost": 11,
+        "rate": 5.37
       }
     ],
     [
-      "【3-2月】L4新思维全年提升计划",
+      "25-26【10月】",
       {
-        "total": 71,
+        "total": 197,
+        "lost": 5,
+        "rate": 2.54
+      }
+    ],
+    [
+      "24-25【6月】",
+      {
+        "total": 173,
         "lost": 4,
-        "rate": 5.63
+        "rate": 2.31
       }
     ],
     [
-      "【1-12月】L2新思维全年提升计划",
+      "24-25【3月】",
       {
-        "total": 70,
-        "lost": 2,
-        "rate": 2.86
+        "total": 126,
+        "lost": 1,
+        "rate": 0.79
       }
     ],
     [
-      "【9-8月】S4新思维全年提升计划",
+      "26-27【7月】",
       {
-        "total": 69,
-        "lost": 3,
-        "rate": 4.35
-      }
-    ],
-    [
-      "【3-2月】L2新思维全年提升计划",
-      {
-        "total": 64,
+        "total": 124,
         "lost": 4,
-        "rate": 6.25
+        "rate": 3.23
       }
     ],
     [
-      "【1-12月】L5新思维全年提升计划（全国B版）",
+      "24-25【4月】",
       {
-        "total": 63,
+        "total": 107,
+        "lost": 4,
+        "rate": 3.74
+      }
+    ],
+    [
+      "24-25【5月】",
+      {
+        "total": 105,
+        "lost": 0,
+        "rate": 0.0
+      }
+    ],
+    [
+      "26-27【9月】",
+      {
+        "total": 44,
+        "lost": 0,
+        "rate": 0.0
+      }
+    ],
+    [
+      "25-26【新12月】",
+      {
+        "total": 24,
         "lost": 3,
-        "rate": 4.76
+        "rate": 12.5
       }
     ],
     [
-      "【1-12月】L4新思维全年提升计划（全国B版）",
+      "26-27【10月】",
       {
-        "total": 59,
-        "lost": 8,
-        "rate": 13.56
+        "total": 4,
+        "lost": 0,
+        "rate": 0.0
       }
     ],
     [
-      "【9-8月】L4新思维全年提升计划",
+      "25-26【2月】",
       {
-        "total": 58,
-        "lost": 2,
-        "rate": 3.45
+        "total": 2,
+        "lost": 0,
+        "rate": 0.0
       }
     ],
     [
-      "【3-2月】L3新思维全年提升计划",
+      "24-25【1月】",
       {
-        "total": 57,
-        "lost": 6,
-        "rate": 10.53
-      }
-    ],
-    [
-      "【7-6月】L4新思维全年提升计划",
-      {
-        "total": 55,
-        "lost": 2,
-        "rate": 3.64
-      }
-    ],
-    [
-      "【9-8月】L5新思维全年提升计划",
-      {
-        "total": 55,
-        "lost": 3,
-        "rate": 5.45
+        "total": 1,
+        "lost": 0,
+        "rate": 0.0
       }
     ]
   ],
   "ketou_timing": {
-    "【1-12月】L3新思维全年提升计划": [
+    "25-26【1月】": [
       0,
       0,
       0,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      3,
-      9,
-      4
-    ],
-    "【1-12月】L3新思维全年提升计划（全国B版）": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      3,
-      7,
-      4
-    ],
-    "【9-8月】L3新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1
-    ],
-    "【1-12月】S1新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      2,
-      3,
-      4
-    ],
-    "【7-6月】L3新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0
-    ],
-    "【1-12月】S3新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      7,
-      1,
-      2
-    ],
-    "【1-12月】L5新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      3,
-      1
-    ],
-    "【3-2月】S1新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      5,
+      23,
+      24,
+      19,
+      23,
       6,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【9月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      5,
+      7,
+      4,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【7月】": [
       3,
-      2
-    ],
-    "【1-12月】L4新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      1,
-      0
-    ],
-    "【1-12月】L2新思维全年提升计划（全国B版）": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      5,
       2,
-      2,
-      0
-    ],
-    "【3-2月】L4新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      2,
-      0,
-      0
-    ],
-    "【1-12月】L2新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0
-    ],
-    "【9-8月】S4新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      1,
-      0
-    ],
-    "【3-2月】L2新思维全年提升计划": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
       3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ],
-    "【1-12月】L5新思维全年提升计划（全国B版）": [
+    "25-26【3月】": [
+      0,
+      0,
+      0,
+      0,
+      2,
+      20,
+      10,
+      6,
+      1,
       0,
       0,
       0,
@@ -8899,6 +8420,122 @@ var DATA = {
       0,
       0,
       0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【4月】": [
+      0,
+      0,
+      0,
+      0,
+      4,
+      12,
+      8,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【12月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      10,
+      5,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【6月】": [
+      0,
+      0,
+      0,
+      0,
+      7,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【5月】": [
+      0,
+      0,
+      1,
+      2,
+      8,
+      10,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【11月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      6,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【10月】": [
       0,
       0,
       0,
@@ -8910,12 +8547,83 @@ var DATA = {
       0,
       0,
       2,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0
     ],
-    "【1-12月】L4新思维全年提升计划（全国B版）": [
+    "24-25【6月】": [
       0,
       0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "24-25【3月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "26-27【7月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "24-25【4月】": [
       0,
       0,
       0,
@@ -8932,32 +8640,12 @@ var DATA = {
       0,
       0,
       4,
-      2,
-      2
-    ],
-    "【9-8月】L4新思维全年提升计划": [
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
       0,
       0
     ],
-    "【3-2月】L3新思维全年提升计划": [
+    "24-25【5月】": [
       0,
       0,
       0,
@@ -8976,10 +8664,10 @@ var DATA = {
       0,
       0,
       0,
-      3,
-      3
+      0,
+      0
     ],
-    "【7-6月】L4新思维全年提升计划": [
+    "26-27【9月】": [
       0,
       0,
       0,
@@ -8997,11 +8685,11 @@ var DATA = {
       0,
       0,
       0,
-      1,
+      0,
       0,
       0
     ],
-    "【9-8月】L5新思维全年提升计划": [
+    "25-26【新12月】": [
       0,
       0,
       0,
@@ -9010,19 +8698,118 @@ var DATA = {
       0,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      2,
       0,
       1,
-      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "26-27【10月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【2月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "24-25【1月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ]
+  },
+  "total_records": 4922,
+  "total_lost": 279,
+  "total_lost_rate": 5.67,
+  "timing_mapped": 274,
+  "interval_valid": 279,
+  "interval_p25": 10,
+  "interval_p50": 27,
+  "interval_p75": 54,
+  "interval_max": 402,
+  "interval_avg": 39.9,
+  "ay_kpi_detail": {
+    "24-25": {
+      "total": 512,
+      "pre": 503,
+      "cur": 5,
+      "m13": 3,
+      "m4p": 1
+    },
+    "25-26": {
+      "total": 4148,
+      "pre": 1104,
+      "cur": 847,
+      "m13": 1123,
+      "m4p": 1074
+    },
+    "26-27": {
+      "total": 172,
+      "pre": 124,
+      "cur": 0,
+      "m13": 0,
+      "m4p": 48
+    }
   }
 };
 window.DATA = DATA;
