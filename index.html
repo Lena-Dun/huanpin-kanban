@@ -189,10 +189,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
     </h2>
     
     <!-- 月度KPI卡片 -->
-    <div class="kpi-row" style="margin-bottom:16px"><div class="kpi-card" style="--c:#4e79a7"><div class="month">换品总记录</div><div class="num">4922</div><div class="label">数据截止 2026年6月5日</div></div><div class="kpi-card" style="--c:#e15759"><div class="month">总流失</div><div class="num" style="color:#e15759">279人</div><div class="label">流失率 5.67%</div></div><div class="kpi-card" style="--c:#e15759"><div class="month">24-25学年</div><div class="num">512</div><div class="label">课前503 | 当月5 | 1-3月3 | 4月+1</div></div><div class="kpi-card" style="--c:#4e79a7"><div class="month">25-26学年</div><div class="num">4238</div><div class="label">课前1104 | 当月847 | 1-3月1123 | 4月+1074</div></div><div class="kpi-card" style="--c:#59a14f"><div class="month">26-27学年</div><div class="num">172</div><div class="label">课前124 | 当月0 | 1-3月0 | 4月+48</div></div></div>
-    <div class="kpi-row">
-      <div class="kpi-card" style="--c:#4e79a7"><div class="month">1月</div><div class="num">947</div><div class="label">换品记录</div></div><div class="kpi-card" style="--c:#f28e2b"><div class="month">2月</div><div class="num">797</div><div class="label">换品记录</div></div><div class="kpi-card" style="--c:#e15759"><div class="month">3月</div><div class="num">1055</div><div class="label">换品记录</div></div><div class="kpi-card" style="--c:#76b7b2"><div class="month">4月</div><div class="num">887</div><div class="label">换品记录</div></div><div class="kpi-card" style="--c:#59a14f"><div class="month">5月</div><div class="num">979</div><div class="label">换品记录</div></div><div class="kpi-card" style="--c:#edc948"><div class="month">6月</div><div class="num">257</div><div class="label">换品记录</div></div><div class="kpi-card" style="--c:#2c3e50"><div class="month">1-6月合计</div><div class="num">4922</div><div class="label">换品记录</div></div>
-    </div>
+    <div id="ov-kpi-summary"></div>
+    <div id="ov-kpi-months" class="kpi-row"></div>
     <!-- 总览图表 -->
     <div class="charts-grid">
       <div class="chart-card"><h3>月度换品总量趋势</h3><div class="chart-wrap"><canvas id="ov-total"></canvas></div></div>
@@ -283,7 +281,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
     </h2>
 
     <!-- 学年KPI -->
-    <div class="kpi-row"><div class="kpi-card" style="--c:#e15759"><div class="month">24-25学年</div><div class="num">512</div><div class="label">课前503 | 当月5 | 1-3月3 | 4月+1</div></div><div class="kpi-card" style="--c:#4e79a7"><div class="month">25-26学年</div><div class="num">4238</div><div class="label">课前1104 | 当月847 | 1-3月1123 | 4月+1074</div></div><div class="kpi-card" style="--c:#59a14f"><div class="month">26-27学年</div><div class="num">172</div><div class="label">课前124 | 当月0 | 1-3月0 | 4月+48</div></div></div>
+    <div id="timing-ay-kpi" class="kpi-row"></div>
 
     <!-- 整体分布 -->
     <div class="charts-grid">
@@ -318,13 +316,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
       流失分析 <span style="font-size:13px;font-weight:400;color:#888;margin-left:8px">流失时间截至 2026年6月7日10:30</span>
     </h2>
     <!-- KPI -->
-    <div class="kpi-row">
-      <div class="kpi-card" style="--c:#e15759"><div class="month">流失人数</div><div class="num">279</div><div class="label">1-6月累计</div></div>
-      <div class="kpi-card" style="--c:#4e79a7"><div class="month">未流失</div><div class="num">4643</div><div class="label">1-6月累计</div></div>
-      <div class="kpi-card" style="--c:#f28e2b"><div class="month">总流失率</div><div class="num" style="font-size:26px">5.67%</div><div class="label">流失/总换品</div></div>
-      <div class="kpi-card" style="--c:#59a14f"><div class="month">流失中位间隔</div><div class="num" style="font-size:26px">39.0</div><div class="label">天（换品后）</div></div>
-      <div class="kpi-card" style="--c:#76b7b2"><div class="month">流失均值间隔</div><div class="num" style="font-size:26px">48.5</div><div class="label">天（换品后）</div></div>
-    </div>
+    <div id="lost-kpi-row" class="kpi-row"></div>
     <!-- 图表 -->
     <div class="charts-grid">
       <div class="chart-card"><h3>各月流失人数 &amp; 流失率</h3><div class="chart-wrap"><canvas id="c-lost-month"></canvas></div></div>
@@ -334,35 +326,40 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
     <div class="charts-grid" style="margin-top:18px">
       <div class="chart-card">
         <h3>换品后流失时间分布</h3>
-        <div style="padding:8px 0">
-                    <div class="lost-bar-row"><div class="lost-bar-label">1周内</div><div class="lost-bar-track"><div class="lost-bar-fill" style="width:13.6%;background:linear-gradient(90deg,#e15759,#f28e2b);opacity:0.6"></div></div><div class="lost-bar-num">14人</div><div class="lost-bar-pct">5.0%</div></div>
-          <div class="lost-bar-row"><div class="lost-bar-label">1-2周</div><div class="lost-bar-track"><div class="lost-bar-fill" style="width:17.5%;background:linear-gradient(90deg,#e15759,#f28e2b);opacity:0.6"></div></div><div class="lost-bar-num">18人</div><div class="lost-bar-pct">6.5%</div></div>
-          <div class="lost-bar-row"><div class="lost-bar-label">2-4周</div><div class="lost-bar-track"><div class="lost-bar-fill" style="width:65.0%;background:linear-gradient(90deg,#e15759,#f28e2b);opacity:0.65"></div></div><div class="lost-bar-num">67人</div><div class="lost-bar-pct">24.1%</div></div>
-          <div class="lost-bar-row"><div class="lost-bar-label">1-2月</div><div class="lost-bar-track"><div class="lost-bar-fill" style="width:100.0%;background:linear-gradient(90deg,#e15759,#f28e2b);opacity:0.7"></div></div><div class="lost-bar-num">103人</div><div class="lost-bar-pct">37.1%</div></div>
-          <div class="lost-bar-row"><div class="lost-bar-label">2-3月</div><div class="lost-bar-track"><div class="lost-bar-fill" style="width:39.8%;background:linear-gradient(90deg,#e15759,#f28e2b);opacity:0.75"></div></div><div class="lost-bar-num">41人</div><div class="lost-bar-pct">14.7%</div></div>
-          <div class="lost-bar-row"><div class="lost-bar-label">3-6月</div><div class="lost-bar-track"><div class="lost-bar-fill" style="width:34.0%;background:linear-gradient(90deg,#e15759,#f28e2b);opacity:0.8"></div></div><div class="lost-bar-num">35人</div><div class="lost-bar-pct">12.6%</div></div>
-          <div class="lost-bar-row"><div class="lost-bar-label">6月以上</div><div class="lost-bar-track"><div class="lost-bar-fill" style="width:0.0%;background:linear-gradient(90deg,#e15759,#f28e2b);opacity:0.85"></div></div><div class="lost-bar-num">0人</div><div class="lost-bar-pct">0.0%</div></div>
-          
-          <p style="font-size:11px;color:#aaa;margin-top:10px">&#9888; 另有 1 条流失时间早于换品月份（数据异常），已排除。</p>
-        </div>
+        <div id="lost-time-dist" style="padding:8px 0"></div>
       </div>
     </div>
     <!-- 间隔统计 -->
     <div class="charts-grid" style="margin-top:18px">
       <div class="chart-card">
         <h3>换品-流失间隔统计</h3>
-        <div style="display:flex;gap:16px;align-items:stretch;padding:8px 0;flex-wrap:wrap">
-      <div class="interval-card"><div class="interval-card-icon">📊</div><div class="interval-card-body"><div class="interval-card-val">279</div><div class="interval-card-label">有效记录</div></div></div>
-      <div class="interval-card interval-card-min"><div class="interval-card-icon">◐</div><div class="interval-card-body"><div class="interval-card-val">10</div><div class="interval-card-label">P25 分位（天）</div></div></div>
-      <div class="interval-card interval-card-mid"><div class="interval-card-icon">◆</div><div class="interval-card-body"><div class="interval-card-val">27</div><div class="interval-card-label">中位数（天）</div></div></div>
-      <div class="interval-card interval-card-max"><div class="interval-card-icon">◐</div><div class="interval-card-body"><div class="interval-card-val">54</div><div class="interval-card-label">P75 分位（天）</div></div></div>
-      <div class="interval-card interval-card-end"><div class="interval-card-icon">▲</div><div class="interval-card-body"><div class="interval-card-val">402</div><div class="interval-card-label">最大值（天）</div></div></div>
-    </div><span>4.13%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#e1575920;color:#e15759">换年级</span></td><td>541</td><td style="color:#e15759;font-weight:600">41</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:37.9%;background:#e15759"></div><span>7.58%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#76b7b220;color:#76b7b2">调入C版</span></td><td>80</td><td style="color:#e15759;font-weight:600">7</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:43.8%;background:#76b7b2"></div><span>8.75%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#b07aa120;color:#b07aa1">换课头</span></td><td>18</td><td style="color:#e15759;font-weight:600">1</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:27.8%;background:#b07aa1"></div><span>5.56%</span></div></td></tr><tr><td class="row-label"><span class="tag" style="background:#edc94820;color:#edc948">换时段</span></td><td>19</td><td style="color:#e15759;font-weight:600">1</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:26.3%;background:#edc948"></div><span>5.26%</span></div></td></tr></tbody></table></div>
+        <div id="lost-interval-stats" style="display:flex;gap:16px;align-items:stretch;padding:8px 0;flex-wrap:wrap"></div>
+      </div>
+    </div>
+    <!-- 流失类型明细 -->
+    <div class="charts-grid" style="margin-top:18px">
+      <div class="chart-card full">
+        <h3>各月 / 各类型 流失明细</h3>
+        <div style="display:flex;gap:16px;flex-wrap:wrap">
+          <div style="flex:1;min-width:280px;overflow-x:auto">
+            <table class="data-table" id="lost-month-tbl">
+              <thead><tr><th data-tbl="lost-month-tbl" data-col="0" onclick="sortTableByCol(this)" style="cursor:pointer">月份 <span class="sort-icon">⇅</span></th><th data-tbl="lost-month-tbl" data-col="1" onclick="sortTableByCol(this)" style="cursor:pointer">总记录 <span class="sort-icon">⇅</span></th><th data-tbl="lost-month-tbl" data-col="2" onclick="sortTableByCol(this)" style="cursor:pointer">流失 <span class="sort-icon">⇅</span></th><th data-tbl="lost-month-tbl" data-col="3" onclick="sortTableByCol(this)" style="cursor:pointer">流失率 <span class="sort-icon">⇅</span></th></tr></thead>
+              <tbody id="lost-month-tbody"></tbody>
+            </table>
+          </div>
+          <div style="flex:1;min-width:280px;overflow-x:auto">
+            <table class="data-table" id="lost-type-tbl">
+              <thead><tr><th data-tbl="lost-type-tbl" data-col="0" onclick="sortTableByCol(this)" style="cursor:pointer">换品类型 <span class="sort-icon">⇅</span></th><th data-tbl="lost-type-tbl" data-col="1" onclick="sortTableByCol(this)" style="cursor:pointer">总记录 <span class="sort-icon">⇅</span></th><th data-tbl="lost-type-tbl" data-col="2" onclick="sortTableByCol(this)" style="cursor:pointer">流失 <span class="sort-icon">⇅</span></th><th data-tbl="lost-type-tbl" data-col="3" onclick="sortTableByCol(this)" style="cursor:pointer">流失率 <span class="sort-icon">⇅</span></th></tr></thead>
+              <tbody id="lost-type-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- 课头流失明细 -->
     <div class="chart-card full" style="margin-top:18px">
       <h3>课头流失明细 TOP20（按总记录排序）</h3>
-      <div style="overflow-x:auto"><table class="data-table" id="lost-ketou-tbl"><thead><tr><th data-tbl="lost-ketou-tbl" data-col="0" onclick="sortTableByCol(this)">课头<span class="sort-icon"></span></th><th data-tbl="lost-ketou-tbl" data-col="1" onclick="sortTableByCol(this)">总记录<span class="sort-icon"></span></th><th data-tbl="lost-ketou-tbl" data-col="2" onclick="sortTableByCol(this)">流失人数<span class="sort-icon"></span></th><th data-tbl="lost-ketou-tbl" data-col="3" onclick="sortTableByCol(this)">流失率<span class="sort-icon"></span></th></tr></thead><tbody><tr><td class="row-label">25-26【1月】</td><td>1201</td><td style="color:#e15759;font-weight:600">100</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:41.6%;background:#f28e2b"></div><span>8.33%</span></div></td></tr><tr><td class="row-label">25-26【9月】</td><td>516</td><td style="color:#e15759;font-weight:600">19</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:18.4%;background:#59a14f"></div><span>3.68%</span></div></td></tr><tr><td class="row-label">25-26【7月】</td><td>495</td><td style="color:#e15759;font-weight:600">14</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:14.2%;background:#59a14f"></div><span>2.83%</span></div></td></tr><tr><td class="row-label">25-26【3月】</td><td>430</td><td style="color:#e15759;font-weight:600">39</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:45.4%;background:#f28e2b"></div><span>9.07%</span></div></td></tr><tr><td class="row-label">25-26【4月】</td><td>377</td><td style="color:#e15759;font-weight:600">24</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:31.9%;background:#59a14f"></div><span>6.37%</span></div></td></tr><tr><td class="row-label">25-26【12月】</td><td>269</td><td style="color:#e15759;font-weight:600">18</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:33.5%;background:#59a14f"></div><span>6.69%</span></div></td></tr><tr><td class="row-label">25-26【6月】</td><td>266</td><td style="color:#e15759;font-weight:600">11</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:20.7%;background:#59a14f"></div><span>4.14%</span></div></td></tr><tr><td class="row-label">25-26【5月】</td><td>256</td><td style="color:#e15759;font-weight:600">22</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:43.0%;background:#f28e2b"></div><span>8.59%</span></div></td></tr><tr><td class="row-label">25-26【11月】</td><td>205</td><td style="color:#e15759;font-weight:600">11</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:26.9%;background:#59a14f"></div><span>5.37%</span></div></td></tr><tr><td class="row-label">25-26【10月】</td><td>197</td><td style="color:#e15759;font-weight:600">5</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:12.7%;background:#59a14f"></div><span>2.54%</span></div></td></tr><tr><td class="row-label">24-25【6月】</td><td>173</td><td style="color:#e15759;font-weight:600">4</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:11.6%;background:#59a14f"></div><span>2.31%</span></div></td></tr><tr><td class="row-label">24-25【3月】</td><td>126</td><td style="color:#e15759;font-weight:600">1</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:4.0%;background:#59a14f"></div><span>0.79%</span></div></td></tr><tr><td class="row-label">26-27【7月】</td><td>124</td><td style="color:#e15759;font-weight:600">4</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:16.1%;background:#59a14f"></div><span>3.23%</span></div></td></tr><tr><td class="row-label">24-25【4月】</td><td>107</td><td style="color:#e15759;font-weight:600">4</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:18.7%;background:#59a14f"></div><span>3.74%</span></div></td></tr><tr><td class="row-label">24-25【5月】</td><td>105</td><td style="color:#e15759;font-weight:600">0</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:0.0%;background:#59a14f"></div><span>0.00%</span></div></td></tr><tr><td class="row-label">26-27【9月】</td><td>44</td><td style="color:#e15759;font-weight:600">0</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:0.0%;background:#59a14f"></div><span>0.00%</span></div></td></tr><tr><td class="row-label">25-26【新12月】</td><td>24</td><td style="color:#e15759;font-weight:600">3</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:62.5%;background:#e15759"></div><span>12.50%</span></div></td></tr><tr><td class="row-label">26-27【10月】</td><td>4</td><td style="color:#e15759;font-weight:600">0</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:0.0%;background:#59a14f"></div><span>0.00%</span></div></td></tr><tr><td class="row-label">25-26【2月】</td><td>2</td><td style="color:#e15759;font-weight:600">0</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:0.0%;background:#59a14f"></div><span>0.00%</span></div></td></tr><tr><td class="row-label">24-25【1月】</td><td>1</td><td style="color:#e15759;font-weight:600">0</td><td><div class="pct-bar-wrap"><div class="pct-bar" style="width:0.0%;background:#59a14f"></div><span>0.00%</span></div></td></tr></tbody></table></div>
+      <div style="overflow-x:auto"><table class="data-table" id="lost-ketou-tbl"><thead><tr><th data-tbl="lost-ketou-tbl" data-col="0" onclick="sortTableByCol(this)" style="cursor:pointer">课头 <span class="sort-icon">⇅</span></th><th data-tbl="lost-ketou-tbl" data-col="1" onclick="sortTableByCol(this)" style="cursor:pointer">总记录 <span class="sort-icon">⇅</span></th><th data-tbl="lost-ketou-tbl" data-col="2" onclick="sortTableByCol(this)" style="cursor:pointer">流失人数 <span class="sort-icon">⇅</span></th><th data-tbl="lost-ketou-tbl" data-col="3" onclick="sortTableByCol(this)" style="cursor:pointer">流失率 <span class="sort-icon">⇅</span></th></tr></thead><tbody id="lost-ketou-tbody"></tbody></table></div>
     </div>
     <!-- 课头流失率 -->
     <div class="chart-card full" style="margin-top:18px">
@@ -8819,6 +8816,155 @@ window.DATA = DATA;
 
 
 // ==================== 流失分析图表 ====================
+// ======== 公共 pctBar 生成器 ========
+function makePctBar(rate, color) {
+  var c = color || (rate>=10?'#e15759':rate>=7?'#f28e2b':'#59a14f');
+  var w = Math.min(rate*5, 100);
+  return '<div class="pct-bar-wrap"><div class="pct-bar" style="width:'+w.toFixed(1)+'%;background:'+c+'"></div><span>'+rate.toFixed(2)+'%</span></div>';
+}
+
+// ======== 动态初始化所有静态卡片（只在页面首次加载时调用一次）========
+function initDynamicCards() {
+  var D = window.DATA;
+  if (!D) return;
+  var M_COLORS = ['#4e79a7','#f28e2b','#e15759','#76b7b2','#59a14f','#edc948','#2c3e50','#b07aa1','#ff9da7','#8cd3c5','#beb9db','#ffffb3'];
+
+  // ---- 1. 总览页：汇总KPI + 月度KPI ----
+  var ay_kpi_detail = D.ay_kpi_detail || {};
+  var ay_kpi = D.ay_kpi || {};
+  var ay_colors = D.ay_colors || {};
+  var ayCards = (D.ay_labels||[]).map(function(ay){
+    var kd = ay_kpi_detail[ay] || {pre:0,cur:0,m13:0,m4p:0};
+    var kpi = ay_kpi[ay] || {total:0};
+    var c = ay_colors[ay] || '#4e79a7';
+    return '<div class="kpi-card" style="--c:'+c+'"><div class="month">'+ay+'学年</div><div class="num">'+kpi.total+'</div><div class="label">课前'+kd.pre+' | 当月'+kd.cur+' | 1-3月'+kd.m13+' | 4月+'+kd.m4p+'</div></div>';
+  }).join('');
+  var summaryEl = document.getElementById('ov-kpi-summary');
+  if (summaryEl) {
+    summaryEl.className = 'kpi-row';
+    summaryEl.style.marginBottom = '16px';
+    summaryEl.innerHTML =
+      '<div class="kpi-card" style="--c:#4e79a7"><div class="month">换品总记录</div><div class="num">'+D.total_records+'</div><div class="label">数据截至更新日期</div></div>'+
+      '<div class="kpi-card" style="--c:#e15759"><div class="month">总流失</div><div class="num" style="color:#e15759">'+(D.total_lost||0)+'人</div><div class="label">流失率 '+(D.total_lost_rate||0)+'%</div></div>'+
+      ayCards;
+  }
+  var monthKpiEl = document.getElementById('ov-kpi-months');
+  if (monthKpiEl) {
+    var mCards = (D.months||[]).map(function(m,i){
+      return '<div class="kpi-card" style="--c:'+M_COLORS[i%M_COLORS.length]+'"><div class="month">'+m+'</div><div class="num">'+D.totals[i]+'</div><div class="label">换品记录</div></div>';
+    });
+    var total = (D.totals||[]).reduce(function(a,v){return a+v;},0);
+    mCards.push('<div class="kpi-card" style="--c:#2c3e50"><div class="month">合计</div><div class="num">'+total+'</div><div class="label">换品记录</div></div>');
+    monthKpiEl.innerHTML = mCards.join('');
+  }
+
+  // ---- 2. 换品时机页：学年KPI ----
+  var timingKpiEl = document.getElementById('timing-ay-kpi');
+  if (timingKpiEl) {
+    timingKpiEl.innerHTML = (D.ay_labels||[]).map(function(ay){
+      var kd = ay_kpi_detail[ay] || {pre:0,cur:0,m13:0,m4p:0};
+      var kpi = ay_kpi[ay] || {total:0};
+      var c = ay_colors[ay] || '#4e79a7';
+      return '<div class="kpi-card" style="--c:'+c+'"><div class="month">'+ay+'学年</div><div class="num">'+kpi.total+'</div><div class="label">课前'+kd.pre+' | 当月'+kd.cur+' | 1-3月'+kd.m13+' | 4月+'+kd.m4p+'</div></div>';
+    }).join('');
+  }
+
+  // ---- 3. 流失分析页：KPI 卡片 ----
+  var lostKpiEl = document.getElementById('lost-kpi-row');
+  if (lostKpiEl) {
+    var lost = D.total_lost||0, total = D.total_records||1, notLost = total - lost;
+    var lostRate = D.total_lost_rate||0;
+    var p50 = D.interval_p50||0, avg = D.interval_avg||0;
+    lostKpiEl.innerHTML =
+      '<div class="kpi-card" style="--c:#e15759"><div class="month">流失人数</div><div class="num">'+lost+'</div><div class="label">1-6月累计</div></div>'+
+      '<div class="kpi-card" style="--c:#4e79a7"><div class="month">未流失</div><div class="num">'+notLost+'</div><div class="label">1-6月累计</div></div>'+
+      '<div class="kpi-card" style="--c:#f28e2b"><div class="month">总流失率</div><div class="num" style="font-size:26px">'+lostRate+'%</div><div class="label">流失/总换品</div></div>'+
+      '<div class="kpi-card" style="--c:#59a14f"><div class="month">流失中位间隔</div><div class="num" style="font-size:26px">'+p50+'</div><div class="label">天（换品后）</div></div>'+
+      '<div class="kpi-card" style="--c:#76b7b2"><div class="month">流失均值间隔</div><div class="num" style="font-size:26px">'+avg+'</div><div class="label">天（换品后）</div></div>';
+  }
+
+  // ---- 4. 流失时间分布进度条（基于 interval_total + interval_labels） ----
+  var distEl = document.getElementById('lost-time-dist');
+  if (distEl && D.interval_total && D.interval_labels) {
+    // 将间隔月份映射到时间区间（天）
+    // 0个月=0-30天,1个月=30-60天,2个月=60-90天 等
+    var bands = [
+      {label:'1周内',  minM:0, maxM:0, dayMin:0,  dayMax:7},
+      {label:'1-2周',  minM:0, maxM:0, dayMin:7,  dayMax:14},
+      {label:'2-4周',  minM:0, maxM:0, dayMin:14, dayMax:30},
+      {label:'1-2月',  minM:1, maxM:1, dayMin:30, dayMax:60},
+      {label:'2-3月',  minM:2, maxM:2, dayMin:60, dayMax:90},
+      {label:'3-6月',  minM:3, maxM:5, dayMin:90, dayMax:180},
+      {label:'6月以上',minM:6, maxM:999,dayMin:180,dayMax:9999},
+    ];
+    // 计算各区间人数（用月份近似）
+    var counts = bands.map(function(b){
+      var n = 0;
+      (D.interval_total||[]).forEach(function(v,i){
+        var m = i; // index = months
+        if (m >= b.minM && m <= b.maxM) n += v;
+      });
+      return n;
+    });
+    var maxN = Math.max.apply(null, counts) || 1;
+    var validTotal = (D.interval_total||[]).reduce(function(a,v){return a+v;},0) || 1;
+    var opacities = [0.6,0.6,0.65,0.7,0.75,0.8,0.85];
+    var html = bands.map(function(b,i){
+      var n = counts[i];
+      var pct = (n/validTotal*100).toFixed(1);
+      var w = (n/maxN*100).toFixed(1);
+      return '<div class="lost-bar-row"><div class="lost-bar-label">'+b.label+'</div>'+
+        '<div class="lost-bar-track"><div class="lost-bar-fill" style="width:'+w+'%;background:linear-gradient(90deg,#e15759,#f28e2b);opacity:'+opacities[i]+'"></div></div>'+
+        '<div class="lost-bar-num">'+n+'人</div><div class="lost-bar-pct">'+pct+'%</div></div>';
+    }).join('');
+    var anomaly = (D.interval_anomaly||0);
+    if (anomaly>0) html += '<p style="font-size:11px;color:#aaa;margin-top:10px">⚠ 另有 '+anomaly+' 条流失时间早于换品月份（数据异常），已排除。</p>';
+    distEl.innerHTML = html;
+  }
+
+  // ---- 5. 流失间隔统计卡片 ----
+  var intStatsEl = document.getElementById('lost-interval-stats');
+  if (intStatsEl) {
+    var n = D.interval_valid||0, p25 = D.interval_p25||0, p50i = D.interval_p50||0;
+    var p75 = D.interval_p75||0, pmax = D.interval_max||0, avgD = D.interval_avg||0;
+    intStatsEl.innerHTML =
+      '<div class="interval-card"><div class="interval-card-icon">📊</div><div class="interval-card-body"><div class="interval-card-val">'+n+'</div><div class="interval-card-label">有效记录</div></div></div>'+
+      '<div class="interval-card interval-card-min"><div class="interval-card-icon">◐</div><div class="interval-card-body"><div class="interval-card-val">'+p25+'</div><div class="interval-card-label">P25 分位（天）</div></div></div>'+
+      '<div class="interval-card interval-card-mid"><div class="interval-card-icon">◆</div><div class="interval-card-body"><div class="interval-card-val">'+p50i+'</div><div class="interval-card-label">中位数（天）</div></div></div>'+
+      '<div class="interval-card interval-card-max"><div class="interval-card-icon">◐</div><div class="interval-card-body"><div class="interval-card-val">'+p75+'</div><div class="interval-card-label">P75 分位（天）</div></div></div>'+
+      '<div class="interval-card interval-card-end"><div class="interval-card-icon">▲</div><div class="interval-card-body"><div class="interval-card-val">'+pmax+'</div><div class="interval-card-label">最大值（天）</div></div></div>';
+  }
+
+  // ---- 6. 流失各月明细表体 ----
+  var mTbody = document.getElementById('lost-month-tbody');
+  if (mTbody && D.months && D.month_lost) {
+    mTbody.innerHTML = D.months.map(function(m){
+      var ml = D.month_lost[m] || {total:0,lost:0,rate:0};
+      return '<tr><td class="row-label">'+m+'</td><td>'+ml.total+'</td><td style="color:#e15759;font-weight:600">'+ml.lost+'</td><td>'+makePctBar(ml.rate)+'</td></tr>';
+    }).join('');
+  }
+
+  // ---- 7. 流失各调品类型明细表体 ----
+  var tColors2 = {'调入A版':'#4e79a7','调入S+版':'#f28e2b','调入B版':'#59a14f','调入C版':'#76b7b2','换年级':'#e15759','换时段':'#edc948','换课头':'#b07aa1'};
+  var tTbody = document.getElementById('lost-type-tbody');
+  if (tTbody && D.type_order && D.type_lost) {
+    tTbody.innerHTML = D.type_order.map(function(t){
+      var tl = D.type_lost[t] || {total:0,lost:0,rate:0};
+      var tc = tColors2[t] || '#999';
+      return '<tr><td class="row-label"><span class="tag" style="background:'+tc+'20;color:'+tc+'">'+t+'</span></td><td>'+tl.total+'</td><td style="color:#e15759;font-weight:600">'+tl.lost+'</td><td>'+makePctBar(tl.rate, tc)+'</td></tr>';
+    }).join('');
+  }
+
+  // ---- 8. 课头流失明细表体 ----
+  var ktTbody = document.getElementById('lost-ketou-tbody');
+  if (ktTbody && D.kt_lost_top) {
+    ktTbody.innerHTML = D.kt_lost_top.slice(0,20).map(function(item){
+      var h = item[0], lk = item[1];
+      return '<tr><td class="row-label">'+h+'</td><td>'+lk.total+'</td><td style="color:#e15759;font-weight:600">'+lk.lost+'</td><td>'+makePctBar(lk.rate)+'</td></tr>';
+    }).join('');
+  }
+}
+
 function initLostCharts() {
   var D = window.DATA;
   // 1. 各月流失人数+流失率（柱+折）
@@ -8900,6 +9046,9 @@ function initLostCharts() {
 
 // ==================== 主逻辑 ====================
 
+
+// 页面启动时立即渲染所有动态卡片（不依赖懒加载）
+initDynamicCards();
 
 var MONTHS = DATA.months;
 var TOTALS = DATA.totals;
