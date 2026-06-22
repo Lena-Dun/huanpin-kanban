@@ -9532,14 +9532,6 @@ function initDynamicCards() {
   }
 }
 
-  if (ktTbody && D.kt_lost_top) {
-    ktTbody.innerHTML = D.kt_lost_top.slice(0,20).map(function(item){
-      var h = item[0], lk = item[1];
-      return '<tr><td class="row-label">'+h+'</td><td>'+lk.total+'</td><td style="color:#e15759;font-weight:600">'+lk.lost+'</td><td>'+makePctBar(lk.rate)+'</td></tr>';
-    }).join('');
-  }
-}
-
 // ==================== 难度换品分析 ====================
 function initDifficultyPage() {
   var D = window.DATA;
@@ -9731,6 +9723,9 @@ function initDifficultyPage() {
   }
 }
 
+// ======== LOST ========
+function initLostCharts() {
+  var D = window.DATA;
 
   // 1. 各月流失人数+流失率（柱+折）
   var monthTotals = D.months.map(m => D.month_lost[m].total);
