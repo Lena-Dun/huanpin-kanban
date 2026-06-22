@@ -171,13 +171,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 <div class="header">
   <div>
     <div class="h1">换品分析总看板</div>
-    <div class="subtitle">换品数据截止 2026年6月12日15:00 &nbsp;|&nbsp; 流失时间截至 2026年6月7日10:30 &nbsp;|&nbsp; 共 5203 条换品记录</div>
+    <div class="subtitle">换品数据截止 2026年6月22日15:00 &nbsp;|&nbsp; 流失时间截至 2026年6月7日10:30 &nbsp;|&nbsp; 共 5705 条换品记录</div>
   </div>
   <div class="top-nav">
     <button class="top-nav-btn active" data-page="overview">总览分析</button>
     <button class="top-nav-btn" data-page="ketou">课包分析</button>
     <button class="top-nav-btn" data-page="timing">换品时机</button>
     <button class="top-nav-btn" data-page="lost">流失分析</button>
+    <button class="top-nav-btn" data-page="difficulty">难度换品分析</button>
   </div>
 </div>
 
@@ -185,7 +186,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 <div id="page-overview" class="page active">
   <div class="container">
     <h2 style="font-size:16px;font-weight:700;color:#2c3e50;margin-bottom:16px;padding:12px 16px;background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border-left:4px solid #4e79a7">
-      总览分析 <span style="font-size:13px;font-weight:400;color:#888;margin-left:8px">换品数据截至 2026年6月12日15:00</span>
+      总览分析 <span style="font-size:13px;font-weight:400;color:#888;margin-left:8px">换品数据截至 2026年6月22日15:00</span>
     </h2>
     
     <!-- 月度KPI卡片 -->
@@ -214,7 +215,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 <div id="page-ketou" class="page">
   <div class="container">
     <h2 style="font-size:16px;font-weight:700;color:#2c3e50;margin-bottom:16px;padding:12px 16px;background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border-left:4px solid #f28e2b">
-      课包分析 <span style="font-size:13px;font-weight:400;color:#888;margin-left:8px">换品数据截至 2026年6月12日15:00</span>
+      课包分析 <span style="font-size:13px;font-weight:400;color:#888;margin-left:8px">换品数据截至 2026年6月22日15:00</span>
     </h2>
     <div class="sub-tabs">
 <button class="sub-tab active" data-kt="A">调入A版</button>
@@ -429,6 +430,67 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
   </div>
 </div>
 
+<!-- ==================== 难度换品分析 ==================== -->
+<div id="page-difficulty" class="page">
+  <div class="container">
+    <h2 style="font-size:16px;font-weight:700;color:#2c3e50;margin-bottom:16px;padding:12px 16px;background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border-left:4px solid #e15759">
+      难度换品分析 <span style="font-size:13px;font-weight:400;color:#888;margin-left:8px">4星=A/B/C版 &nbsp;|&nbsp; 5星=S版 &nbsp;|&nbsp; 6星=S+版</span>
+    </h2>
+
+    <!-- KPI 汇总 -->
+    <div id="diff-kpi-row" class="kpi-row" style="margin-bottom:16px"></div>
+
+    <!-- 星级流向矩阵 -->
+    <div class="charts-grid" style="margin-bottom:18px">
+      <div class="chart-card full">
+        <h3>难度级别换品流向矩阵</h3>
+        <div id="diff-matrix-wrap" style="overflow-x:auto"></div>
+      </div>
+    </div>
+
+    <!-- 月度升降级趋势 + 细分类型分布 -->
+    <div class="charts-grid" style="margin-bottom:18px">
+      <div class="chart-card">
+        <h3>各月升级 / 降级 / 平级趋势</h3>
+        <div class="chart-wrap"><canvas id="c-diff-monthly"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>细分类型换品分布（Top N）</h3>
+        <div class="chart-wrap"><canvas id="c-diff-xf-bar"></canvas></div>
+      </div>
+    </div>
+
+    <!-- 降级分析 -->
+    <div class="chart-card full" style="margin-bottom:18px">
+      <h3>🔽 降级换品明细（高难度 → 低难度）</h3>
+      <div id="diff-down-wrap" style="overflow-x:auto"></div>
+    </div>
+
+    <!-- 升级分析 -->
+    <div class="chart-card full" style="margin-bottom:18px">
+      <h3>🔼 升级换品明细（低难度 → 高难度）</h3>
+      <div id="diff-up-wrap" style="overflow-x:auto"></div>
+    </div>
+
+    <!-- 平级分析 -->
+    <div class="chart-card full" style="margin-bottom:18px">
+      <h3>↔ 平级换品明细（同难度版本间）</h3>
+      <div id="diff-same-wrap" style="overflow-x:auto"></div>
+    </div>
+
+    <!-- 细分类型月度明细表 -->
+    <div class="chart-card full" style="margin-bottom:18px">
+      <h3>细分类型 × 月份 换品明细表</h3>
+      <div style="overflow-x:auto">
+        <table class="data-table" id="diff-xf-table">
+          <thead id="diff-xf-thead"></thead>
+          <tbody id="diff-xf-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 var DATA = {
   "months": [
@@ -445,7 +507,7 @@ var DATA = {
     1055,
     887,
     979,
-    538
+    1040
   ],
   "type_order": [
     "调入A版",
@@ -492,9 +554,9 @@ var DATA = {
       "rate": 2.76
     },
     "6月": {
-      "total": 538,
+      "total": 1040,
       "lost": 2,
-      "rate": 0.37
+      "rate": 0.19
     }
   },
   "type_lost": {
@@ -541,81 +603,81 @@ var DATA = {
     "25-26【3月】",
     "25-26【4月】",
     "25-26【6月】",
-    "25-26【12月】",
-    "25-26【5月】",
-    "25-26【11月】",
     "25-26【10月】",
-    "24-25【6月】",
+    "25-26【12月】",
+    "25-26【11月】",
     "26-27【7月】",
+    "25-26【5月】",
+    "24-25【6月】",
     "24-25【3月】",
     "24-25【4月】",
     "24-25【5月】",
     "26-27【9月】",
+    "26-27【11月】",
     "25-26【新12月】",
     "26-27【10月】",
-    "26-27【11月】",
     "25-26【2月】"
   ],
   "lost_ketou": {
     "25-26【1月】": {
-      "total": 1220,
+      "total": 1240,
       "lost": 100,
-      "rate": 8.2
+      "rate": 8.06
     },
     "25-26【9月】": {
-      "total": 565,
+      "total": 635,
       "lost": 19,
-      "rate": 3.36
+      "rate": 2.99
     },
     "25-26【7月】": {
-      "total": 536,
+      "total": 573,
       "lost": 14,
-      "rate": 2.61
+      "rate": 2.44
     },
     "25-26【3月】": {
-      "total": 437,
+      "total": 448,
       "lost": 39,
-      "rate": 8.92
+      "rate": 8.71
     },
     "25-26【4月】": {
-      "total": 381,
+      "total": 386,
       "lost": 24,
-      "rate": 6.3
+      "rate": 6.22
     },
     "25-26【6月】": {
-      "total": 294,
+      "total": 313,
       "lost": 11,
-      "rate": 3.74
-    },
-    "25-26【12月】": {
-      "total": 276,
-      "lost": 18,
-      "rate": 6.52
-    },
-    "25-26【5月】": {
-      "total": 260,
-      "lost": 22,
-      "rate": 8.46
-    },
-    "25-26【11月】": {
-      "total": 222,
-      "lost": 11,
-      "rate": 4.95
+      "rate": 3.51
     },
     "25-26【10月】": {
-      "total": 220,
+      "total": 304,
       "lost": 5,
-      "rate": 2.27
+      "rate": 1.64
     },
-    "24-25【6月】": {
-      "total": 173,
-      "lost": 4,
-      "rate": 2.31
+    "25-26【12月】": {
+      "total": 286,
+      "lost": 18,
+      "rate": 6.29
+    },
+    "25-26【11月】": {
+      "total": 275,
+      "lost": 11,
+      "rate": 4.0
     },
     "26-27【7月】": {
-      "total": 173,
+      "total": 272,
       "lost": 4,
-      "rate": 2.31
+      "rate": 1.47
+    },
+    "25-26【5月】": {
+      "total": 264,
+      "lost": 22,
+      "rate": 8.33
+    },
+    "24-25【6月】": {
+      "total": 174,
+      "lost": 4,
+      "rate": 2.3
     },
     "24-25【3月】": {
       "total": 126,
@@ -628,27 +690,27 @@ var DATA = {
       "rate": 3.74
     },
     "24-25【5月】": {
-      "total": 105,
+      "total": 106,
       "lost": 0,
       "rate": 0.0
     },
     "26-27【9月】": {
-      "total": 67,
-      "lost": 0,
-      "rate": 0.0
-    },
-    "25-26【新12月】": {
-      "total": 26,
-      "lost": 3,
-      "rate": 11.54
-    },
-    "26-27【10月】": {
-      "total": 6,
+      "total": 91,
       "lost": 0,
       "rate": 0.0
     },
     "26-27【11月】": {
-      "total": 6,
+      "total": 48,
+      "lost": 0,
+      "rate": 0.0
+    },
+    "25-26【新12月】": {
+      "total": 28,
+      "lost": 3,
+      "rate": 10.71
+    },
+    "26-27【10月】": {
+      "total": 23,
       "lost": 0,
       "rate": 0.0
     },
@@ -1174,6 +1236,28 @@ var DATA = {
       0,
       0
     ],
+    "25-26【10月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "25-26【12月】": [
       0,
       0,
@@ -1187,28 +1271,6 @@ var DATA = {
       10,
       5,
       1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "25-26【5月】": [
-      0,
-      0,
-      1,
-      2,
-      8,
-      10,
-      1,
-      0,
-      0,
-      0,
-      0,
-      0,
       0,
       0,
       0,
@@ -1240,7 +1302,7 @@ var DATA = {
       0,
       0
     ],
-    "25-26【10月】": [
+    "26-27【7月】": [
       0,
       0,
       0,
@@ -1251,9 +1313,31 @@ var DATA = {
       0,
       0,
       0,
-      2,
-      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【5月】": [
+      0,
+      0,
       1,
+      2,
+      8,
+      10,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -1279,28 +1363,6 @@ var DATA = {
       1,
       2,
       1,
-      0,
-      0,
-      0,
-      0
-    ],
-    "26-27【7月】": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       0,
       0,
       0,
@@ -1394,6 +1456,28 @@ var DATA = {
       0,
       0
     ],
+    "26-27【11月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "25-26【新12月】": [
       0,
       0,
@@ -1417,28 +1501,6 @@ var DATA = {
       0
     ],
     "26-27【10月】": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "26-27【11月】": [
       0,
       0,
       0,
@@ -2073,7 +2135,7 @@ var DATA = {
       "name": "李敏敏",
       "leader": "未知",
       "base": "其他",
-      "total": 50,
+      "total": 51,
       "lost": 0,
       "rate": 0.0
     },
@@ -2097,23 +2159,23 @@ var DATA = {
       "name": "赵晨越",
       "leader": "未知",
       "base": "其他",
-      "total": 66,
+      "total": 67,
       "lost": 2,
-      "rate": 3.03
+      "rate": 2.99
     },
     {
       "name": "潘萌",
       "leader": "未知",
       "base": "其他",
-      "total": 45,
+      "total": 51,
       "lost": 2,
-      "rate": 4.44
+      "rate": 3.92
     },
     {
       "name": "陈立学",
-      "leader": "史冠群",
-      "base": "济南",
-      "total": 10,
+      "leader": "未知",
+      "base": "其他",
+      "total": 12,
       "lost": 0,
       "rate": 0.0
     },
@@ -2137,9 +2199,9 @@ var DATA = {
       "name": "袁雪利",
       "leader": "未知",
       "base": "其他",
-      "total": 53,
+      "total": 54,
       "lost": 3,
-      "rate": 5.66
+      "rate": 5.56
     },
     {
       "name": "李伊琳",
@@ -2169,9 +2231,9 @@ var DATA = {
       "name": "张梦婷",
       "leader": "未知",
       "base": "其他",
-      "total": 53,
+      "total": 57,
       "lost": 3,
-      "rate": 5.66
+      "rate": 5.26
     },
     {
       "name": "李梓童",
@@ -2201,9 +2263,9 @@ var DATA = {
       "name": "赵阳",
       "leader": "未知",
       "base": "其他",
-      "total": 48,
+      "total": 49,
       "lost": 6,
-      "rate": 12.5
+      "rate": 12.24
     },
     {
       "name": "徐静",
@@ -2217,9 +2279,9 @@ var DATA = {
       "name": "赵煦哲",
       "leader": "未知",
       "base": "其他",
-      "total": 47,
+      "total": 49,
       "lost": 2,
-      "rate": 4.26
+      "rate": 4.08
     },
     {
       "name": "张荣州",
@@ -2233,9 +2295,9 @@ var DATA = {
       "name": "王静娅",
       "leader": "未知",
       "base": "其他",
-      "total": 57,
+      "total": 62,
       "lost": 2,
-      "rate": 3.51
+      "rate": 3.23
     },
     {
       "name": "赵佳琳",
@@ -2249,17 +2311,17 @@ var DATA = {
       "name": "张蕾",
       "leader": "未知",
       "base": "其他",
-      "total": 22,
+      "total": 24,
       "lost": 1,
-      "rate": 4.55
+      "rate": 4.17
     },
     {
       "name": "高楠",
-      "leader": "程雪航",
-      "base": "西安",
-      "total": 51,
+      "leader": "未知",
+      "base": "其他",
+      "total": 58,
       "lost": 3,
-      "rate": 5.88
+      "rate": 5.17
     },
     {
       "name": "王耀一",
@@ -2287,19 +2349,19 @@ var DATA = {
     },
     {
       "name": "孙恬",
-      "leader": "程雪航",
-      "base": "西安",
-      "total": 49,
+      "leader": "未知",
+      "base": "其他",
+      "total": 52,
       "lost": 1,
-      "rate": 2.04
+      "rate": 1.92
     },
     {
       "name": "鹿恪迪",
-      "leader": "程雪航",
-      "base": "西安",
-      "total": 33,
+      "leader": "未知",
+      "base": "其他",
+      "total": 40,
       "lost": 1,
-      "rate": 3.03
+      "rate": 2.5
     },
     {
       "name": "李可喻",
@@ -2401,15 +2463,15 @@ var DATA = {
       "name": "周颖",
       "leader": "未知",
       "base": "其他",
-      "total": 68,
+      "total": 71,
       "lost": 6,
-      "rate": 8.82
+      "rate": 8.45
     },
     {
       "name": "刘佳怡",
       "leader": "未知",
       "base": "其他",
-      "total": 22,
+      "total": 26,
       "lost": 0,
       "rate": 0.0
     },
@@ -2457,7 +2519,7 @@ var DATA = {
       "name": "候英杰",
       "leader": "未知",
       "base": "其他",
-      "total": 10,
+      "total": 11,
       "lost": 0,
       "rate": 0.0
     },
@@ -2465,7 +2527,7 @@ var DATA = {
       "name": "卫飞鸿",
       "leader": "未知",
       "base": "其他",
-      "total": 37,
+      "total": 42,
       "lost": 0,
       "rate": 0.0
     },
@@ -2481,7 +2543,7 @@ var DATA = {
       "name": "黄欣瑞",
       "leader": "未知",
       "base": "其他",
-      "total": 4,
+      "total": 5,
       "lost": 0,
       "rate": 0.0
     },
@@ -2495,9 +2557,9 @@ var DATA = {
     },
     {
       "name": "吴润婕",
-      "leader": "别泽宇",
-      "base": "西安",
-      "total": 10,
+      "leader": "未知",
+      "base": "其他",
+      "total": 11,
       "lost": 0,
       "rate": 0.0
     },
@@ -2505,9 +2567,9 @@ var DATA = {
       "name": "窦凯",
       "leader": "未知",
       "base": "其他",
-      "total": 66,
+      "total": 67,
       "lost": 2,
-      "rate": 3.03
+      "rate": 2.99
     },
     {
       "name": "冯健昊",
@@ -2519,27 +2581,27 @@ var DATA = {
     },
     {
       "name": "高本航",
-      "leader": "程雪航",
-      "base": "西安",
-      "total": 28,
+      "leader": "未知",
+      "base": "其他",
+      "total": 29,
       "lost": 4,
-      "rate": 14.29
+      "rate": 13.79
     },
     {
       "name": "赵天云",
       "leader": "未知",
       "base": "其他",
-      "total": 62,
+      "total": 65,
       "lost": 1,
-      "rate": 1.61
+      "rate": 1.54
     },
     {
       "name": "申嘉欣",
       "leader": "未知",
       "base": "其他",
-      "total": 37,
+      "total": 38,
       "lost": 4,
-      "rate": 10.81
+      "rate": 10.53
     },
     {
       "name": "陈颖",
@@ -2575,9 +2637,9 @@ var DATA = {
     },
     {
       "name": "徐鑫",
-      "leader": "杨思静",
-      "base": "西安",
-      "total": 5,
+      "leader": "未知",
+      "base": "其他",
+      "total": 7,
       "lost": 0,
       "rate": 0.0
     },
@@ -2593,17 +2655,17 @@ var DATA = {
       "name": "王丹丹",
       "leader": "未知",
       "base": "其他",
-      "total": 50,
+      "total": 53,
       "lost": 1,
-      "rate": 2.0
+      "rate": 1.89
     },
     {
       "name": "梁佳洁",
       "leader": "未知",
       "base": "其他",
-      "total": 12,
+      "total": 14,
       "lost": 1,
-      "rate": 8.33
+      "rate": 7.14
     },
     {
       "name": "雷叶凡",
@@ -2639,19 +2701,19 @@ var DATA = {
     },
     {
       "name": "张若华",
-      "leader": "马英豪",
-      "base": "济南",
-      "total": 17,
+      "leader": "未知",
+      "base": "其他",
+      "total": 20,
       "lost": 1,
-      "rate": 5.88
+      "rate": 5.0
     },
     {
       "name": "胡荣丽",
       "leader": "未知",
       "base": "其他",
-      "total": 81,
+      "total": 88,
       "lost": 4,
-      "rate": 4.94
+      "rate": 4.55
     },
     {
       "name": "李林波",
@@ -2671,19 +2733,19 @@ var DATA = {
     },
     {
       "name": "朱芮芮",
-      "leader": "周杰",
-      "base": "西安",
-      "total": 31,
+      "leader": "未知",
+      "base": "其他",
+      "total": 32,
       "lost": 3,
-      "rate": 9.68
+      "rate": 9.38
     },
     {
       "name": "王宏宇",
       "leader": "未知",
       "base": "其他",
-      "total": 9,
+      "total": 10,
       "lost": 2,
-      "rate": 22.22
+      "rate": 20.0
     },
     {
       "name": "张乐乐",
@@ -2785,15 +2847,15 @@ var DATA = {
       "name": "闫文静",
       "leader": "未知",
       "base": "其他",
-      "total": 13,
+      "total": 38,
       "lost": 0,
       "rate": 0.0
     },
     {
       "name": "刘佳",
-      "leader": "李耐徽",
-      "base": "济南",
-      "total": 6,
+      "leader": "未知",
+      "base": "其他",
+      "total": 7,
       "lost": 0,
       "rate": 0.0
     },
@@ -2831,11 +2893,11 @@ var DATA = {
     },
     {
       "name": "常甜甜",
-      "leader": "姜莎莎",
-      "base": "西安",
-      "total": 39,
+      "leader": "未知",
+      "base": "其他",
+      "total": 43,
       "lost": 1,
-      "rate": 2.56
+      "rate": 2.33
     },
     {
       "name": "陈伟伟",
@@ -2855,11 +2917,11 @@ var DATA = {
     },
     {
       "name": "宋亚欣",
-      "leader": "张爱荣",
-      "base": "济南",
-      "total": 6,
+      "leader": "未知",
+      "base": "其他",
+      "total": 7,
       "lost": 1,
-      "rate": 16.67
+      "rate": 14.29
     },
     {
       "name": "刘哲琳",
@@ -2881,17 +2943,17 @@ var DATA = {
       "name": "徐闵",
       "leader": "未知",
       "base": "其他",
-      "total": 73,
+      "total": 75,
       "lost": 7,
-      "rate": 9.59
+      "rate": 9.33
     },
     {
       "name": "侯乐乐",
       "leader": "未知",
       "base": "其他",
-      "total": 19,
+      "total": 20,
       "lost": 1,
-      "rate": 5.26
+      "rate": 5.0
     },
     {
       "name": "王慧民",
@@ -2911,11 +2973,11 @@ var DATA = {
     },
     {
       "name": "李博杨",
-      "leader": "周杰",
-      "base": "西安",
-      "total": 9,
+      "leader": "未知",
+      "base": "其他",
+      "total": 10,
       "lost": 1,
-      "rate": 11.11
+      "rate": 10.0
     },
     {
       "name": "席依娜",
@@ -2935,9 +2997,9 @@ var DATA = {
     },
     {
       "name": "王星喆",
-      "leader": "黄欣瑞",
-      "base": "西安",
-      "total": 7,
+      "leader": "未知",
+      "base": "其他",
+      "total": 8,
       "lost": 0,
       "rate": 0.0
     },
@@ -2967,19 +3029,19 @@ var DATA = {
     },
     {
       "name": "李茵",
-      "leader": "林柏霆",
-      "base": "西安",
-      "total": 32,
+      "leader": "未知",
+      "base": "其他",
+      "total": 44,
       "lost": 1,
-      "rate": 3.12
+      "rate": 2.27
     },
     {
       "name": "赵林汐",
       "leader": "未知",
       "base": "其他",
-      "total": 40,
+      "total": 41,
       "lost": 2,
-      "rate": 5.0
+      "rate": 4.88
     },
     {
       "name": "张焕",
@@ -2991,17 +3053,17 @@ var DATA = {
     },
     {
       "name": "丁佳伊",
-      "leader": "徐婷",
-      "base": "西安",
-      "total": 7,
+      "leader": "未知",
+      "base": "其他",
+      "total": 10,
       "lost": 0,
       "rate": 0.0
     },
     {
       "name": "张彬",
-      "leader": "林柏霆",
-      "base": "西安",
-      "total": 9,
+      "leader": "未知",
+      "base": "其他",
+      "total": 10,
       "lost": 0,
       "rate": 0.0
     },
@@ -3033,9 +3095,9 @@ var DATA = {
       "name": "李鹏鹏",
       "leader": "未知",
       "base": "其他",
-      "total": 33,
+      "total": 37,
       "lost": 4,
-      "rate": 12.12
+      "rate": 10.81
     },
     {
       "name": "金竞一",
@@ -3047,11 +3109,11 @@ var DATA = {
     },
     {
       "name": "白杜鹃",
-      "leader": "林柏霆",
-      "base": "西安",
-      "total": 12,
+      "leader": "未知",
+      "base": "其他",
+      "total": 13,
       "lost": 1,
-      "rate": 8.33
+      "rate": 7.69
     },
     {
       "name": "李惠敏",
@@ -3065,9 +3127,9 @@ var DATA = {
       "name": "徐思雯",
       "leader": "未知",
       "base": "其他",
-      "total": 21,
+      "total": 22,
       "lost": 2,
-      "rate": 9.52
+      "rate": 9.09
     },
     {
       "name": "王少昆",
@@ -3087,19 +3149,19 @@ var DATA = {
     },
     {
       "name": "刘芸琪",
-      "leader": "李耐徽",
-      "base": "济南",
-      "total": 8,
+      "leader": "未知",
+      "base": "其他",
+      "total": 9,
       "lost": 0,
       "rate": 0.0
     },
     {
       "name": "代新珍",
-      "leader": "黄欣瑞",
-      "base": "西安",
-      "total": 13,
+      "leader": "未知",
+      "base": "其他",
+      "total": 14,
       "lost": 1,
-      "rate": 7.69
+      "rate": 7.14
     },
     {
       "name": "陈金萍",
@@ -3119,35 +3181,35 @@ var DATA = {
     },
     {
       "name": "韩幸",
-      "leader": "林柏霆",
-      "base": "西安",
-      "total": 17,
+      "leader": "未知",
+      "base": "其他",
+      "total": 18,
       "lost": 2,
-      "rate": 11.76
+      "rate": 11.11
     },
     {
       "name": "王璇",
       "leader": "未知",
       "base": "其他",
-      "total": 9,
+      "total": 15,
       "lost": 0,
       "rate": 0.0
     },
     {
       "name": "张爽",
-      "leader": "马英豪",
-      "base": "济南",
-      "total": 16,
+      "leader": "未知",
+      "base": "其他",
+      "total": 24,
       "lost": 1,
-      "rate": 6.25
+      "rate": 4.17
     },
     {
       "name": "马瑶",
       "leader": "未知",
       "base": "其他",
-      "total": 58,
+      "total": 62,
       "lost": 2,
-      "rate": 3.45
+      "rate": 3.23
     },
     {
       "name": "温希阳",
@@ -3175,9 +3237,9 @@ var DATA = {
     },
     {
       "name": "张怡楠",
-      "leader": "林柏霆",
-      "base": "西安",
-      "total": 4,
+      "leader": "未知",
+      "base": "其他",
+      "total": 25,
       "lost": 0,
       "rate": 0.0
     },
@@ -3185,9 +3247,9 @@ var DATA = {
       "name": "徐瑛瑛",
       "leader": "未知",
       "base": "其他",
-      "total": 18,
+      "total": 19,
       "lost": 1,
-      "rate": 5.56
+      "rate": 5.26
     },
     {
       "name": "刘嘉欣",
@@ -3263,9 +3325,9 @@ var DATA = {
     },
     {
       "name": "李引",
-      "leader": "黄欣瑞",
-      "base": "西安",
-      "total": 8,
+      "leader": "未知",
+      "base": "其他",
+      "total": 9,
       "lost": 0,
       "rate": 0.0
     },
@@ -3303,9 +3365,9 @@ var DATA = {
     },
     {
       "name": "李安薇",
-      "leader": "黄欣瑞",
-      "base": "西安",
-      "total": 8,
+      "leader": "未知",
+      "base": "其他",
+      "total": 9,
       "lost": 0,
       "rate": 0.0
     },
@@ -3335,9 +3397,9 @@ var DATA = {
     },
     {
       "name": "李子怡",
-      "leader": "林柏霆",
-      "base": "西安",
-      "total": 14,
+      "leader": "未知",
+      "base": "其他",
+      "total": 17,
       "lost": 0,
       "rate": 0.0
     },
@@ -3351,17 +3413,17 @@ var DATA = {
     },
     {
       "name": "赵飞飞",
-      "leader": "林柏霆",
-      "base": "西安",
-      "total": 7,
+      "leader": "未知",
+      "base": "其他",
+      "total": 15,
       "lost": 2,
-      "rate": 28.57
+      "rate": 13.33
     },
     {
       "name": "王鑫宇",
       "leader": "未知",
       "base": "其他",
-      "total": 6,
+      "total": 7,
       "lost": 0,
       "rate": 0.0
     },
@@ -3377,9 +3439,9 @@ var DATA = {
       "name": "冯雪辉",
       "leader": "未知",
       "base": "其他",
-      "total": 12,
+      "total": 14,
       "lost": 2,
-      "rate": 16.67
+      "rate": 14.29
     },
     {
       "name": "吴星星",
@@ -3417,7 +3479,7 @@ var DATA = {
       "name": "李文涛",
       "leader": "未知",
       "base": "其他",
-      "total": 42,
+      "total": 44,
       "lost": 0,
       "rate": 0.0
     },
@@ -3431,9 +3493,9 @@ var DATA = {
     },
     {
       "name": "孙梅",
-      "leader": "马英豪",
-      "base": "济南",
-      "total": 4,
+      "leader": "未知",
+      "base": "其他",
+      "total": 5,
       "lost": 0,
       "rate": 0.0
     },
@@ -3465,9 +3527,9 @@ var DATA = {
       "name": "黄紫芬",
       "leader": "未知",
       "base": "其他",
-      "total": 5,
+      "total": 8,
       "lost": 1,
-      "rate": 20.0
+      "rate": 12.5
     },
     {
       "name": "石娜娜",
@@ -3495,11 +3557,11 @@ var DATA = {
     },
     {
       "name": "杨朕",
-      "leader": "林柏霆",
-      "base": "西安",
-      "total": 12,
+      "leader": "未知",
+      "base": "其他",
+      "total": 27,
       "lost": 2,
-      "rate": 16.67
+      "rate": 7.41
     },
     {
       "name": "陈文晶",
@@ -3545,7 +3607,7 @@ var DATA = {
       "name": "栗帆",
       "leader": "未知",
       "base": "其他",
-      "total": 47,
+      "total": 48,
       "lost": 0,
       "rate": 0.0
     },
@@ -3583,9 +3645,9 @@ var DATA = {
     },
     {
       "name": "马毅昂",
-      "leader": "姜莎莎",
-      "base": "西安",
-      "total": 5,
+      "leader": "未知",
+      "base": "其他",
+      "total": 17,
       "lost": 0,
       "rate": 0.0
     },
@@ -3649,7 +3711,7 @@ var DATA = {
       "name": "常若彤",
       "leader": "未知",
       "base": "其他",
-      "total": 7,
+      "total": 14,
       "lost": 0,
       "rate": 0.0
     },
@@ -3745,7 +3807,7 @@ var DATA = {
       "name": "史梦楠",
       "leader": "未知",
       "base": "其他",
-      "total": 47,
+      "total": 50,
       "lost": 0,
       "rate": 0.0
     },
@@ -3775,11 +3837,11 @@ var DATA = {
     },
     {
       "name": "李芳芳",
-      "leader": "史冠群",
-      "base": "济南",
-      "total": 14,
+      "leader": "未知",
+      "base": "其他",
+      "total": 15,
       "lost": 4,
-      "rate": 28.57
+      "rate": 26.67
     },
     {
       "name": "夏志远",
@@ -3903,9 +3965,9 @@ var DATA = {
     },
     {
       "name": "刘峰",
-      "leader": "杨思静",
-      "base": "西安",
-      "total": 3,
+      "leader": "未知",
+      "base": "其他",
+      "total": 4,
       "lost": 0,
       "rate": 0.0
     },
@@ -3943,25 +4005,25 @@ var DATA = {
     },
     {
       "name": "王雨洁",
-      "leader": "边雯瑄",
-      "base": "济南",
-      "total": 7,
+      "leader": "未知",
+      "base": "其他",
+      "total": 9,
       "lost": 0,
       "rate": 0.0
     },
     {
       "name": "赵杏",
-      "leader": "程雪航",
-      "base": "西安",
-      "total": 42,
+      "leader": "未知",
+      "base": "其他",
+      "total": 46,
       "lost": 1,
-      "rate": 2.38
+      "rate": 2.17
     },
     {
       "name": "王浩然",
-      "leader": "边雯瑄",
-      "base": "济南",
-      "total": 1,
+      "leader": "未知",
+      "base": "其他",
+      "total": 3,
       "lost": 0,
       "rate": 0.0
     },
@@ -3969,15 +4031,15 @@ var DATA = {
       "name": "侯思文",
       "leader": "未知",
       "base": "其他",
-      "total": 17,
+      "total": 40,
       "lost": 2,
-      "rate": 11.76
+      "rate": 5.0
     },
     {
       "name": "田涛",
-      "leader": "徐婷",
-      "base": "西安",
-      "total": 7,
+      "leader": "未知",
+      "base": "其他",
+      "total": 12,
       "lost": 0,
       "rate": 0.0
     },
@@ -4033,15 +4095,15 @@ var DATA = {
       "name": "胡丽丽",
       "leader": "未知",
       "base": "其他",
-      "total": 9,
+      "total": 12,
       "lost": 0,
       "rate": 0.0
     },
     {
       "name": "张琳唯",
-      "leader": "姜莎莎",
-      "base": "西安",
-      "total": 6,
+      "leader": "未知",
+      "base": "其他",
+      "total": 11,
       "lost": 0,
       "rate": 0.0
     },
@@ -4097,7 +4159,7 @@ var DATA = {
       "name": "李申申",
       "leader": "未知",
       "base": "其他",
-      "total": 30,
+      "total": 31,
       "lost": 0,
       "rate": 0.0
     },
@@ -4113,9 +4175,9 @@ var DATA = {
       "name": "毛浩东",
       "leader": "未知",
       "base": "其他",
-      "total": 30,
+      "total": 32,
       "lost": 3,
-      "rate": 10.0
+      "rate": 9.38
     },
     {
       "name": "翟旭茹",
@@ -4145,7 +4207,7 @@ var DATA = {
       "name": "刘鑫",
       "leader": "未知",
       "base": "其他",
-      "total": 11,
+      "total": 12,
       "lost": 0,
       "rate": 0.0
     },
@@ -4217,9 +4279,9 @@ var DATA = {
       "name": "刘晨",
       "leader": "未知",
       "base": "其他",
-      "total": 5,
+      "total": 6,
       "lost": 2,
-      "rate": 40.0
+      "rate": 33.33
     },
     {
       "name": "王怡楠",
@@ -4231,11 +4293,11 @@ var DATA = {
     },
     {
       "name": "李婧一",
-      "leader": "史冠群",
-      "base": "济南",
-      "total": 20,
+      "leader": "未知",
+      "base": "其他",
+      "total": 31,
       "lost": 1,
-      "rate": 5.0
+      "rate": 3.23
     },
     {
       "name": "张硕",
@@ -4257,9 +4319,9 @@ var DATA = {
       "name": "薛文辉",
       "leader": "未知",
       "base": "其他",
-      "total": 61,
+      "total": 63,
       "lost": 3,
-      "rate": 4.92
+      "rate": 4.76
     },
     {
       "name": "李梦瑶",
@@ -4281,7 +4343,7 @@ var DATA = {
       "name": "徐开明",
       "leader": "未知",
       "base": "其他",
-      "total": 2,
+      "total": 3,
       "lost": 0,
       "rate": 0.0
     },
@@ -4305,9 +4367,9 @@ var DATA = {
       "name": "陈纪谋",
       "leader": "未知",
       "base": "其他",
-      "total": 46,
+      "total": 48,
       "lost": 1,
-      "rate": 2.17
+      "rate": 2.08
     },
     {
       "name": "杨思静",
@@ -4329,7 +4391,7 @@ var DATA = {
       "name": "徐海丽",
       "leader": "未知",
       "base": "其他",
-      "total": 58,
+      "total": 68,
       "lost": 0,
       "rate": 0.0
     },
@@ -4343,9 +4405,9 @@ var DATA = {
     },
     {
       "name": "罗紫月",
-      "leader": "陈卓",
-      "base": "西安",
-      "total": 6,
+      "leader": "未知",
+      "base": "其他",
+      "total": 7,
       "lost": 0,
       "rate": 0.0
     },
@@ -4361,7 +4423,7 @@ var DATA = {
       "name": "魏欣怡",
       "leader": "未知",
       "base": "其他",
-      "total": 6,
+      "total": 7,
       "lost": 0,
       "rate": 0.0
     },
@@ -4377,7 +4439,7 @@ var DATA = {
       "name": "陈欣",
       "leader": "未知",
       "base": "其他",
-      "total": 11,
+      "total": 30,
       "lost": 0,
       "rate": 0.0
     },
@@ -4431,11 +4493,11 @@ var DATA = {
     },
     {
       "name": "柯婷婷",
-      "leader": "陈卓",
-      "base": "西安",
-      "total": 8,
+      "leader": "未知",
+      "base": "其他",
+      "total": 10,
       "lost": 2,
-      "rate": 25.0
+      "rate": 20.0
     },
     {
       "name": "黄鑫艳",
@@ -4463,11 +4525,11 @@ var DATA = {
     },
     {
       "name": "孙向宇",
-      "leader": "马英豪",
-      "base": "济南",
-      "total": 27,
+      "leader": "未知",
+      "base": "其他",
+      "total": 31,
       "lost": 1,
-      "rate": 3.7
+      "rate": 3.23
     },
     {
       "name": "翟曼彤",
@@ -4495,9 +4557,9 @@ var DATA = {
     },
     {
       "name": "牛军芳",
-      "leader": "李改改",
-      "base": "西安",
-      "total": 15,
+      "leader": "未知",
+      "base": "其他",
+      "total": 16,
       "lost": 0,
       "rate": 0.0
     },
@@ -4519,9 +4581,9 @@ var DATA = {
     },
     {
       "name": "刘鹏辉",
-      "leader": "周杰",
-      "base": "西安",
-      "total": 8,
+      "leader": "未知",
+      "base": "其他",
+      "total": 16,
       "lost": 0,
       "rate": 0.0
     },
@@ -4543,17 +4605,17 @@ var DATA = {
     },
     {
       "name": "田俏",
-      "leader": "李赟",
-      "base": "西安",
-      "total": 5,
+      "leader": "未知",
+      "base": "其他",
+      "total": 6,
       "lost": 0,
       "rate": 0.0
     },
     {
       "name": "王亚云",
-      "leader": "林柏霆",
-      "base": "西安",
-      "total": 2,
+      "leader": "未知",
+      "base": "其他",
+      "total": 30,
       "lost": 0,
       "rate": 0.0
     },
@@ -4631,9 +4693,9 @@ var DATA = {
     },
     {
       "name": "刘泽宇",
-      "leader": "刘泽宇",
-      "base": "济南",
-      "total": 5,
+      "leader": "未知",
+      "base": "其他",
+      "total": 6,
       "lost": 0,
       "rate": 0.0
     },
@@ -4695,9 +4757,9 @@ var DATA = {
     },
     {
       "name": "吝丹",
-      "leader": "杨思静",
-      "base": "西安",
-      "total": 6,
+      "leader": "未知",
+      "base": "其他",
+      "total": 7,
       "lost": 0,
       "rate": 0.0
     },
@@ -4743,9 +4805,9 @@ var DATA = {
     },
     {
       "name": "郑洪晖",
-      "leader": "刘泽宇",
-      "base": "济南",
-      "total": 6,
+      "leader": "未知",
+      "base": "其他",
+      "total": 10,
       "lost": 0,
       "rate": 0.0
     },
@@ -4761,7 +4823,7 @@ var DATA = {
       "name": "胡倩雯",
       "leader": "未知",
       "base": "其他",
-      "total": 2,
+      "total": 3,
       "lost": 0,
       "rate": 0.0
     },
@@ -4777,15 +4839,15 @@ var DATA = {
       "name": "冯思瑕",
       "leader": "未知",
       "base": "其他",
-      "total": 9,
+      "total": 10,
       "lost": 2,
-      "rate": 22.22
+      "rate": 20.0
     },
     {
       "name": "李勇",
       "leader": "未知",
       "base": "其他",
-      "total": 34,
+      "total": 35,
       "lost": 0,
       "rate": 0.0
     },
@@ -4817,9 +4879,9 @@ var DATA = {
       "name": "刘存旺",
       "leader": "未知",
       "base": "其他",
-      "total": 14,
+      "total": 15,
       "lost": 1,
-      "rate": 7.14
+      "rate": 6.67
     },
     {
       "name": "尹霞",
@@ -4849,9 +4911,9 @@ var DATA = {
       "name": "周凯旋",
       "leader": "未知",
       "base": "其他",
-      "total": 21,
+      "total": 22,
       "lost": 2,
-      "rate": 9.52
+      "rate": 9.09
     },
     {
       "name": "钟承晓",
@@ -4871,9 +4933,9 @@ var DATA = {
     },
     {
       "name": "戴瑞婷",
-      "leader": "林柏霆",
-      "base": "西安",
-      "total": 7,
+      "leader": "未知",
+      "base": "其他",
+      "total": 10,
       "lost": 0,
       "rate": 0.0
     },
@@ -4895,17 +4957,17 @@ var DATA = {
     },
     {
       "name": "陈珊珊",
-      "leader": "林柏霆",
-      "base": "西安",
-      "total": 7,
+      "leader": "未知",
+      "base": "其他",
+      "total": 11,
       "lost": 0,
       "rate": 0.0
     },
     {
       "name": "赵敏",
-      "leader": "袁博",
-      "base": "济南",
-      "total": 9,
+      "leader": "未知",
+      "base": "其他",
+      "total": 11,
       "lost": 0,
       "rate": 0.0
     },
@@ -4913,7 +4975,7 @@ var DATA = {
       "name": "夏圣杰",
       "leader": "未知",
       "base": "其他",
-      "total": 5,
+      "total": 8,
       "lost": 0,
       "rate": 0.0
     },
@@ -4999,17 +5061,17 @@ var DATA = {
     },
     {
       "name": "边雯瑄",
-      "leader": "边雯瑄",
-      "base": "济南",
-      "total": 7,
+      "leader": "未知",
+      "base": "其他",
+      "total": 11,
       "lost": 1,
-      "rate": 14.29
+      "rate": 9.09
     },
     {
       "name": "刘雨卉",
       "leader": "未知",
       "base": "其他",
-      "total": 2,
+      "total": 3,
       "lost": 0,
       "rate": 0.0
     },
@@ -5071,9 +5133,9 @@ var DATA = {
     },
     {
       "name": "王佳琪",
-      "leader": "马英豪",
-      "base": "济南",
-      "total": 22,
+      "leader": "未知",
+      "base": "其他",
+      "total": 23,
       "lost": 0,
       "rate": 0.0
     },
@@ -5281,7 +5343,7 @@ var DATA = {
       "name": "李鑫",
       "leader": "未知",
       "base": "其他",
-      "total": 5,
+      "total": 6,
       "lost": 0,
       "rate": 0.0
     },
@@ -5289,7 +5351,7 @@ var DATA = {
       "name": "程菲",
       "leader": "未知",
       "base": "其他",
-      "total": 5,
+      "total": 6,
       "lost": 0,
       "rate": 0.0
     },
@@ -5297,9 +5359,9 @@ var DATA = {
       "name": "吴桐",
       "leader": "未知",
       "base": "其他",
-      "total": 9,
+      "total": 10,
       "lost": 1,
-      "rate": 11.11
+      "rate": 10.0
     },
     {
       "name": "李浩然",
@@ -5367,9 +5429,9 @@ var DATA = {
     },
     {
       "name": "李新志",
-      "leader": "倪燕",
-      "base": "济南",
-      "total": 1,
+      "leader": "未知",
+      "base": "其他",
+      "total": 2,
       "lost": 0,
       "rate": 0.0
     },
@@ -5393,9 +5455,9 @@ var DATA = {
       "name": "杨华",
       "leader": "未知",
       "base": "其他",
-      "total": 9,
+      "total": 10,
       "lost": 1,
-      "rate": 11.11
+      "rate": 10.0
     },
     {
       "name": "吴兆香",
@@ -5409,7 +5471,7 @@ var DATA = {
       "name": "邓欣桐",
       "leader": "未知",
       "base": "其他",
-      "total": 15,
+      "total": 16,
       "lost": 0,
       "rate": 0.0
     },
@@ -5473,7 +5535,7 @@ var DATA = {
       "name": "孙颖超",
       "leader": "未知",
       "base": "其他",
-      "total": 10,
+      "total": 13,
       "lost": 0,
       "rate": 0.0
     },
@@ -5519,11 +5581,11 @@ var DATA = {
     },
     {
       "name": "哈腾鹏",
-      "leader": "别泽宇",
-      "base": "西安",
-      "total": 23,
+      "leader": "未知",
+      "base": "其他",
+      "total": 24,
       "lost": 1,
-      "rate": 4.35
+      "rate": 4.17
     },
     {
       "name": "姜莎莎",
@@ -5537,7 +5599,7 @@ var DATA = {
       "name": "张译丹",
       "leader": "未知",
       "base": "其他",
-      "total": 3,
+      "total": 4,
       "lost": 0,
       "rate": 0.0
     },
@@ -5559,9 +5621,9 @@ var DATA = {
     },
     {
       "name": "夏紫怡",
-      "leader": "李改改",
-      "base": "西安",
-      "total": 2,
+      "leader": "未知",
+      "base": "其他",
+      "total": 10,
       "lost": 0,
       "rate": 0.0
     },
@@ -5615,17 +5677,17 @@ var DATA = {
     },
     {
       "name": "盛士丽",
-      "leader": "王欣怡",
-      "base": "济南",
-      "total": 1,
+      "leader": "未知",
+      "base": "其他",
+      "total": 2,
       "lost": 0,
       "rate": 0.0
     },
     {
       "name": "何雨鑫",
-      "leader": "周杰",
-      "base": "西安",
-      "total": 1,
+      "leader": "未知",
+      "base": "其他",
+      "total": 2,
       "lost": 0,
       "rate": 0.0
     },
@@ -5639,9 +5701,9 @@ var DATA = {
     },
     {
       "name": "牟晓琦",
-      "leader": "张爱荣",
-      "base": "济南",
-      "total": 3,
+      "leader": "未知",
+      "base": "其他",
+      "total": 5,
       "lost": 0,
       "rate": 0.0
     },
@@ -5655,9 +5717,9 @@ var DATA = {
     },
     {
       "name": "雷佳昕",
-      "leader": "王欣怡",
-      "base": "济南",
-      "total": 3,
+      "leader": "未知",
+      "base": "其他",
+      "total": 5,
       "lost": 0,
       "rate": 0.0
     },
@@ -5673,7 +5735,7 @@ var DATA = {
       "name": "阮文婷",
       "leader": "未知",
       "base": "其他",
-      "total": 6,
+      "total": 7,
       "lost": 0,
       "rate": 0.0
     },
@@ -5697,7 +5759,7 @@ var DATA = {
       "name": "任雪艳",
       "leader": "未知",
       "base": "其他",
-      "total": 7,
+      "total": 8,
       "lost": 0,
       "rate": 0.0
     },
@@ -5721,7 +5783,7 @@ var DATA = {
       "name": "吕卓阳",
       "leader": "未知",
       "base": "其他",
-      "total": 2,
+      "total": 3,
       "lost": 0,
       "rate": 0.0
     },
@@ -5809,7 +5871,7 @@ var DATA = {
       "name": "李若羽",
       "leader": "未知",
       "base": "其他",
-      "total": 5,
+      "total": 7,
       "lost": 0,
       "rate": 0.0
     },
@@ -5943,9 +6005,9 @@ var DATA = {
     },
     {
       "name": "杜研",
-      "leader": "林柏霆",
-      "base": "西安",
-      "total": 1,
+      "leader": "未知",
+      "base": "其他",
+      "total": 2,
       "lost": 0,
       "rate": 0.0
     },
@@ -5969,7 +6031,7 @@ var DATA = {
       "name": "何悦兰",
       "leader": "未知",
       "base": "其他",
-      "total": 3,
+      "total": 4,
       "lost": 0,
       "rate": 0.0
     },
@@ -5977,15 +6039,15 @@ var DATA = {
       "name": "毛静",
       "leader": "未知",
       "base": "其他",
-      "total": 4,
+      "total": 8,
       "lost": 0,
       "rate": 0.0
     },
     {
       "name": "王祎锋",
-      "leader": "李改改",
-      "base": "西安",
-      "total": 1,
+      "leader": "未知",
+      "base": "其他",
+      "total": 16,
       "lost": 0,
       "rate": 0.0
     },
@@ -6015,9 +6077,9 @@ var DATA = {
     },
     {
       "name": "马英豪",
-      "leader": "马英豪",
-      "base": "济南",
-      "total": 1,
+      "leader": "未知",
+      "base": "其他",
+      "total": 8,
       "lost": 0,
       "rate": 0.0
     },
@@ -6079,9 +6141,9 @@ var DATA = {
     },
     {
       "name": "周钰茜",
-      "leader": "张爱荣",
-      "base": "济南",
-      "total": 1,
+      "leader": "未知",
+      "base": "其他",
+      "total": 3,
       "lost": 0,
       "rate": 0.0
     },
@@ -6201,7 +6263,55 @@ var DATA = {
       "name": "杨云妍",
       "leader": "未知",
       "base": "其他",
-      "total": 2,
+      "total": 4,
+      "lost": 0,
+      "rate": 0.0
+    },
+    {
+      "name": "郭蓓蓓",
+      "leader": "未知",
+      "base": "其他",
+      "total": 1,
+      "lost": 0,
+      "rate": 0.0
+    },
+    {
+      "name": "李辉",
+      "leader": "未知",
+      "base": "其他",
+      "total": 15,
+      "lost": 0,
+      "rate": 0.0
+    },
+    {
+      "name": "邢明萱",
+      "leader": "未知",
+      "base": "其他",
+      "total": 3,
+      "lost": 0,
+      "rate": 0.0
+    },
+    {
+      "name": "王柏森",
+      "leader": "未知",
+      "base": "其他",
+      "total": 1,
+      "lost": 0,
+      "rate": 0.0
+    },
+    {
+      "name": "宋洋洋",
+      "leader": "未知",
+      "base": "其他",
+      "total": 1,
+      "lost": 0,
+      "rate": 0.0
+    },
+    {
+      "name": "冯雨洁",
+      "leader": "未知",
+      "base": "其他",
+      "total": 1,
       "lost": 0,
       "rate": 0.0
     }
@@ -6210,26 +6320,26 @@ var DATA = {
     {
       "name": "未知",
       "base": "其他",
-      "fp_cnt": 268,
-      "total": 3017,
-      "lost": 161,
-      "rate": 5.34
+      "fp_cnt": 338,
+      "total": 4271,
+      "lost": 198,
+      "rate": 4.64
     },
     {
       "name": "史冠群",
       "base": "济南",
-      "fp_cnt": 14,
-      "total": 165,
-      "lost": 14,
-      "rate": 8.48
+      "fp_cnt": 11,
+      "total": 121,
+      "lost": 9,
+      "rate": 7.44
     },
     {
       "name": "杨思静",
       "base": "西安",
-      "fp_cnt": 19,
-      "total": 136,
+      "fp_cnt": 16,
+      "total": 122,
       "lost": 1,
-      "rate": 0.74
+      "rate": 0.82
     },
     {
       "name": "徐静",
@@ -6248,60 +6358,60 @@ var DATA = {
       "rate": 7.62
     },
     {
-      "name": "程雪航",
-      "base": "西安",
-      "fp_cnt": 7,
-      "total": 289,
-      "lost": 14,
-      "rate": 4.84
-    },
-    {
       "name": "别泽宇",
       "base": "西安",
-      "fp_cnt": 5,
-      "total": 115,
-      "lost": 4,
-      "rate": 3.48
+      "fp_cnt": 3,
+      "total": 82,
+      "lost": 3,
+      "rate": 3.66
     },
     {
       "name": "倪燕",
       "base": "济南",
-      "fp_cnt": 13,
-      "total": 94,
+      "fp_cnt": 12,
+      "total": 93,
       "lost": 2,
-      "rate": 2.13
+      "rate": 2.15
     },
     {
       "name": "周杰",
       "base": "西安",
-      "fp_cnt": 16,
-      "total": 161,
-      "lost": 13,
-      "rate": 8.07
+      "fp_cnt": 12,
+      "total": 112,
+      "lost": 9,
+      "rate": 8.04
     },
     {
       "name": "姜莎莎",
       "base": "西安",
-      "fp_cnt": 15,
-      "total": 140,
+      "fp_cnt": 12,
+      "total": 90,
+      "lost": 3,
+      "rate": 3.33
+    },
+    {
+      "name": "程雪航",
+      "base": "西安",
+      "fp_cnt": 2,
+      "total": 86,
       "lost": 4,
-      "rate": 2.86
+      "rate": 4.65
     },
     {
       "name": "马英豪",
       "base": "济南",
-      "fp_cnt": 11,
-      "total": 133,
-      "lost": 7,
-      "rate": 5.26
+      "fp_cnt": 5,
+      "total": 46,
+      "lost": 4,
+      "rate": 8.7
     },
     {
       "name": "张爱荣",
       "base": "济南",
-      "fp_cnt": 10,
-      "total": 43,
-      "lost": 2,
-      "rate": 4.65
+      "fp_cnt": 7,
+      "total": 33,
+      "lost": 1,
+      "rate": 3.03
     },
     {
       "name": "侯瑶瑶",
@@ -6314,34 +6424,34 @@ var DATA = {
     {
       "name": "李耐徽",
       "base": "济南",
-      "fp_cnt": 9,
-      "total": 62,
+      "fp_cnt": 7,
+      "total": 48,
       "lost": 6,
-      "rate": 9.68
+      "rate": 12.5
     },
     {
       "name": "刘泽宇",
       "base": "济南",
-      "fp_cnt": 7,
-      "total": 57,
+      "fp_cnt": 5,
+      "total": 46,
       "lost": 0,
       "rate": 0.0
     },
     {
       "name": "黄欣瑞",
       "base": "西安",
-      "fp_cnt": 14,
-      "total": 112,
-      "lost": 4,
-      "rate": 3.57
+      "fp_cnt": 10,
+      "total": 76,
+      "lost": 3,
+      "rate": 3.95
     },
     {
       "name": "袁博",
       "base": "济南",
-      "fp_cnt": 10,
-      "total": 37,
+      "fp_cnt": 9,
+      "total": 28,
       "lost": 1,
-      "rate": 2.7
+      "rate": 3.57
     },
     {
       "name": "辛健齐",
@@ -6354,26 +6464,10 @@ var DATA = {
     {
       "name": "王欣怡",
       "base": "济南",
-      "fp_cnt": 16,
-      "total": 58,
+      "fp_cnt": 14,
+      "total": 54,
       "lost": 4,
-      "rate": 6.9
-    },
-    {
-      "name": "林柏霆",
-      "base": "西安",
-      "fp_cnt": 23,
-      "total": 181,
-      "lost": 10,
-      "rate": 5.52
-    },
-    {
-      "name": "徐婷",
-      "base": "西安",
-      "fp_cnt": 7,
-      "total": 58,
-      "lost": 4,
-      "rate": 6.9
+      "rate": 7.41
     },
     {
       "name": "小猴",
@@ -6384,34 +6478,50 @@ var DATA = {
       "rate": 50.0
     },
     {
+      "name": "林柏霆",
+      "base": "西安",
+      "fp_cnt": 11,
+      "total": 57,
+      "lost": 2,
+      "rate": 3.51
+    },
+    {
       "name": "陈卓",
       "base": "西安",
-      "fp_cnt": 6,
-      "total": 32,
-      "lost": 5,
-      "rate": 15.62
+      "fp_cnt": 4,
+      "total": 18,
+      "lost": 3,
+      "rate": 16.67
     },
     {
       "name": "边雯瑄",
       "base": "济南",
-      "fp_cnt": 6,
-      "total": 35,
-      "lost": 3,
-      "rate": 8.57
+      "fp_cnt": 3,
+      "total": 20,
+      "lost": 2,
+      "rate": 10.0
+    },
+    {
+      "name": "徐婷",
+      "base": "西安",
+      "fp_cnt": 5,
+      "total": 44,
+      "lost": 4,
+      "rate": 9.09
     },
     {
       "name": "李改改",
       "base": "西安",
-      "fp_cnt": 7,
-      "total": 68,
+      "fp_cnt": 4,
+      "total": 50,
       "lost": 5,
-      "rate": 7.35
+      "rate": 10.0
     },
     {
       "name": "李赟",
       "base": "西安",
-      "fp_cnt": 5,
-      "total": 13,
+      "fp_cnt": 4,
+      "total": 8,
       "lost": 0,
       "rate": 0.0
     },
@@ -6436,10 +6546,10 @@ var DATA = {
     {
       "name": "其他",
       "leader_cnt": 4,
-      "fp_cnt": 272,
-      "total": 752,
+      "fp_cnt": 341,
+      "total": 1254,
       "lost": 52,
-      "rate": 6.91
+      "rate": 4.15
     },
     {
       "name": "济南",
@@ -7166,7 +7276,8 @@ var DATA = {
     "C-S+",
     "S+-C",
     "S+-S+",
-    "A-S"
+    "A-S",
+    "S-S+"
   ],
   "sub_counts": {
     "A-B": [
@@ -7175,7 +7286,7 @@ var DATA = {
       227,
       143,
       138,
-      83
+      143
     ],
     "A-S+": [
       227,
@@ -7183,7 +7294,7 @@ var DATA = {
       162,
       333,
       323,
-      187
+      454
     ],
     "S+-A": [
       319,
@@ -7191,7 +7302,7 @@ var DATA = {
       374,
       262,
       268,
-      173
+      269
     ],
     "换年级": [
       49,
@@ -7199,7 +7310,7 @@ var DATA = {
       165,
       67,
       121,
-      43
+      69
     ],
     "A-C": [
       13,
@@ -7207,7 +7318,7 @@ var DATA = {
       17,
       6,
       18,
-      9
+      16
     ],
     "B-A": [
       57,
@@ -7215,7 +7326,7 @@ var DATA = {
       38,
       17,
       50,
-      14
+      22
     ],
     "S+-B": [
       7,
@@ -7223,7 +7334,7 @@ var DATA = {
       21,
       13,
       21,
-      6
+      9
     ],
     "B-S+": [
       23,
@@ -7231,7 +7342,7 @@ var DATA = {
       33,
       40,
       24,
-      18
+      41
     ],
     "C-A": [
       4,
@@ -7263,7 +7374,7 @@ var DATA = {
       0,
       0,
       2,
-      1
+      2
     ],
     "C-S+": [
       0,
@@ -7290,6 +7401,14 @@ var DATA = {
       0
     ],
     "A-S": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      8
+    ],
+    "S-S+": [
       0,
       0,
       0,
@@ -8211,35 +8330,35 @@ var DATA = {
   "version_flows": [
     [
       "S+-A",
-      1704
+      1800
     ],
     [
       "A-S+",
-      1364
+      1631
     ],
     [
       "A-B",
-      945
+      1005
     ],
     [
       "换年级",
-      565
+      591
     ],
     [
       "B-A",
-      200
+      208
     ],
     [
       "B-S+",
-      158
+      181
     ],
     [
       "S+-B",
-      87
+      90
     ],
     [
       "A-C",
-      75
+      82
     ],
     [
       "C-A",
@@ -8247,11 +8366,15 @@ var DATA = {
     ],
     [
       "换时段",
-      19
+      20
     ],
     [
       "换课头",
       18
+    ],
+    [
+      "A-S",
+      8
     ],
     [
       "S+-C",
@@ -8270,13 +8393,13 @@ var DATA = {
       4
     ],
     [
-      "A-S",
+      "S-S+",
       1
     ]
   ],
   "ay_kpi": {
     "24-25": {
-      "total": 512,
+      "total": 514,
       "types": {
         "调入A版": 251,
         "调入B版": 49,
@@ -8288,7 +8411,7 @@ var DATA = {
       }
     },
     "25-26": {
-      "total": 4439,
+      "total": 4754,
       "types": {
         "调入A版": 1610,
         "调入B版": 955,
@@ -8300,7 +8423,7 @@ var DATA = {
       }
     },
     "26-27": {
-      "total": 252,
+      "total": 434,
       "types": {
         "调入A版": 87,
         "调入B版": 32,
@@ -8316,97 +8439,97 @@ var DATA = {
     [
       "25-26【1月】",
       {
-        "total": 1220,
+        "total": 1240,
         "lost": 100,
-        "rate": 8.2
+        "rate": 8.06
       }
     ],
     [
       "25-26【9月】",
       {
-        "total": 565,
+        "total": 635,
         "lost": 19,
-        "rate": 3.36
+        "rate": 2.99
       }
     ],
     [
       "25-26【7月】",
       {
-        "total": 536,
+        "total": 573,
         "lost": 14,
-        "rate": 2.61
+        "rate": 2.44
       }
     ],
     [
       "25-26【3月】",
       {
-        "total": 437,
+        "total": 448,
         "lost": 39,
-        "rate": 8.92
+        "rate": 8.71
       }
     ],
     [
       "25-26【4月】",
       {
-        "total": 381,
+        "total": 386,
         "lost": 24,
-        "rate": 6.3
+        "rate": 6.22
       }
     ],
     [
       "25-26【6月】",
       {
-        "total": 294,
+        "total": 313,
         "lost": 11,
-        "rate": 3.74
-      }
-    ],
-    [
-      "25-26【12月】",
-      {
-        "total": 276,
-        "lost": 18,
-        "rate": 6.52
-      }
-    ],
-    [
-      "25-26【5月】",
-      {
-        "total": 260,
-        "lost": 22,
-        "rate": 8.46
-      }
-    ],
-    [
-      "25-26【11月】",
-      {
-        "total": 222,
-        "lost": 11,
-        "rate": 4.95
+        "rate": 3.51
       }
     ],
     [
       "25-26【10月】",
       {
-        "total": 220,
+        "total": 304,
         "lost": 5,
-        "rate": 2.27
+        "rate": 1.64
       }
     ],
     [
-      "24-25【6月】",
+      "25-26【12月】",
       {
-        "total": 173,
-        "lost": 4,
-        "rate": 2.31
+        "total": 286,
+        "lost": 18,
+        "rate": 6.29
+      }
+    ],
+    [
+      "25-26【11月】",
+      {
+        "total": 275,
+        "lost": 11,
+        "rate": 4.0
       }
     ],
     [
       "26-27【7月】",
       {
-        "total": 173,
+        "total": 272,
         "lost": 4,
-        "rate": 2.31
+        "rate": 1.47
+      }
+    ],
+    [
+      "25-26【5月】",
+      {
+        "total": 264,
+        "lost": 22,
+        "rate": 8.33
+      }
+    ],
+    [
+      "24-25【6月】",
+      {
+        "total": 174,
+        "lost": 4,
+        "rate": 2.3
       }
     ],
     [
@@ -8428,7 +8551,7 @@ var DATA = {
     [
       "24-25【5月】",
       {
-        "total": 105,
+        "total": 106,
         "lost": 0,
         "rate": 0.0
       }
@@ -8436,23 +8559,7 @@ var DATA = {
     [
       "26-27【9月】",
       {
-        "total": 67,
-        "lost": 0,
-        "rate": 0.0
-      }
-    ],
-    [
-      "25-26【新12月】",
-      {
-        "total": 26,
-        "lost": 3,
-        "rate": 11.54
-      }
-    ],
-    [
-      "26-27【10月】",
-      {
-        "total": 6,
+        "total": 91,
         "lost": 0,
         "rate": 0.0
       }
@@ -8460,7 +8567,23 @@ var DATA = {
     [
       "26-27【11月】",
       {
-        "total": 6,
+        "total": 48,
+        "lost": 0,
+        "rate": 0.0
+      }
+    ],
+    [
+      "25-26【新12月】",
+      {
+        "total": 28,
+        "lost": 3,
+        "rate": 10.71
+      }
+    ],
+    [
+      "26-27【10月】",
+      {
+        "total": 23,
         "lost": 0,
         "rate": 0.0
       }
@@ -8607,6 +8730,28 @@ var DATA = {
       0,
       0
     ],
+    "25-26【10月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "25-26【12月】": [
       0,
       0,
@@ -8620,28 +8765,6 @@ var DATA = {
       10,
       5,
       1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "25-26【5月】": [
-      0,
-      0,
-      1,
-      2,
-      8,
-      10,
-      1,
-      0,
-      0,
-      0,
-      0,
-      0,
       0,
       0,
       0,
@@ -8673,7 +8796,7 @@ var DATA = {
       0,
       0
     ],
-    "25-26【10月】": [
+    "26-27【7月】": [
       0,
       0,
       0,
@@ -8684,9 +8807,31 @@ var DATA = {
       0,
       0,
       0,
-      2,
-      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "25-26【5月】": [
+      0,
+      0,
       1,
+      2,
+      8,
+      10,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -8712,28 +8857,6 @@ var DATA = {
       1,
       2,
       1,
-      0,
-      0,
-      0,
-      0
-    ],
-    "26-27【7月】": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       0,
       0,
       0,
@@ -8827,6 +8950,28 @@ var DATA = {
       0,
       0
     ],
+    "26-27【11月】": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "25-26【新12月】": [
       0,
       0,
@@ -8871,28 +9016,6 @@ var DATA = {
       0,
       0
     ],
-    "26-27【11月】": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
     "25-26【2月】": [
       0,
       0,
@@ -8916,9 +9039,9 @@ var DATA = {
       0
     ]
   },
-  "total_records": 5203,
+  "total_records": 5705,
   "total_lost": 279,
-  "total_lost_rate": 5.36,
+  "total_lost_rate": 4.89,
   "timing_mapped": 274,
   "interval_valid": 279,
   "interval_p25": 10,
@@ -8928,25 +9051,321 @@ var DATA = {
   "interval_avg": 39.9,
   "ay_kpi_detail": {
     "24-25": {
-      "total": 512,
+      "total": 514,
       "pre": 503,
-      "cur": 5,
-      "m13": 3,
+      "cur": 6,
+      "m13": 4,
       "m4p": 1
     },
     "25-26": {
-      "total": 4349,
-      "pre": 1145,
-      "cur": 875,
-      "m13": 1138,
-      "m4p": 1191
+      "total": 4664,
+      "pre": 1182,
+      "cur": 894,
+      "m13": 1158,
+      "m4p": 1430
     },
     "26-27": {
-      "total": 252,
-      "pre": 173,
+      "total": 434,
+      "pre": 272,
       "cur": 0,
       "m13": 0,
-      "m4p": 79
+      "m4p": 162
+    }
+  },
+  "difficulty": {
+    "xf_order": [
+      "S+-A",
+      "S+-B",
+      "S+-C",
+      "A-B",
+      "A-C",
+      "B-A",
+      "C-A",
+      "C-B",
+      "A-S+",
+      "A-S",
+      "B-S+",
+      "C-S+",
+      "S-S+",
+      "S+-S+"
+    ],
+    "xf_total": {
+      "S+-A": 1800,
+      "S+-B": 90,
+      "S+-C": 7,
+      "A-B": 1005,
+      "A-C": 82,
+      "B-A": 208,
+      "C-A": 44,
+      "C-B": 4,
+      "A-S+": 1631,
+      "A-S": 8,
+      "B-S+": 181,
+      "C-S+": 6,
+      "S-S+": 1,
+      "S+-S+": 6
+    },
+    "xf_monthly": {
+      "S+-A": [
+        319,
+        308,
+        374,
+        262,
+        268,
+        269
+      ],
+      "S+-B": [
+        7,
+        19,
+        21,
+        13,
+        21,
+        9
+      ],
+      "S+-C": [
+        0,
+        0,
+        4,
+        1,
+        1,
+        1
+      ],
+      "A-B": [
+        236,
+        118,
+        227,
+        143,
+        138,
+        143
+      ],
+      "A-C": [
+        13,
+        12,
+        17,
+        6,
+        18,
+        16
+      ],
+      "B-A": [
+        57,
+        24,
+        38,
+        17,
+        50,
+        22
+      ],
+      "C-A": [
+        4,
+        23,
+        13,
+        3,
+        1,
+        0
+      ],
+      "C-B": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "A-S+": [
+        227,
+        132,
+        162,
+        333,
+        323,
+        454
+      ],
+      "A-S": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        8
+      ],
+      "B-S+": [
+        23,
+        20,
+        33,
+        40,
+        24,
+        41
+      ],
+      "C-S+": [
+        0,
+        4,
+        1,
+        1,
+        0,
+        0
+      ],
+      "S-S+": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "S+-S+": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0
+      ]
+    },
+    "xf_lost": {
+      "S+-A": 64,
+      "S+-B": 2,
+      "S+-C": 1,
+      "A-B": 70,
+      "A-C": 6,
+      "B-A": 12,
+      "C-A": 1,
+      "C-B": 0,
+      "A-S+": 71,
+      "A-S": 0,
+      "B-S+": 9,
+      "C-S+": 0,
+      "S-S+": 0,
+      "S+-S+": 0
+    },
+    "direction_summary": {
+      "up": {
+        "total": 1827,
+        "lost": 80,
+        "by_xf": {
+          "A-S+": 1631,
+          "B-S+": 181,
+          "C-S+": 6,
+          "A-S": 8,
+          "S-S+": 1
+        },
+        "rate": 4.38
+      },
+      "down": {
+        "total": 1897,
+        "lost": 67,
+        "by_xf": {
+          "S+-A": 1800,
+          "S+-B": 90,
+          "S+-C": 7
+        },
+        "rate": 3.53
+      },
+      "same": {
+        "total": 1349,
+        "lost": 89,
+        "by_xf": {
+          "A-B": 1005,
+          "A-C": 82,
+          "B-A": 208,
+          "C-A": 44,
+          "C-B": 4,
+          "S+-S+": 6
+        },
+        "rate": 6.6
+      }
+    },
+    "monthly_direction": {
+      "1月": {
+        "up": 250,
+        "down": 326,
+        "same": 311
+      },
+      "2月": {
+        "up": 156,
+        "down": 327,
+        "same": 178
+      },
+      "3月": {
+        "up": 196,
+        "down": 399,
+        "same": 295
+      },
+      "4月": {
+        "up": 374,
+        "down": 276,
+        "same": 170
+      },
+      "5月": {
+        "up": 347,
+        "down": 290,
+        "same": 214
+      },
+      "6月": {
+        "up": 504,
+        "down": 279,
+        "same": 181
+      }
+    },
+    "star_matrix": {
+      "4": {
+        "4": {
+          "total": 1343,
+          "lost": 89,
+          "rate": 6.63
+        },
+        "5": {
+          "total": 8,
+          "lost": 0,
+          "rate": 0.0
+        },
+        "6": {
+          "total": 1818,
+          "lost": 80,
+          "rate": 4.4
+        }
+      },
+      "5": {
+        "4": {
+          "total": 0,
+          "lost": 0,
+          "rate": 0
+        },
+        "5": {
+          "total": 0,
+          "lost": 0,
+          "rate": 0
+        },
+        "6": {
+          "total": 1,
+          "lost": 0,
+          "rate": 0.0
+        }
+      },
+      "6": {
+        "4": {
+          "total": 1897,
+          "lost": 67,
+          "rate": 3.53
+        },
+        "5": {
+          "total": 0,
+          "lost": 0,
+          "rate": 0
+        },
+        "6": {
+          "total": 6,
+          "lost": 0,
+          "rate": 0.0
+        }
+      }
+    },
+    "star_label": {
+      "4": "4星(A/B/C版)",
+      "5": "5星(S版)",
+      "6": "6星(S+版)"
+    },
+    "star_color": {
+      "4": "#4e79a7",
+      "5": "#f28e2b",
+      "6": "#e15759"
     }
   }
 };
@@ -8992,7 +9411,7 @@ function initDynamicCards() {
     summaryEl.className = 'kpi-row';
     summaryEl.style.marginBottom = '16px';
     summaryEl.innerHTML =
-      '<div class="kpi-card" style="--c:#4e79a7"><div class="month">换品总记录</div><div class="num">'+D.total_records+'</div><div class="label">数据截止 2026年6月12日15:00</div></div>'+
+      '<div class="kpi-card" style="--c:#4e79a7"><div class="month">换品总记录</div><div class="num">'+D.total_records+'</div><div class="label">数据截止 2026年6月22日15:00</div></div>'+
       '<div class="kpi-card" style="--c:#e15759"><div class="month">总流失</div><div class="num" style="color:#e15759">'+(D.total_lost||0)+'人</div><div class="label">流失率 '+(D.total_lost_rate||0)+'%</div></div>'+
       ayCards;
   }
@@ -9113,8 +9532,206 @@ function initDynamicCards() {
   }
 }
 
-function initLostCharts() {
+  if (ktTbody && D.kt_lost_top) {
+    ktTbody.innerHTML = D.kt_lost_top.slice(0,20).map(function(item){
+      var h = item[0], lk = item[1];
+      return '<tr><td class="row-label">'+h+'</td><td>'+lk.total+'</td><td style="color:#e15759;font-weight:600">'+lk.lost+'</td><td>'+makePctBar(lk.rate)+'</td></tr>';
+    }).join('');
+  }
+}
+
+// ==================== 难度换品分析 ====================
+function initDifficultyPage() {
   var D = window.DATA;
+  if (!D || !D.difficulty) return;
+  var diff = D.difficulty;
+  var months = D.months;
+
+  var DIR_LABEL = {up:'升级（低→高）', down:'降级（高→低）', same:'平级（同难度）'};
+  var DIR_COLOR = {up:'#59a14f', down:'#e15759', same:'#4e79a7'};
+  var STAR_LABEL = diff.star_label; // {4:'4星(A/B/C版)', 5:'5星(S版)', 6:'6星(S+版)'}
+  var STAR_COLOR = diff.star_color; // {4:'#4e79a7', 5:'#f28e2b', 6:'#e15759'}
+
+  // --- KPI 汇总 ---
+  var kpiRow = document.getElementById('diff-kpi-row');
+  if (kpiRow) {
+    var totalDiff = (diff.direction_summary.up.total||0) + (diff.direction_summary.down.total||0) + (diff.direction_summary.same.total||0);
+    var cards = ['down','up','same'].map(function(d) {
+      var s = diff.direction_summary[d];
+      var pct = totalDiff ? Math.round(s.total/totalDiff*100) : 0;
+      return '<div class="kpi-card" style="--c:'+DIR_COLOR[d]+'"><div class="month">'+DIR_LABEL[d]+'</div><div class="num">'+s.total+'</div><div class="label">流失 '+s.lost+' | 流失率 '+s.rate+'% | 占比 '+pct+'%</div></div>';
+    });
+    kpiRow.innerHTML = cards.join('');
+  }
+
+  // --- 星级流向矩阵 ---
+  var matrixWrap = document.getElementById('diff-matrix-wrap');
+  if (matrixWrap) {
+    var stars = [6, 5, 4]; // 行：从高到低
+    var starsCol = [4, 5, 6]; // 列：从低到高
+    var html = '<table class="data-table" style="min-width:600px">';
+    html += '<thead><tr><th style="background:#f5f6fa">原课程 \\ 调入课程</th>';
+    starsCol.forEach(function(d){ html += '<th style="color:'+STAR_COLOR[d]+'">'+STAR_LABEL[d]+'</th>'; });
+    html += '<th>行合计</th></tr></thead><tbody>';
+    stars.forEach(function(s) {
+      var rowTotal = starsCol.reduce(function(acc,d){ return acc + (diff.star_matrix[s]&&diff.star_matrix[s][d]?diff.star_matrix[s][d].total:0); }, 0);
+      html += '<tr><td class="row-label" style="color:'+STAR_COLOR[s]+'"><b>'+STAR_LABEL[s]+'</b></td>';
+      starsCol.forEach(function(d) {
+        var cell = diff.star_matrix[s] && diff.star_matrix[s][d] ? diff.star_matrix[s][d] : {total:0,lost:0,rate:0};
+        var bg = s===d ? '#f5f6fa' : (s>d ? '#fff0f0' : '#f0fff4');
+        var arrow = s===d ? '↔' : (s>d ? '🔽' : '🔼');
+        html += '<td style="background:'+bg+';text-align:center">';
+        if (cell.total > 0) {
+          html += '<div style="font-weight:700;font-size:15px">'+arrow+' '+cell.total+'</div>';
+          html += '<div style="font-size:11px;color:#e15759">流失 '+cell.lost+' ('+cell.rate+'%)</div>';
+        } else {
+          html += '<span style="color:#ccc">—</span>';
+        }
+        html += '</td>';
+      });
+      html += '<td><b>'+rowTotal+'</b></td></tr>';
+    });
+    // 列合计
+    html += '<tr style="font-weight:700;background:#f5f6fa"><td class="row-label">列合计</td>';
+    var grandTotal = 0;
+    starsCol.forEach(function(d) {
+      var colTotal = stars.reduce(function(acc,s){ return acc + (diff.star_matrix[s]&&diff.star_matrix[s][d]?diff.star_matrix[s][d].total:0); }, 0);
+      grandTotal += colTotal;
+      html += '<td style="text-align:center">'+colTotal+'</td>';
+    });
+    html += '<td>'+grandTotal+'</td></tr>';
+    html += '</tbody></table>';
+    matrixWrap.innerHTML = html;
+  }
+
+  // --- 月度升降级趋势图 ---
+  var ctxMonthly = document.getElementById('c-diff-monthly');
+  if (ctxMonthly) {
+    new Chart(ctxMonthly.getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: months,
+        datasets: [
+          { label:'降级', data: months.map(function(m){ return diff.monthly_direction[m]?diff.monthly_direction[m].down:0; }), backgroundColor: DIR_COLOR.down+'cc', stack:'s' },
+          { label:'升级', data: months.map(function(m){ return diff.monthly_direction[m]?diff.monthly_direction[m].up:0; }), backgroundColor: DIR_COLOR.up+'cc', stack:'s' },
+          { label:'平级', data: months.map(function(m){ return diff.monthly_direction[m]?diff.monthly_direction[m].same:0; }), backgroundColor: DIR_COLOR.same+'cc', stack:'s' }
+        ]
+      },
+      options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'top'}}, scales:{x:{stacked:true},y:{stacked:true,beginAtZero:true}} }
+    });
+  }
+
+  // --- 细分类型分布柱状图 ---
+  var ctxXfBar = document.getElementById('c-diff-xf-bar');
+  if (ctxXfBar) {
+    var xfKeys = diff.xf_order.slice(0,12);
+    var xfColors = ['#e15759','#e15759','#e15759','#4e79a7','#4e79a7','#4e79a7','#59a14f','#59a14f','#59a14f','#59a14f','#59a14f','#59a14f'];
+    new Chart(ctxXfBar.getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: xfKeys,
+        datasets: [{
+          label: '换品人数',
+          data: xfKeys.map(function(k){ return diff.xf_total[k]||0; }),
+          backgroundColor: xfKeys.map(function(k){
+            var parts = k.split('-');
+            if (parts.length===2) {
+              var STAR = {A:4,B:4,C:4,S:5,'S+':6};
+              var s = STAR[parts[0]], d = STAR[parts[1]];
+              if(s&&d){ return s>d?DIR_COLOR.down+'cc':(s<d?DIR_COLOR.up+'cc':DIR_COLOR.same+'cc'); }
+            }
+            return '#4e79a7cc';
+          })
+        }]
+      },
+      options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}} }
+    });
+  }
+
+  // --- 生成方向明细表 ---
+  function renderDirTable(containerId, direction) {
+    var wrap = document.getElementById(containerId);
+    if (!wrap) return;
+    var s = diff.direction_summary[direction];
+    if (!s || !s.by_xf || Object.keys(s.by_xf).length === 0) {
+      wrap.innerHTML = '<p style="color:#aaa;padding:12px">暂无数据</p>';
+      return;
+    }
+    var entries = Object.entries(s.by_xf).sort(function(a,b){ return b[1]-a[1]; });
+    var html = '<table class="data-table"><thead><tr>';
+    html += '<th>细分类型</th><th>原难度</th><th>调入难度</th><th>总人数</th><th>流失人数</th><th>流失率</th>';
+    months.forEach(function(m){ html += '<th>'+m+'</th>'; });
+    html += '<th>合计</th></tr></thead><tbody>';
+    var STAR = {A:4,B:4,C:4,S:5,'S+':6};
+    entries.forEach(function(entry) {
+      var xf = entry[0], cnt = entry[1];
+      var parts = xf.split('-');
+      var srcStar = parts[0] && STAR[parts[0]] ? STAR[parts[0]] : '—';
+      var dstStar = parts[1] && STAR[parts[1]] ? STAR[parts[1]] : '—';
+      var lostCnt = diff.xf_lost[xf]||0;
+      var lostRate = cnt>0 ? (lostCnt/cnt*100).toFixed(1) : '0.0';
+      var srcLabel = srcStar !== '—' ? STAR_LABEL[srcStar] : '—';
+      var dstLabel = dstStar !== '—' ? STAR_LABEL[dstStar] : '—';
+      html += '<tr>';
+      html += '<td class="row-label"><b>'+xf+'</b></td>';
+      html += '<td style="color:'+(srcStar!=='—'?STAR_COLOR[srcStar]:'#999')+'">'+srcLabel+'</td>';
+      html += '<td style="color:'+(dstStar!=='—'?STAR_COLOR[dstStar]:'#999')+'">'+dstLabel+'</td>';
+      html += '<td>'+cnt+'</td>';
+      html += '<td style="color:#e15759">'+lostCnt+'</td>';
+      html += '<td>'+lostRate+'%</td>';
+      var monthly = diff.xf_monthly[xf]||[];
+      monthly.forEach(function(v){ html += '<td>'+v+'</td>'; });
+      html += '<td><b>'+cnt+'</b></td>';
+      html += '</tr>';
+    });
+    // 合计行
+    html += '<tr style="font-weight:700;background:#f5f6fa"><td class="row-label">合计</td><td></td><td></td><td>'+s.total+'</td><td style="color:#e15759">'+s.lost+'</td><td>'+s.rate+'%</td>';
+    months.forEach(function(m,mi){
+      var colSum = entries.reduce(function(acc, entry){ var xf=entry[0]; return acc+(diff.xf_monthly[xf]&&diff.xf_monthly[xf][mi]?diff.xf_monthly[xf][mi]:0); }, 0);
+      html += '<td>'+colSum+'</td>';
+    });
+    html += '<td><b>'+s.total+'</b></td></tr>';
+    html += '</tbody></table>';
+    wrap.innerHTML = html;
+  }
+
+  renderDirTable('diff-down-wrap', 'down');
+  renderDirTable('diff-up-wrap', 'up');
+  renderDirTable('diff-same-wrap', 'same');
+
+  // --- 细分类型×月份 明细表 ---
+  var xfThead = document.getElementById('diff-xf-thead');
+  var xfTbody = document.getElementById('diff-xf-tbody');
+  if (xfThead && xfTbody) {
+    var headHtml = '<tr><th>细分类型</th><th>方向</th>';
+    months.forEach(function(m){ headHtml += '<th>'+m+'</th>'; });
+    headHtml += '<th>合计</th><th>流失</th><th>流失率</th></tr>';
+    xfThead.innerHTML = headHtml;
+
+    var STAR = {A:4,B:4,C:4,S:5,'S+':6};
+    var bodyHtml = diff.xf_order.map(function(xf) {
+      var parts = xf.split('-');
+      var s = parts[0]&&STAR[parts[0]]?STAR[parts[0]]:null;
+      var d = parts[1]&&STAR[parts[1]]?STAR[parts[1]]:null;
+      var dir = s&&d ? (s>d?'🔽降级':s<d?'🔼升级':'↔平级') : '';
+      var dirColor = s&&d ? (s>d?DIR_COLOR.down:s<d?DIR_COLOR.up:DIR_COLOR.same) : '#999';
+      var monthly = diff.xf_monthly[xf]||[];
+      var total = diff.xf_total[xf]||0;
+      var lost = diff.xf_lost[xf]||0;
+      var rate = total>0?(lost/total*100).toFixed(1):'0.0';
+      var row = '<tr><td class="row-label"><b>'+xf+'</b></td>';
+      row += '<td style="color:'+dirColor+';font-size:12px">'+dir+'</td>';
+      monthly.forEach(function(v){ row += '<td>'+v+'</td>'; });
+      row += '<td><b>'+total+'</b></td>';
+      row += '<td style="color:#e15759">'+lost+'</td>';
+      row += '<td>'+rate+'%</td></tr>';
+      return row;
+    }).join('');
+    xfTbody.innerHTML = bodyHtml;
+  }
+}
+
+
   // 1. 各月流失人数+流失率（柱+折）
   var monthTotals = D.months.map(m => D.month_lost[m].total);
   new Chart(document.getElementById('c-lost-month').getContext('2d'), {
@@ -9522,6 +10139,12 @@ function switchPage(pageId) {
       if (typeof initFilterOpts === 'function') initFilterOpts();
     }
   }
+  else if (pageId==='difficulty') {
+    if (!inited.difficulty) {
+      inited.difficulty = true;
+      setTimeout(function(){ initDifficultyPage(); }, 80);
+    }
+  }
 }
 
 // 课包子Tab
@@ -9878,7 +10501,7 @@ initOverview();
 // ==================== 排序逻辑结束 ====================
 
 // ==================== 导出功能 ====================
-var GRAND_TOTAL = 5203; // 1-6月换品总量
+var GRAND_TOTAL = 5705; // 1-6月换品总量
 
 // 导出表格为CSV
 function exportTableCSV(tableId, filename) {
