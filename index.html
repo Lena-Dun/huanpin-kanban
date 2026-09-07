@@ -460,6 +460,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
       </div>
     </div>
 
+    <!-- 月度升降级趋势（折线图版本） -->
+    <div class="chart-card full" style="margin-bottom:18px">
+      <h3>各月升级 / 降级 / 平级趋势（折线图）</h3>
+      <div class="chart-wrap"><canvas id="c-diff-monthly-line"></canvas></div>
+    </div>
+
     <!-- 降级分析 -->
     <div class="chart-card full" style="margin-bottom:18px">
       <h3>🔽 降级换品明细（高难度 → 低难度）</h3>
@@ -11961,6 +11967,23 @@ function initDifficultyPage() {
         ]
       },
       options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'top'}}, scales:{x:{stacked:true},y:{stacked:true,beginAtZero:true}} }
+    });
+  }
+
+  // --- 月度升降级趋势图（折线图版本） ---
+  var ctxMonthlyLine = document.getElementById('c-diff-monthly-line');
+  if (ctxMonthlyLine) {
+    new Chart(ctxMonthlyLine.getContext('2d'), {
+      type: 'line',
+      data: {
+        labels: months,
+        datasets: [
+          { label:'升级', data: months.map(function(m){ return diff.monthly_direction[m]?diff.monthly_direction[m].up:0; }), borderColor: DIR_COLOR.up, backgroundColor: DIR_COLOR.up+'22', tension:0.3, pointRadius:3, fill:false },
+          { label:'降级', data: months.map(function(m){ return diff.monthly_direction[m]?diff.monthly_direction[m].down:0; }), borderColor: DIR_COLOR.down, backgroundColor: DIR_COLOR.down+'22', tension:0.3, pointRadius:3, fill:false },
+          { label:'平级', data: months.map(function(m){ return diff.monthly_direction[m]?diff.monthly_direction[m].same:0; }), borderColor: DIR_COLOR.same, backgroundColor: DIR_COLOR.same+'22', tension:0.3, pointRadius:3, fill:false }
+        ]
+      },
+      options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'top'}}, scales:{x:{}, y:{beginAtZero:true}} }
     });
   }
 
